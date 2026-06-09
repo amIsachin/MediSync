@@ -1,0 +1,11 @@
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\bin\Debug\net10.0\MediSync.BuildingBlocks.deps.json
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\MediSync.BuildingBlocks.GeneratedMSBuildEditorConfig.editorconfig
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\MediSync.BuildingBlocks.AssemblyInfoInputs.cache
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\MediSync.BuildingBlocks.AssemblyInfo.cs
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\MediSync.BuildingBlocks.csproj.CoreCompileInputs.cache
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\refint\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\MediSync.BuildingBlocks.pdb
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\ref\MediSync.BuildingBlocks.dll

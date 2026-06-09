@@ -1,0 +1,17 @@
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.deps.json
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.pdb
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Domain.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Domain.pdb
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.csproj.AssemblyReference.cache
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.GeneratedMSBuildEditorConfig.editorconfig
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.AssemblyInfoInputs.cache
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.AssemblyInfo.cs
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.csproj.CoreCompileInputs.cache
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.204911CE.Up2Date
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\refint\MediSync.Auth.Infrastrucure.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.pdb
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\ref\MediSync.Auth.Infrastrucure.dll

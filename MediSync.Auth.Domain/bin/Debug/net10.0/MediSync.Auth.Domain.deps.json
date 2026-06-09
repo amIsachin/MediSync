@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "MediSync.Auth.Domain/1.0.0": {
+        "dependencies": {
+          "MediSync.BuildingBlocks": "1.0.0"
+        },
+        "runtime": {
+          "MediSync.Auth.Domain.dll": {}
+        }
+      },
+      "MediSync.BuildingBlocks/1.0.0": {
+        "runtime": {
+          "MediSync.BuildingBlocks.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MediSync.Auth.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MediSync.BuildingBlocks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

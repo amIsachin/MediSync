@@ -1,0 +1,15 @@
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\bin\Debug\net10.0\MediSync.Auth.Domain.deps.json
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\bin\Debug\net10.0\MediSync.Auth.Domain.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\bin\Debug\net10.0\MediSync.Auth.Domain.pdb
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\MediSync.Auth.Domain.csproj.AssemblyReference.cache
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\MediSync.Auth.Domain.GeneratedMSBuildEditorConfig.editorconfig
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\MediSync.Auth.Domain.AssemblyInfoInputs.cache
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\MediSync.Auth.Domain.AssemblyInfo.cs
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\MediSync.Auth.Domain.csproj.CoreCompileInputs.cache
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\MediSync.4FACB0B5.Up2Date
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\MediSync.Auth.Domain.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\refint\MediSync.Auth.Domain.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\MediSync.Auth.Domain.pdb
+S:\.Net\Learning\MediSync\MediSync.Auth.Domain\obj\Debug\net10.0\ref\MediSync.Auth.Domain.dll
