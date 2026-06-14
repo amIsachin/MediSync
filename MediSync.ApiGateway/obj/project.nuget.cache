@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "qw/r48OObDA=",
+  "success": true,
+  "projectFilePath": "S:\\.Net\\Learning\\MediSync\\MediSync.ApiGateway\\MediSync.ApiGateway.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amIsa\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\ipaddressrange\\6.3.0\\ipaddressrange.6.3.0.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\10.0.8\\microsoft.aspnetcore.jsonpatch.10.0.8.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\microsoft.aspnetcore.middlewareanalysis\\10.0.8\\microsoft.aspnetcore.middlewareanalysis.10.0.8.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\10.0.8\\microsoft.aspnetcore.mvc.newtonsoftjson.10.0.8.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\microsoft.extensions.diagnosticadapter\\3.1.32\\microsoft.extensions.diagnosticadapter.3.1.32.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\ocelot\\25.0.0-beta.3\\ocelot.25.0.0-beta.3.nupkg.sha512"
+  ],
+  "logs": []
+}

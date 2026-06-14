@@ -8,7 +8,7 @@ public sealed record UserRegisteredEvent(Guid EventId, DateTime OccurredAt, Guid
         : this(Guid.NewGuid(), DateTime.UtcNow, userId, email, role)
     { }
 
-    public Guid Id => throw new NotImplementedException();
+    public Guid Id => EventId;
 }
 
 public sealed record UserActivatedEvent(Guid EventId, DateTime OccurredAt, Guid UserId, string Email) : IDomainEvent
@@ -17,7 +17,7 @@ public sealed record UserActivatedEvent(Guid EventId, DateTime OccurredAt, Guid 
         : this(Guid.NewGuid(), DateTime.UtcNow, userId, email)
     { }
 
-    public Guid Id => throw new NotImplementedException();
+    public Guid Id => EventId;
 }
 
 public sealed record UserDeactivatedEvent(Guid EventId, DateTime OccurredAt, Guid UserId) : IDomainEvent
@@ -26,5 +26,5 @@ public sealed record UserDeactivatedEvent(Guid EventId, DateTime OccurredAt, Gui
         : this(Guid.NewGuid(), DateTime.UtcNow, userId)
     { }
 
-    public Guid Id => throw new NotImplementedException();
+    public Guid Id => EventId;
 }

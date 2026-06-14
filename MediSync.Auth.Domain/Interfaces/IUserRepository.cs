@@ -13,4 +13,6 @@ public interface IUserRepository
     public Task AddAsync(User user, CancellationToken cancellationToken = default);
 
     public Task UpdateAsync(User user, CancellationToken cancellationToken = default);
+
+    public Task<bool> DeleteAsync(User user, CancellationToken cancellationToken = default);
 }

@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="14.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MediSync.Auth.Domain\MediSync.Auth.Domain.csproj" />
+    <ProjectReference Include="..\MediSync.Auth.Infrastrucure\MediSync.Auth.Infrastrucure.csproj" />
     <ProjectReference Include="..\MediSync.BuildingBlocks\MediSync.BuildingBlocks.csproj" />
   </ItemGroup>
 

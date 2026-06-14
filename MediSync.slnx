@@ -1,4 +1,10 @@
 <Solution>
+  <Folder Name="/Fontend/">
+    <Project Path="MediSync.Web/MediSync.Web.csproj" Id="2ed4669e-173a-4b45-aa4f-18e5b4f5103c" />
+  </Folder>
+  <Folder Name="/Gateways/">
+    <Project Path="MediSync.ApiGateway/MediSync.ApiGateway.csproj" Id="8ef64cb1-f785-4ae3-b081-d7a8f4e66da2" />
+  </Folder>
   <Folder Name="/Services/" />
   <Folder Name="/Services/Auth/" />
   <Folder Name="/Services/Auth/src/">

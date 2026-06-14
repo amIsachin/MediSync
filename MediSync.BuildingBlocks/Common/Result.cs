@@ -6,7 +6,7 @@
 /// Example: Result<UserDto> means success returns a UserDto
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class Result<T> 
+public sealed class Result<T> 
 {
     // The success value — only has meaning when IsSuccess is true
     // Nullable because on failure there is no value

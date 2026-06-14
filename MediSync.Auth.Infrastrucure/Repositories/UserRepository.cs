@@ -20,6 +20,12 @@ public class UserRepository : IUserRepository
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
+    public async Task<bool> DeleteAsync(User user, CancellationToken cancellationToken = default)
+    {
+        _dbContext.Users.Remove(user);
+        return await _dbContext.SaveChangesAsync(cancellationToken) > 0;
+    }
+
     public async Task<bool> ExistsByEmailAsync(string email, CancellationToken cancellationToken = default)
     {
         return await _dbContext.Users.AnyAsync(u => u.Email == email.ToLowerInvariant(), cancellationToken);

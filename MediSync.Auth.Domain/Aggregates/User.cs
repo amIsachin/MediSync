@@ -55,6 +55,11 @@ public sealed class User : AggregateRoot
         return Create(firstName, lastName, email, UserRole.Admin);
     }
 
+    public static User CreateLabTechnician(string firstName, string lastName, string email)
+    {
+        return Create(firstName, lastName, email, UserRole.LabTechnician);
+    }
+
     // ── Behaviours ────────────────────────────────────────────
     // These are the ONLY ways to change a User's state
     // Each method validates the transition before allowing it
@@ -119,6 +124,7 @@ public sealed class User : AggregateRoot
 
         var user = new User
         {
+            Id = Guid.NewGuid(),
             FirstName = firstName,
             LastName = lastName,
             Email = email,

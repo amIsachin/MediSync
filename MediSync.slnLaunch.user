@@ -1,0 +1,19 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "MediSync.Web\\MediSync.Web.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MediSync.Auth.Presentation\\MediSync.Auth.Presentation.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MediSync.ApiGateway\\MediSync.ApiGateway.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

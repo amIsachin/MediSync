@@ -10,6 +10,7 @@ S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.AssemblyInfoInputs.cache
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.AssemblyInfo.cs
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.csproj.CoreCompileInputs.cache
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.sourcelink.json
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.204911CE.Up2Date
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\refint\MediSync.Auth.Infrastrucure.dll

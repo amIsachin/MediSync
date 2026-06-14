@@ -161,6 +161,7 @@ S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\obj\Debug\net10.0\MediSync.
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\obj\Debug\net10.0\MediSync.Auth.Presentation.csproj.CoreCompileInputs.cache
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\obj\Debug\net10.0\MediSync.Auth.Presentation.MvcApplicationPartsAssemblyInfo.cs
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\obj\Debug\net10.0\MediSync.Auth.Presentation.MvcApplicationPartsAssemblyInfo.cache
+S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\obj\Debug\net10.0\MediSync.Auth.Presentation.sourcelink.json
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\obj\Debug\net10.0\rjimswa.dswa.cache.json
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
