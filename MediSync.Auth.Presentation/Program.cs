@@ -1,7 +1,9 @@
-﻿using MediSync.Auth.Domain.Interfaces;
+﻿using MediSync.Auth.Application.Abstractions;
+using MediSync.Auth.Domain.Interfaces;
 using MediSync.Auth.Infrastrucure.Identity;
 using MediSync.Auth.Infrastrucure.Persistence;
 using MediSync.Auth.Infrastrucure.Repositories;
+using MediSync.Auth.Infrastrucure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,6 +42,9 @@ builder.Services.AddMediatR(cfg =>
 
 // ── Repositories ─────────────────────────────────────────────
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IIdentityService, IdentityService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

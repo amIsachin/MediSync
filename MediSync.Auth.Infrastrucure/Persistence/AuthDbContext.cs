@@ -28,10 +28,16 @@ public class AuthDbContext(DbContextOptions<AuthDbContext> options) : IdentityDb
         {
             foreach (var aggregate in aggregatesWithEvents)
             {
-                foreach (var item in aggregate.DomainEvents)
+                foreach (var domainEvent in aggregate.DomainEvents)
                 {
                     // _eventBus.PublishAsync(domainEvent) — injected via constructor
                     // For now — the pattern is in place, implementation follows
+
+                    Console.WriteLine($"Domain Event Published: {domainEvent.GetType().Name}");
+                    Console.WriteLine(domainEvent.Id);
+                    Console.WriteLine(domainEvent.OccurredAt);
+                    Console.WriteLine(aggregate.GetType().Name);
+
                 }
 
                 aggregate.ClearDomainEvents();

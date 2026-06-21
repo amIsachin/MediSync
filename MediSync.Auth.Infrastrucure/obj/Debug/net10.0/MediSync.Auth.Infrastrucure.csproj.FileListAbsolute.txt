@@ -1,8 +1,10 @@
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.deps.json
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.pdb
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Application.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Domain.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Application.pdb
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.Auth.Domain.pdb
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
 S:\.Net\Learning\MediSync\MediSync.Auth.Infrastrucure\obj\Debug\net10.0\MediSync.Auth.Infrastrucure.csproj.AssemblyReference.cache

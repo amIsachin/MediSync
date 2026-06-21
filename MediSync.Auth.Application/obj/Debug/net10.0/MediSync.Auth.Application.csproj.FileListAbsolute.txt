@@ -2,10 +2,8 @@ S:\.Net\Learning\MediSync\MediSync.Auth.Application\bin\Debug\net10.0\MediSync.A
 S:\.Net\Learning\MediSync\MediSync.Auth.Application\bin\Debug\net10.0\MediSync.Auth.Application.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Application\bin\Debug\net10.0\MediSync.Auth.Application.pdb
 S:\.Net\Learning\MediSync\MediSync.Auth.Application\bin\Debug\net10.0\MediSync.Auth.Domain.dll
-S:\.Net\Learning\MediSync\MediSync.Auth.Application\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Application\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Application\bin\Debug\net10.0\MediSync.Auth.Domain.pdb
-S:\.Net\Learning\MediSync\MediSync.Auth.Application\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.pdb
 S:\.Net\Learning\MediSync\MediSync.Auth.Application\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
 S:\.Net\Learning\MediSync\MediSync.Auth.Application\obj\Debug\net10.0\MediSync.Auth.Application.csproj.AssemblyReference.cache
 S:\.Net\Learning\MediSync\MediSync.Auth.Application\obj\Debug\net10.0\MediSync.Auth.Application.GeneratedMSBuildEditorConfig.editorconfig

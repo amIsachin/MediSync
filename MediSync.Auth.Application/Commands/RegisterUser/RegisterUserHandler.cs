@@ -1,10 +1,9 @@
 ﻿using MediatR;
+using MediSync.Auth.Application.Abstractions;
 using MediSync.Auth.Domain.Aggregates;
 using MediSync.Auth.Domain.Interfaces;
 using MediSync.Auth.Domain.Utilities.Enums;
-using MediSync.Auth.Infrastrucure.Identity;
 using MediSync.BuildingBlocks.Common;
-using Microsoft.AspNetCore.Identity;
 
 namespace MediSync.Auth.Application.Commands.RegisterUser;
 
@@ -14,13 +13,13 @@ public sealed class RegisterUserHandler : IRequestHandler<RegisterUserCommand, R
     // Handler depends on INTERFACES (IUserRepository) not implementations (UserRepository)
     // This means we can swap SQL Server for MongoDB without touching this class
     private readonly IUserRepository _userRepository;
-    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly IIdentityService _identityService;
     //private readonly IPasswordHasher _passwordHasher;  // interface — not BCrypt directly
 
-    public RegisterUserHandler(IUserRepository userRepository, UserManager<ApplicationUser> userManager) //, IPasswordHasher passwordHasher)
+    public RegisterUserHandler(IUserRepository userRepository, IIdentityService identityService)
     {
         _userRepository = userRepository;
-        _userManager = userManager;
+        _identityService = identityService;
         // _passwordHasher = passwordHasher;
     }
 
@@ -45,35 +44,32 @@ public sealed class RegisterUserHandler : IRequestHandler<RegisterUserCommand, R
         // Handler calls the factory method — it does NOT use new User()
         // The factory method ensures User is always valid from birth
         // UserRegisteredEvent is raised inside CreatePatient/CreateDoctor
-        var user = request.role == UserRole.Doctor
-            ? User.CreateDoctor(request.firstName, request.lastName, request.email)
-            : User.CreatePatient(request.firstName, request.lastName, request.email);
+
+        var user = request.role switch
+        {
+            UserRole.Doctor => User.CreateDoctor(request.firstName, request.lastName, request.email),
+            UserRole.Patient => User.CreatePatient(request.firstName, request.lastName, request.email),
+            UserRole.Admin => User.CreateAdmin(request.firstName, request.lastName, request.email),
+            UserRole.LabTechnician => User.CreateLabTechnician(request.firstName, request.lastName, request.email),
+            UserRole.Pharmacist => User.CreatePharmacist(request.firstName, request.lastName, request.email),
+            _ => throw new InvalidOperationException("Invalid user role")
+        };
+
+        //var user = request.role == UserRole.Doctor
+        //    ? User.CreateDoctor(request.firstName, request.lastName, request.email)
+        //    : User.CreatePatient(request.firstName, request.lastName, request.email);
 
         // ── Step 4: Persist to database ─────────────────────────────
         // Repository handles the actual SQL — handler does not know about SQL
         await _userRepository.AddAsync(user, cancellationToken);
 
-        var applicationUser = new ApplicationUser
-        {
-            UserName = request.email,
-            Email = request.email,
-            FirstName = request.firstName,
-            LastName = request.lastName,
-            Role = request.role,
-            Status = UserStatus.PendingVerification,
-            CreatedAt = DateTime.UtcNow,
-            DomainUserId = user.Id
-        };
+        IdentityCreationResult  identityCreationResult = await _identityService.CreateUserAsync(user.Id, request.firstName, request.lastName, request.email, request.password, request.role.ToString(), cancellationToken);
 
-        IdentityResult identityResult = await _userManager.CreateAsync(applicationUser, request.password);
-
-        if (!identityResult.Succeeded)
+        if (!identityCreationResult.Succeeded)
         {
             await _userRepository.DeleteAsync(user, cancellationToken);
 
-            var error = identityResult.Errors.First();
-
-            return Result<Guid>.Failure(Error.Failure(error.Code, "IDENTITY_CREATION_FAILED"));
+            return Result<Guid>.Failure(Error.Failure(identityCreationResult?.ErrorCode!, "IDENTITY_CREATION_FAILED"));
         }
 
         // ── Step 5: Domain events are published by infrastructure ────

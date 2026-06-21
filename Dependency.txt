@@ -1,0 +1,32 @@
+﻿
+
+
+                    ┌─────────────────────┐
+                    │   Domain Layer       │  ← depends on nothing
+                    │   (User, Enums)       │
+                    └──────────▲────────────┘
+                               │ depends on
+                    ┌──────────┴────────────┐
+                    │  Application Layer    │  ← depends on Domain only
+                    │  (Handlers, Interfaces)│
+                    └──────────▲────────────┘
+                               │ depends on
+                    ┌──────────┴────────────┐
+                    │ Infrastructure Layer  │  ← depends on Application + Domain
+                    │ (EF Core, Identity)   │
+                    └────────────────────────┘
+
+
+
+
+var applicationUser = new ApplicationUser
+        {
+            UserName = request.email,
+            Email = request.email,
+            FirstName = request.firstName,
+            LastName = request.lastName,
+            Role = request.role,
+            Status = UserStatus.PendingVerification,
+            CreatedAt = DateTime.UtcNow,
+            DomainUserId = user.Id
+        };

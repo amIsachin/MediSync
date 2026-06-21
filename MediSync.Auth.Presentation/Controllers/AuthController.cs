@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using MediSync.Auth.Application.Commands.LoginUser;
 using MediSync.Auth.Application.Commands.RegisterUser;
 using MediSync.Auth.Domain.Utilities.Enums;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,15 @@ namespace MediSync.Auth.Presentation.Controllers
                 request.Password,
                 request.Role);
 
+            var result = await _mediator.Send(command, cancellationToken);
+
+            return Ok(result);
+        }
+
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginUserCommand request, CancellationToken cancellationToken)
+        {
+            var command = new LoginUserCommand(request.Email, request.Password);
             var result = await _mediator.Send(command, cancellationToken);
 
             return Ok(result);

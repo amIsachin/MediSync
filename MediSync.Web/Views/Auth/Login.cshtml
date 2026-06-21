@@ -1,0 +1,537 @@
+﻿@* MediSync.Web/Views/Account/Login.cshtml *@
+@model MediSync.Web.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Sign In";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In — MediSync</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+    <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: 'Segoe UI', sans-serif;
+                height: 100vh;
+                overflow: hidden;
+                background: #f0f4f8;
+            }
+
+            .page-wrapper {
+                display: flex;
+                height: 100vh;
+            }
+
+            /* ── Left Panel ── */
+            .left-panel {
+                width: 42%;
+                background: linear-gradient(160deg, #0d3b6e 0%, #1B4F8A 50%, #1a7a4a 100%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 48px 40px;
+                position: relative;
+                overflow: hidden;
+            }
+
+                .left-panel::before {
+                    content: '';
+                    position: absolute;
+                    width: 350px;
+                    height: 350px;
+                    border-radius: 50%;
+                    border: 1px solid rgba(255,255,255,0.06);
+                    top: -100px;
+                    right: -100px;
+                }
+
+                .left-panel::after {
+                    content: '';
+                    position: absolute;
+                    width: 250px;
+                    height: 250px;
+                    border-radius: 50%;
+                    border: 1px solid rgba(255,255,255,0.06);
+                    bottom: -60px;
+                    left: -60px;
+                }
+
+            .logo-area {
+                text-align: center;
+                margin-bottom: 36px;
+                z-index: 1;
+            }
+
+                .logo-area img {
+                    width: 170px;
+                }
+
+            .logo-tagline {
+                font-size: 13px;
+                color: rgba(255,255,255,0.6);
+                margin-top: 6px;
+            }
+
+            .welcome-text {
+                z-index: 1;
+                text-align: center;
+                margin-top: 8px;
+                max-width: 300px;
+            }
+
+            .welcome-title {
+                font-size: 19px;
+                color: #fff;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .welcome-sub {
+                font-size: 13px;
+                color: rgba(255,255,255,0.55);
+                line-height: 1.7;
+            }
+
+            .stats-row {
+                display: flex;
+                gap: 28px;
+                margin-top: 36px;
+                z-index: 1;
+            }
+
+            .stat-box {
+                text-align: center;
+            }
+
+            .stat-num {
+                font-size: 24px;
+                font-weight: 700;
+                color: #fff;
+            }
+
+            .stat-lbl {
+                font-size: 11px;
+                color: rgba(255,255,255,0.5);
+                margin-top: 3px;
+                letter-spacing: 0.03em;
+            }
+
+            /* ── Right Panel ── */
+            .right-panel {
+                flex: 1;
+                background: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 40px;
+            }
+
+            .form-wrapper {
+                width: 100%;
+                max-width: 380px;
+            }
+
+            .form-title {
+                font-size: 24px;
+                font-weight: 700;
+                color: #1a202c;
+                margin-bottom: 6px;
+            }
+
+            .form-subtitle {
+                font-size: 13px;
+                color: #718096;
+                margin-bottom: 28px;
+            }
+
+            .form-label {
+                font-size: 12px;
+                font-weight: 600;
+                color: #4a5568;
+                margin-bottom: 6px;
+                display: block;
+            }
+
+            .input-wrap {
+                position: relative;
+            }
+
+                .input-wrap input {
+                    width: 100%;
+                    padding: 11px 14px 11px 38px;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 8px;
+                    font-size: 13px;
+                    color: #2d3748;
+                    background: #f7fafc;
+                    outline: none;
+                    transition: all 0.15s;
+                }
+
+                    .input-wrap input:focus {
+                        border-color: #1B4F8A;
+                        background: #fff;
+                        box-shadow: 0 0 0 3px rgba(27,79,138,0.1);
+                    }
+
+                .input-wrap .left-icon {
+                    position: absolute;
+                    left: 13px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 15px;
+                    color: #a0aec0;
+                }
+
+                .input-wrap .right-icon {
+                    position: absolute;
+                    right: 13px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 16px;
+                    color: #a0aec0;
+                    cursor: pointer;
+                }
+
+            .field {
+                margin-bottom: 18px;
+            }
+
+            .row-between {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 22px;
+                font-size: 13px;
+            }
+
+            .remember-check {
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                color: #718096;
+            }
+
+                .remember-check input[type="checkbox"] {
+                    width: 15px;
+                    height: 15px;
+                    cursor: pointer;
+                    accent-color: #1B4F8A;
+                }
+
+            .forgot-link {
+                color: #1B4F8A;
+                font-weight: 600;
+                text-decoration: none;
+            }
+
+                .forgot-link:hover {
+                    text-decoration: underline;
+                }
+
+            .btn-login {
+                width: 100%;
+                padding: 12px;
+                background: #1B4F8A;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                margin-bottom: 18px;
+                transition: background 0.15s;
+            }
+
+                .btn-login:hover {
+                    background: #15407a;
+                }
+
+                .btn-login:disabled {
+                    background: #a0aec0;
+                    cursor: not-allowed;
+                }
+
+            .divider {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 18px;
+            }
+
+            .divider-line {
+                flex: 1;
+                height: 1px;
+                background: #e2e8f0;
+            }
+
+            .divider span {
+                font-size: 11px;
+                color: #a0aec0;
+                white-space: nowrap;
+            }
+
+            .signup-link {
+                text-align: center;
+                font-size: 13px;
+                color: #718096;
+            }
+
+                .signup-link a {
+                    color: #1B4F8A;
+                    font-weight: 600;
+                    text-decoration: none;
+                }
+
+                    .signup-link a:hover {
+                        text-decoration: underline;
+                    }
+
+            .validation-error {
+                font-size: 11px;
+                color: #e53e3e;
+                margin-top: 5px;
+                display: block;
+            }
+
+            .alert-danger {
+                background: #fff5f5;
+                border: 1px solid #fed7d7;
+                color: #c53030;
+                border-radius: 8px;
+                padding: 11px 14px;
+                font-size: 13px;
+                margin-bottom: 18px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .alert-success {
+                background: #f0fff4;
+                border: 1px solid #c6f6d5;
+                color: #276749;
+                border-radius: 8px;
+                padding: 11px 14px;
+                font-size: 13px;
+                margin-bottom: 18px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            /* Spinner for submit button loading state */
+            .spinner {
+                width: 14px;
+                height: 14px;
+                border: 2px solid rgba(255,255,255,0.4);
+                border-top-color: #fff;
+                border-radius: 50%;
+                animation: spin 0.6s linear infinite;
+                display: none;
+            }
+
+            @@keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @@media (max-width: 768px) {
+                .left-panel {
+                    display: none;
+                }
+
+                .right-panel {
+                    width: 100%;
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        @* ── Left Panel ── *@
+        <div class="left-panel">
+            <div class="logo-area">
+                <img src="~/images/medisync.png" alt="MediSync Logo" />
+                <div class="logo-tagline">Connecting Health Solutions</div>
+            </div>
+
+            <div class="welcome-text">
+                <div class="welcome-title">Welcome back</div>
+                <div class="welcome-sub">
+                    Sign in to access your health records, prescriptions, and appointments — all in one secure place.
+                </div>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-box">
+                    <div class="stat-num">50K+</div>
+                    <div class="stat-lbl">PATIENTS</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">500+</div>
+                    <div class="stat-lbl">DOCTORS</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-num">99.9%</div>
+                    <div class="stat-lbl">UPTIME</div>
+                </div>
+            </div>
+        </div>
+
+        @* ── Right Panel ── *@
+        <div class="right-panel">
+            <div class="form-wrapper">
+
+                <div class="form-title">Sign in to MediSync</div>
+                <div class="form-subtitle">Enter your credentials to access your account</div>
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert-success">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>@TempData["SuccessMessage"]</span>
+                    </div>
+                }
+
+                @if (!ViewData.ModelState.IsValid && ViewData.ModelState[string.Empty]?.Errors.Count > 0)
+                {
+                    <div class="alert-danger">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                        <span>@Html.ValidationSummary(true, null, new { @class = "mb-0" })</span>
+                    </div>
+                }
+
+                <form asp-action="Login" id="loginForm">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="ReturnUrl" />
+
+                    <div class="field">
+                        <label class="form-label">Email address</label>
+                        <div class="input-wrap">
+                            <i class="bi bi-envelope left-icon"></i>
+                            <input asp-for="Email" type="email" placeholder="sachin@gmail.com" autocomplete="email" autofocus />
+                        </div>
+                        <span asp-validation-for="Email" class="validation-error"></span>
+                    </div>
+
+                    <div class="field">
+                        <label class="form-label">Password</label>
+                        <div class="input-wrap">
+                            <i class="bi bi-lock left-icon"></i>
+                            <input asp-for="Password" type="password" id="passwordInput"
+                                   placeholder="Enter your password" autocomplete="current-password" />
+                            <i class="bi bi-eye right-icon" id="togglePassword" onclick="togglePasswordVisibility()"></i>
+                        </div>
+                        <span asp-validation-for="Password" class="validation-error"></span>
+                    </div>
+
+                    <div class="row-between">
+                        <label class="remember-check">
+                            <input asp-for="RememberMe" type="checkbox" />
+                            <span>Remember me</span>
+                        </label>
+                        <a class="forgot-link" href="#">Forgot password?</a>
+                    </div>
+
+                    <button type="button" class="btn-login" id="submitBtn">
+                        <span class="spinner" id="spinner"></span>
+                        <i class="bi bi-box-arrow-in-right" id="loginIcon"></i>
+                        <span id="btnText">Sign In</span>
+                    </button>
+
+                    <div class="divider">
+                        <div class="divider-line"></div>
+                        <span>New to MediSync?</span>
+                        <div class="divider-line"></div>
+                    </div>
+
+                    <div class="signup-link">
+                        <a asp-controller="Auth" asp-action="Register">Create an account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+    <script>
+            function togglePasswordVisibility() {
+                const input = document.getElementById('passwordInput');
+                const icon = document.getElementById('togglePassword');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('bi-eye', 'bi-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('bi-eye-slash', 'bi-eye');
+                }
+            }
+
+            // Show loading state on submit — prevents double-submit and gives instant feedback
+            $(document).ready(function() {
+                $("#submitBtn").click(function(e) {
+                    console.log(e);
+                    e.preventDefault(); // Prevent default form submission
+
+                    var form = $('#loginForm');
+
+                    console.log(form.serialize());
+                    // beforSend: function() {
+                    //     const btn = document.getElementById('submitBtn');
+                    //     const spinner = document.getElementById('spinner');
+                    //     const icon = document.getElementById('loginIcon');
+                    //     const text = document.getElementById('btnText');
+                    //     btn.disabled = true;
+                    //     spinner.style.display = 'inline-block';
+                    //     icon.style.display = 'none';
+                    //     text.textContent = 'Signing in...';
+                    // },
+                    $.ajax({
+                        method:'POST',
+                        url: '/Auth/Login',
+                        data: form.serialize(),
+
+                        success:function(response){
+                        },
+                        error:function(xhr, status, error){
+                            console.error('Error:', error);
+                        }
+                    });
+                });
+            });
+
+
+            // document.getElementById('loginForm').addEventListener('submit', function() {
+            //     const btn = document.getElementById('submitBtn');
+            //     const spinner = document.getElementById('spinner');
+            //     const icon = document.getElementById('loginIcon');
+            //     const text = document.getElementById('btnText');
+
+            //     btn.disabled = true;
+            //     spinner.style.display = 'inline-block';
+            //     icon.style.display = 'none';
+            //     text.textContent = 'Signing in...';
+            // });
+    </script>
+</body>
+</html>

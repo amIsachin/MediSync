@@ -16,4 +16,7 @@
   <Folder Name="/Services/Shared/">
     <Project Path="MediSync.BuildingBlocks/MediSync.BuildingBlocks.csproj" Id="92a97e35-29fc-4210-a19e-930dc09c4b84" />
   </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="Dependency.txt" />
+  </Folder>
 </Solution>

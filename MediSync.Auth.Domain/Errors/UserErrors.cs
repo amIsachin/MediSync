@@ -32,4 +32,10 @@ public static class UserErrors
 
     public static readonly Error Unauthorized =
         Error.Unauthorized("User.Unauthorized", "You are not authorized to perform this action");
+
+    public static readonly Error AccountDeactivated =
+        Error.Failure("User.Deactivated", "This account has been deactivated.");
+
+    public static readonly Error LockedOut =
+        Error.Failure("User.LockedOut", "Account locked due to multiple failed attempts. Try again in 15 minutes.");
 }

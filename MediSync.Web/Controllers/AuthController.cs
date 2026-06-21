@@ -23,8 +23,22 @@ namespace MediSync.Web.Controllers
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             AuthService authService = new AuthService(_httpClient);
-            var isSuccess = await authService.Register(model.FirstName, model.LastName, model.Email, model.Password, model.Role);
+            var isSuccess = await authService.RegisterAsync(model.FirstName, model.LastName, model.Email, model.Password, model.Role);
 
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            AuthService authService = new AuthService(_httpClient);
+            var isSuccess = await authService.LoginAsync(model.Email, model.Password);
             return View();
         }
     }

@@ -919,7 +919,6 @@
       "MediSync.Auth.Application/1.0.0": {
         "dependencies": {
           "MediSync.Auth.Domain": "1.0.0",
-          "MediSync.Auth.Infrastrucure": "1.0.0",
           "MediSync.BuildingBlocks": "1.0.0",
           "MediatR": "14.1.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0"
@@ -944,6 +943,7 @@
       },
       "MediSync.Auth.Infrastrucure/1.0.0": {
         "dependencies": {
+          "MediSync.Auth.Application": "1.0.0",
           "MediSync.Auth.Domain": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.0",
           "Microsoft.EntityFrameworkCore": "10.0.0",
