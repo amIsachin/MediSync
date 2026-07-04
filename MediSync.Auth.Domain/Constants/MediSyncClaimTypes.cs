@@ -1,28 +1,42 @@
 ﻿namespace MediSync.Auth.Domain.Constants;
 
-// static class — just constants, no instances needed
+/// <summary>
+/// Defines the custom claim types used throughout the MediSync application.
+/// These claims are included in JWT tokens and used for authentication
+/// and authorization across services.
+/// </summary>
 public static class MediSyncClaimTypes
 {
-    // The user's domain ID (from Users table)
-    // Every service reads this to know who is making the request
-    public const string UserID = "medisync:user_id";
+    /// <summary>
+    /// Identifies the user's domain identifier.
+    /// </summary>
+    public const string UserId = "medisync:user_id";
 
-    // The user's role — "Patient", "Doctor", "Admin", etc.
-    // Every service reads this for authorization decisions
+    /// <summary>
+    /// Identifies the user's role.
+    /// </summary>
     public const string Role = "medisync:role";
 
-    // Only present in token when Role = Patient
-    // Prescription.API reads this to know which patient is logged in
+    /// <summary>
+    /// Identifies the patient's identifier.
+    /// Included only for users with the Patient role.
+    /// </summary>
     public const string PatientId = "medisync:patient_id";
 
-    // Only present in token when Role = Doctor
-    // Lets services know which doctor is making the request
+    /// <summary>
+    /// Identifies the doctor's identifier.
+    /// Included only for users with the Doctor role.
+    /// </summary>
     public const string DoctorId = "medisync:doctor_id";
 
-    // Only present in token when Role = Doctor
-    // Coordination.API uses this for doctor matching
+    /// <summary>
+    /// Identifies the doctor's specialty.
+    /// Included only for users with the Doctor role.
+    /// </summary>
     public const string Specialty = "medisync:specialty";
 
-    // The user's current status — Active, Suspended, etc.
+    /// <summary>
+    /// Identifies the user's current account status.
+    /// </summary>
     public const string Status = "medisync:status";
 }

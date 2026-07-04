@@ -1,30 +1,39 @@
 ﻿namespace MediSync.BuildingBlocks.Domain;
 
-// abstract = you cannot create AggregateRoot directly
-// Only User, Prescription, etc. can be created — and they extend this
+/// <summary>
+/// Base class for all aggregate roots.
+/// Provides a unique identifier and support for domain events.
+/// </summary>
 public abstract class AggregateRoot
 {
-    // Every aggregate has an Id
-    // protected set = only this class and subclasses (User, Prescription) can set it
-    // external code can READ it but never SET it
+    /// <summary>
+    /// Gets the unique identifier of the aggregate.
+    /// Can only be assigned by the aggregate itself or its derived classes.
+    /// </summary>
     public Guid Id { get; protected set; }
 
-    // Private list — nobody outside this class can add/remove events directly
-    // The aggregate is in full control of its own events
+    // Stores domain events raised by the aggregate during the current transaction.
+    // Events are collected here and published after the transaction completes.
     private readonly List<IDomainEvent> _domainEvent = new();
 
-    // Public read-only view of the events
-    // External code can READ the list but never modify it
-    // AsReadOnly() creates a wrapper that throws if someone tries to add/remove
+    /// <summary>
+    /// Gets the domain events raised by the aggregate.
+    /// The returned collection is read-only to prevent external modification.
+    /// </summary>
     public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvent.AsReadOnly();
 
-    // protected = only subclasses (User, Prescription) can call this
-    // external code cannot raise events — only the aggregate itself can
+    /// <summary>
+    /// Adds a domain event to the aggregate.
+    /// Only the aggregate itself can raise its own domain events.
+    /// </summary>
+    /// <param name="domainEvent">The domain event to raise.</param>
     protected void RaiseDomainEvent(IDomainEvent domainEvent)
         => _domainEvent.Add(domainEvent);
 
-    // Called AFTER events are published to the message bus
-    // Clears the list so they are not published again
+    /// <summary>
+    /// Removes all domain events from the aggregate.
+    /// Called after the events have been successfully published.
+    /// </summary>
     public void ClearDomainEvents()
         => _domainEvent.Clear();
 }

@@ -1,11 +1,16 @@
 ﻿namespace MediSync.BuildingBlocks.Common;
 
-// ErrorType tells the API layer what HTTP status code to return
-// NotFound    = 404
-// Conflict    = 409
-// Unauthorized= 401
-// Forbidden   = 403
-// Failure     = 400
+/// <summary>
+/// Represents the category of an application error.
+/// The API layer uses this value to determine the appropriate HTTP status code.
+///
+/// HTTP Status Code Mapping:
+/// - Failure      : 400 Bad Request
+/// - Unauthorized : 401 Unauthorized
+/// - Forbidden    : 403 Forbidden
+/// - NotFound     : 404 Not Found
+/// - Conflict     : 409 Conflict
+/// </summary>
 public enum ErrorType
 {
     None = 0,
@@ -16,8 +21,10 @@ public enum ErrorType
     Forbidden = 5
 }
 
-// sealed = nobody can inherit from Error
-// This keeps it simple and predictable
+/// <summary>
+/// Represents an application error.
+/// Contains an error code, a descriptive message, and an error type.
+/// </summary>
 public sealed class Error
 {
     public string Code { get; set; }

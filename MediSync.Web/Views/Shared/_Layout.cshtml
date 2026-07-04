@@ -10,41 +10,90 @@
     <link rel="stylesheet" href="~/MediSync.Web.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MediSync.Web</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <div class="app-shell">
+
+        @* ── Sidebar ── *@
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <img src="~/images/medisync.png" alt="MediSync" />
+                <span>MediSync</span>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+            <div class="sidebar-scroll">
+                @* Role-based menu — only ONE of these renders *@
+                @if (User.IsInRole("Doctor"))
+                {
+                    <partial name="_DoctorSidebarMenu" />
+                }
+                else if (User.IsInRole("Patient"))
+                {
+                    <partial name="_PatientSidebarMenu" />
+                }
+                else if (User.IsInRole("LabTechnician"))
+                {
+                    <partial name="_LabTechnicianSidebarMenu" />
+                }
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-avatar">
+                    @GetInitials(User.FindFirst(System.Security.Claims.ClaimTypes.GivenName)?.Value,
+                                  User.FindFirst(System.Security.Claims.ClaimTypes.Surname)?.Value)
+                </div>
+                <div class="sidebar-user-info">
+                    <div class="sidebar-user-name">
+                        @User.FindFirst(System.Security.Claims.ClaimTypes.GivenName)?.Value
+                        @User.FindFirst(System.Security.Claims.ClaimTypes.Surname)?.Value
+                    </div>
+                    <div class="sidebar-user-role">@User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value</div>
+                </div>
+                <form asp-controller="Account" asp-action="Logout" method="post">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="logout-btn" title="Logout">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </aside>
+
+        @* ── Main Area ── *@
+        <div class="main-area">
+            <header class="topbar">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search..." disabled />
+                </div>
+                <div class="topbar-right">
+                    <i class="bi bi-bell icon-btn"></i>
+                    <div class="user-chip">
+                        <div class="avatar-sm">
+                            @GetInitials(User.FindFirst(System.Security.Claims.ClaimTypes.GivenName)?.Value,
+                                          User.FindFirst(System.Security.Claims.ClaimTypes.Surname)?.Value)
+                        </div>
+                        <span>@User.FindFirst(System.Security.Claims.ClaimTypes.GivenName)?.Value</span>
+                        <span class="role-badge">@User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="content">
+                @RenderBody()
+            </main>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - MediSync.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
+@functions {
+    string GetInitials(string? firstName, string? lastName)
+    {
+        var f = string.IsNullOrEmpty(firstName) ? "" : firstName[0].ToString();
+        var l = string.IsNullOrEmpty(lastName) ? "" : lastName[0].ToString();
+        return (f + l).ToUpper();
+    }
+}
 </body>
 </html>

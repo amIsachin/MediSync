@@ -465,7 +465,7 @@
                     </div>
 
                     <div class="signup-link">
-                        <a asp-controller="Auth" asp-action="Register">Create an account</a>
+                        <a asp-controller="Auth" asp-action="Register" onclick="gotoCreateAccount">Create an account</a>
                     </div>
                 </form>
             </div>
@@ -487,34 +487,48 @@
                 }
             }
 
+            function gotoCreateAccount() {
+                console.log('goto create accoutnt')
+                setTimeout(() => {
+                    console.log('inside goto create accoutnt')
+                    document.getElementById('spinner').style.display = 'inline-block';
+                }, 5000);
+            }
+
             // Show loading state on submit — prevents double-submit and gives instant feedback
             $(document).ready(function() {
                 $("#submitBtn").click(function(e) {
-                    console.log(e);
-                    e.preventDefault(); // Prevent default form submission
+                    e.preventDefault();
 
-                    var form = $('#loginForm');
+                    var form = $("#loginForm");
 
-                    console.log(form.serialize());
-                    // beforSend: function() {
-                    //     const btn = document.getElementById('submitBtn');
-                    //     const spinner = document.getElementById('spinner');
-                    //     const icon = document.getElementById('loginIcon');
-                    //     const text = document.getElementById('btnText');
-                    //     btn.disabled = true;
-                    //     spinner.style.display = 'inline-block';
-                    //     icon.style.display = 'none';
-                    //     text.textContent = 'Signing in...';
-                    // },
+                    const btn = document.getElementById("submitBtn");
+                    const spinner = document.getElementById("spinner");
+                    const icon = document.getElementById("loginIcon");
+                    const text = document.getElementById("btnText");
+
                     $.ajax({
-                        method:'POST',
+                        method: 'POST',
                         url: '/Auth/Login',
                         data: form.serialize(),
 
-                        success:function(response){
+                        beforeSend: function() {
+                            btn.disabled = true;
+                            spinner.style.display = "inline-block";
+                            icon.style.display = "none";
+                            text.textContent = "Signing in...";
                         },
-                        error:function(xhr, status, error){
-                            console.error('Error:', error);
+
+                        success: function(response) {
+                            window.location.href = 'Home/Index';
+                        },
+                        error: function(xhr, status, error) {
+                            btn.disabled = false;
+                            spinner.style.display = "none";
+                            icon.style.display = "inline-block";
+                            text.textContent = "Sign In";
+
+                            alert("Login failed. Please check your credentials.");
                         }
                     });
                 });

@@ -30,6 +30,11 @@ namespace MediSync.Auth.Presentation.Controllers
 
             var result = await _mediator.Send(command, cancellationToken);
 
+            if (result.IsFailure)
+            {
+                return BadRequest(result);
+            }
+
             return Ok(result);
         }
 

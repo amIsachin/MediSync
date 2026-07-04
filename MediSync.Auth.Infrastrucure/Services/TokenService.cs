@@ -10,6 +10,11 @@ using System.Text;
 
 namespace MediSync.Auth.Infrastrucure.Services;
 
+/// <summary>
+/// Generates JSON Web Tokens (JWT) for authenticated users.
+/// The generated token contains the user's identity and authorization
+/// claims, allowing downstream services to authenticate and authorize requests.
+/// </summary>
 public class TokenService : ITokenService
 {
     private readonly IConfiguration _configuration;
@@ -19,12 +24,21 @@ public class TokenService : ITokenService
         _configuration = configuration;
     }
 
+    /// <summary>
+    /// Generates a signed JWT access token for the specified user.
+    /// </summary>
+    /// <param name="user">
+    /// The authenticated domain user.
+    /// </param>
+    /// <returns>
+    /// A signed JWT that can be used to authenticate requests.
+    /// </returns>
     public string GenerateToken(User user)
     {
         // Claims are pieces of information about the user that are encoded in the token. You can add more claims as needed.
         var claims = new List<Claim>
         {
-            new (MediSyncClaimTypes.UserID, user.Id.ToString()),
+            new (MediSyncClaimTypes.UserId, user.Id.ToString()),
             new (MediSyncClaimTypes.Role, user.Role.ToString()),
             new (JwtRegisteredClaimNames.Email, user.Email),
             new (JwtRegisteredClaimNames.Sub, user.Id.ToString()),

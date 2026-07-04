@@ -22,7 +22,7 @@ S:\.Net\Learning\MediSync\MediSync.Web\obj\Debug\net10.0\rjsmcshtml.dswa.cache.j
 S:\.Net\Learning\MediSync\MediSync.Web\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 S:\.Net\Learning\MediSync\MediSync.Web\obj\Debug\net10.0\scopedcss\bundle\MediSync.Web.styles.css
 S:\.Net\Learning\MediSync\MediSync.Web\obj\Debug\net10.0\scopedcss\projectbundle\MediSync.Web.bundle.scp.css
-S:\.Net\Learning\MediSync\MediSync.Web\obj\Debug\net10.0\compressed\5cb41mb0kh-{0}-b9sayid5wm-b9sayid5wm.gz
+S:\.Net\Learning\MediSync\MediSync.Web\obj\Debug\net10.0\compressed\5cb41mb0kh-{0}-mgvlbc4dqo-mgvlbc4dqo.gz
 S:\.Net\Learning\MediSync\MediSync.Web\obj\Debug\net10.0\compressed\51du25ptap-{0}-61n19gt1b8-61n19gt1b8.gz
 S:\.Net\Learning\MediSync\MediSync.Web\obj\Debug\net10.0\compressed\jyq2exxdxf-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 S:\.Net\Learning\MediSync\MediSync.Web\obj\Debug\net10.0\compressed\qw2ydvd39z-{0}-bqjiyaj88i-bqjiyaj88i.gz

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using MediSync.Web.Services.ServiceResponse;
+using System.Text;
 using System.Text.Json;
 
 namespace MediSync.Web.Services;
@@ -12,7 +13,7 @@ public class AuthService
         this._httpClientFactory = httpClientFactory;
     }
 
-    public async Task<bool> RegisterAsync(string firstName, string lastName, string email, string password, string role)
+    public async Task<ServiceResponseMessage<Guid>> RegisterAsync(string firstName, string lastName, string email, string password, string role)
     {
         var payLoad = new
         {
@@ -26,7 +27,21 @@ public class AuthService
         var json = JsonSerializer.Serialize(payLoad);
         StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await _httpClientFactory.CreateClient().PostAsync("https://localhost:7000/auth/register", content);
-        return response.IsSuccessStatusCode;
+
+        if (!response.IsSuccessStatusCode)
+        {
+            var resultError = await response.Content.ReadFromJsonAsync<ServiceResponseMessage<Guid>>(new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            return ServiceResponseMessage<Guid>.Failure(
+                resultError!.Error.Code ?? "",
+                resultError.Error.Message ?? "",
+                resultError.Error.Type ?? "Failure"
+            );
+        }
+
+        var resultSuccess = await response.Content.ReadFromJsonAsync<ServiceResponseMessage<Guid>>(new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+        return ServiceResponseMessage<Guid>.Success(resultSuccess!.Value);
     }
 
     public async Task<LoginResponse> LoginAsync(string email, string password)
@@ -43,14 +58,14 @@ public class AuthService
 
         if (!response.IsSuccessStatusCode)
         {
-            return new LoginResponse(null, Guid.Empty, null, null, null, null);
+            return new LoginResponse(null!, Guid.Empty, null!, null!, null!, null!);
         }
 
         var result = await response.Content.ReadAsStringAsync();
 
         var deserializeResult = JsonSerializer.Deserialize<LoginResponse>(result);
 
-        return deserializeResult;
+        return deserializeResult!;
     }
 }
 

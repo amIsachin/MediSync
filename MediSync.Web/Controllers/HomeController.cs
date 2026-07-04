@@ -6,9 +6,18 @@ namespace MediSync.Web.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
 
         public IActionResult Privacy()

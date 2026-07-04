@@ -1,5 +1,4 @@
-﻿@* MediSync.Web/Views/Account/Register.cshtml *@
-@model MediSync.Web.ViewModels.RegisterViewModel
+﻿@model MediSync.Web.ViewModels.RegisterViewModel
 
 @{
     ViewData["Title"] = "Register";
@@ -338,6 +337,23 @@
                 height: 100%;
                 margin-bottom: -120px;
             }
+
+            /* Spinner for submit button loading state */
+            .spinner {
+                width: 14px;
+                height: 14px;
+                border: 2px solid rgba(255,255,255,0.4);
+                border-top-color: #fff;
+                border-radius: 50%;
+                animation: spin 0.6s linear infinite;
+                display: none;
+            }
+
+            @@keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
     </style>
 </head>
 <body>
@@ -346,9 +362,7 @@
         @* ── Left Panel ── *@
         <div class="left-panel">
             <div class="logo-area">
-                @* Replace with your actual logo path *@
                 <img src="~/images/medisync.png" alt="MediSync" />
-                @* <div class="logo-tagline">Connecting Health Solutions</div> *@
             </div>
 
             <div class="trust-card">
@@ -384,10 +398,44 @@
                 <div class="form-subtitle">Join MediSync and take control of your health records</div>
 
                 @* Success message *@
-                @if (TempData["SuccessMessage"] != null)
+                @if (TempData["NotificationMessage"] != null)
                 {
-                    <div class="success-message">
-                        <i class="bi bi-check-circle-fill"></i> @TempData["SuccessMessage"]
+                    var isSuccess = TempData["NotificationType"]?.ToString() == "Success";
+
+                    var borderColor = isSuccess ? "border-success" : "border-danger";
+                    var iconColor = isSuccess ? "text-success" : "text-danger";
+                    var icon = isSuccess ? "bi-check-circle-fill" : "bi-exclamation-triangle-fill";
+                    var title = isSuccess ? "Success" : "Failure";
+                    var redirectUrl = isSuccess ? "/Auth/Login" : "";
+
+                    <div class="d-flex align-items-start bg-white border-start border-4 @borderColor rounded-3 shadow-sm px-3 py-3 mb-3">
+
+                        <div class="@iconColor me-3">
+                            <i class="bi @icon fs-5"></i>
+                        </div>
+
+                        <div class="flex-grow-1">
+                            <div class="fw-semibold small">@title</div>
+
+                            <div class="text-muted small">
+                                @TempData["NotificationMessage"]
+                            </div>
+
+                            @if (isSuccess)
+                            {
+                                <a href="@redirectUrl"
+                                   class="btn btn-sm btn-outline-success mt-2 px-3 rounded-pill">
+                                    Go to Login
+                                    <i class="bi bi-arrow-right ms-1"></i>
+                                </a>
+                            }
+                        </div>
+
+                        <button type="button"
+                                class="btn-close ms-2"
+                                data-bs-dismiss="alert">
+                        </button>
+
                     </div>
                 }
 
@@ -400,7 +448,7 @@
                     </div>
                 }
 
-                <form asp-action="Register" method="post">
+                <form asp-action="Register" method="post" id="registerForm">
                     @Html.AntiForgeryToken()
 
                     @* Name Row *@
@@ -486,9 +534,10 @@
                     </div>
 
                     @* Submit *@
-                    <button type="submit" class="btn-register">
-                        <i class="bi bi-person-plus-fill"></i>
-                        Create Account
+                    <button type="submit" class="btn-register" id="createBtn">
+                        <span class="spinner" id="spinner"></span>
+                        <i class="bi bi-person-plus-fill" id="user-icon"></i>
+                        <span id="btnText">Create Account</span>
                     </button>
 
                     <div class="login-link">
@@ -500,7 +549,22 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
+            $(document).ready(function() {
+
+                document.getElementById('registerForm').addEventListener('submit', () => {
+                    document.getElementById('spinner').style.display = 'inline-block'
+                    document.getElementById('user-icon').style.display = 'none'
+                    document.getElementById('btnText').textContent = 'Creating...'
+                    let button = document.getElementById('createBtn')
+
+                    button.disabled = true;
+                });
+            });
+
             // // Role card selection
             function selectRole(role, element) {
                 let roleGrids = document.querySelectorAll('.role-card');

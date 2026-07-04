@@ -4,47 +4,55 @@ using MediSync.Auth.Domain.Aggregates;
 using MediSync.Auth.Domain.Interfaces;
 using MediSync.Auth.Domain.Utilities.Enums;
 using MediSync.BuildingBlocks.Common;
+using System.Net;
 
 namespace MediSync.Auth.Application.Commands.RegisterUser;
 
+/// <summary>
+/// Handles the user registration process by creating both the domain user
+/// and the corresponding identity user.
+/// </summary>
 public sealed class RegisterUserHandler : IRequestHandler<RegisterUserCommand, Result<Guid>>
 {
-    // Dependencies injected via constructor — Dependency Inversion Principle
-    // Handler depends on INTERFACES (IUserRepository) not implementations (UserRepository)
-    // This means we can swap SQL Server for MongoDB without touching this class
+    // Provides access to user data.
     private readonly IUserRepository _userRepository;
-    private readonly IIdentityService _identityService;
-    //private readonly IPasswordHasher _passwordHasher;  // interface — not BCrypt directly
 
+    // Manages authentication user creation.
+    private readonly IIdentityService _identityService;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="RegisterUserHandler"/> class.
+    /// </summary>
+    /// <param name="userRepository">Provides user data operations.</param>
+    /// <param name="identityService">Provides identity management operations.</param>
     public RegisterUserHandler(IUserRepository userRepository, IIdentityService identityService)
     {
         _userRepository = userRepository;
         _identityService = identityService;
-        // _passwordHasher = passwordHasher;
     }
 
+
+    /// <summary>
+    /// Registers a new user by creating the domain user and the corresponding
+    /// identity user.
+    /// </summary>
+    /// <param name="request">Contains the registration details.</param>
+    /// <param name="cancellationToken">Token used to cancel the operation.</param>
+    /// <returns>
+    /// Returns the newly created user's identifier when the registration succeeds;
+    /// otherwise returns a failure result.
+    /// </returns>
     public async Task<Result<Guid>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
     {
-        // ── Step 1: Check business rule — email must be unique ──────
-        // This is a BUSINESS rule, not a format rule
-        // The validator checked format. Handler checks business logic.
+        // Ensure that the email address is not already registered.
         var emailExists = await _userRepository.ExistsByEmailAsync(request.email, cancellationToken);
 
         if (emailExists is true)
         {
-            return Result<Guid>.Failure(Error.Failure("Email already exists", "EMAIL_EXISTS"));
+            return Result<Guid>.Failure(Error.Conflict(HttpStatusCode.Conflict.ToString(), "An account with this email already exists."));
         }
 
-        // ── Step 2: Hash the password BEFORE creating the domain user ─
-        // Plain text password must be destroyed as soon as possible
-        // The domain User never sees the plain text password
-        //_passwordHasher.CreatePasswordHash(request.password, out var passwordHash, out var passwordSalt);
-
-        // ── Step 3: Create the domain user via factory method ──────────
-        // Handler calls the factory method — it does NOT use new User()
-        // The factory method ensures User is always valid from birth
-        // UserRegisteredEvent is raised inside CreatePatient/CreateDoctor
-
+        // Create the appropriate domain user based on the selected role.
         var user = request.role switch
         {
             UserRole.Doctor => User.CreateDoctor(request.firstName, request.lastName, request.email),
@@ -55,30 +63,21 @@ public sealed class RegisterUserHandler : IRequestHandler<RegisterUserCommand, R
             _ => throw new InvalidOperationException("Invalid user role")
         };
 
-        //var user = request.role == UserRole.Doctor
-        //    ? User.CreateDoctor(request.firstName, request.lastName, request.email)
-        //    : User.CreatePatient(request.firstName, request.lastName, request.email);
-
-        // ── Step 4: Persist to database ─────────────────────────────
-        // Repository handles the actual SQL — handler does not know about SQL
+        // Save the domain user.
         await _userRepository.AddAsync(user, cancellationToken);
 
-        IdentityCreationResult  identityCreationResult = await _identityService.CreateUserAsync(user.Id, request.firstName, request.lastName, request.email, request.password, request.role.ToString(), cancellationToken);
+        // Create the authentication user in ASP.NET Identity.
+        IdentityCreationResult identityCreationResult = await _identityService.CreateUserAsync(user.Id, request.firstName, request.lastName, request.email, request.password, request.role.ToString(), cancellationToken);
 
+        // Remove the domain user if the identity user could not be created.
         if (!identityCreationResult.Succeeded)
         {
             await _userRepository.DeleteAsync(user, cancellationToken);
 
-            return Result<Guid>.Failure(Error.Failure(identityCreationResult?.ErrorCode!, "IDENTITY_CREATION_FAILED"));
+            return Result<Guid>.Failure(Error.Failure(identityCreationResult?.ErrorCode!, "Unable to create the account. Please try again."));
         }
 
-        // ── Step 5: Domain events are published by infrastructure ────
-        // After SaveChanges(), the infrastructure reads DomainEvents
-        // and publishes them to Azure Service Bus automatically
-        // The handler does NOT manually publish events
-
-
-        // ── Step 6: Return success with the new user's ID ───────────
+        // Return the identifier of the newly registered user.
         return Result<Guid>.Success(user.Id);
     }
 }

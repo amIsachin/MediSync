@@ -1,17 +1,30 @@
 ﻿namespace MediSync.BuildingBlocks.Domain;
 
 /// <summary>
-/// IDomainEvent is a marker interface that represents a domain event in the system.
-/// It says: this object is a domain event announcement.
-/// Every domain event in every service implements this interface
+/// Marker interface that represents a domain event.
+///
+/// A domain event is an immutable notification that something important
+/// has happened inside the domain model.
+///
+/// Examples:
+/// - UserRegisteredEvent
+/// - UserActivatedEvent
+/// - PrescriptionCreatedEvent
+///
+/// The interface contains no behavior—it simply identifies an object
+/// as a domain event so the infrastructure can discover and publish it.
 /// </summary>
 public interface IDomainEvent
 {
-    // Every event has a unique ID so we can track it
-    // and prevent processing the same event twice
+    /// <summary>
+    /// Unique identifier for this event instance.
+    /// Used for event tracking, logging, and preventing duplicate processing.
+    /// </summary>
     Guid Id { get; }
 
-    // When exactly did this event happen?
-    // Always UTC — never local time in distributed systems
+    /// <summary>
+    /// The UTC date and time when the event occurred.
+    /// Always use UTC to ensure consistency across distributed systems.
+    /// </summary>
     DateTime OccurredAt { get; }
 }
