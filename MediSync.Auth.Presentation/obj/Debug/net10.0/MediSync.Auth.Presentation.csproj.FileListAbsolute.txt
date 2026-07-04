@@ -147,10 +147,10 @@ S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\runtimes\
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Windows.Extensions.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.Auth.Application.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.Auth.Domain.dll
-S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.dll
+S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.Auth.Infrastructure.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.Auth.Application.pdb
-S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.Auth.Infrastrucure.pdb
+S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.Auth.Infrastructure.pdb
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.Auth.Domain.pdb
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
 S:\.Net\Learning\MediSync\MediSync.Auth.Presentation\obj\Debug\net10.0\MediSync.Auth.Presentation.csproj.AssemblyReference.cache

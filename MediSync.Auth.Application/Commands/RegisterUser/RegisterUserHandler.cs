@@ -49,7 +49,7 @@ public sealed class RegisterUserHandler : IRequestHandler<RegisterUserCommand, R
 
         if (emailExists is true)
         {
-            return Result<Guid>.Failure(Error.Conflict(HttpStatusCode.Conflict.ToString(), "An account with this email already exists."));
+            return Result<Guid>.Failure(Error.Conflict(HttpStatusCode.Conflict.ToString(), "This email address is already registered. Please use a different email or sign in."));
         }
 
         // Create the appropriate domain user based on the selected role.

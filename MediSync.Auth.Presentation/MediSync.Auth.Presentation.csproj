@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MediSync.Auth.Application\MediSync.Auth.Application.csproj" />
-    <ProjectReference Include="..\MediSync.Auth.Infrastrucure\MediSync.Auth.Infrastrucure.csproj" />
+    <ProjectReference Include="..\MediSync.Auth.Infrastrucure\MediSync.Auth.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

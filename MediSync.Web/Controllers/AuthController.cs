@@ -28,14 +28,14 @@ namespace MediSync.Web.Controllers
 
             if (response.IsSuccess)
             {
-                TempData["NotificationMessage"] = "Registration successful. Please log in.";
+                TempData["NotificationMessage"] = "Your account has been created. You can now sign in to MediSync.";
                 TempData["NotificationType"] = "Success";
 
                 return View(model);
             }
 
             TempData["NotificationType"] = "Failure";
-            TempData["NotificationMessage"] = response.Error?.Message;
+            TempData["NotificationMessage"] = response.Error?.Message ?? "Registration failed. Please try again.";
 
             return View();
         }
@@ -57,7 +57,7 @@ namespace MediSync.Web.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;

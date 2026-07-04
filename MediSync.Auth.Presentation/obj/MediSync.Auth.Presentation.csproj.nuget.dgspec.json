@@ -709,12 +709,12 @@
         }
       }
     },
-    "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastrucure.csproj": {
+    "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastrucure.csproj",
-        "projectName": "MediSync.Auth.Infrastrucure",
-        "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastrucure.csproj",
+        "projectUniqueName": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastructure.csproj",
+        "projectName": "MediSync.Auth.Infrastructure",
+        "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\amIsa\\.nuget\\packages\\",
         "outputPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\obj\\",
         "projectStyle": "PackageReference",
@@ -1248,8 +1248,8 @@
               "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Application\\MediSync.Auth.Application.csproj": {
                 "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Application\\MediSync.Auth.Application.csproj"
               },
-              "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastrucure.csproj": {
-                "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastrucure.csproj"
+              "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastructure.csproj": {
+                "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastructure.csproj"
               }
             }
           }

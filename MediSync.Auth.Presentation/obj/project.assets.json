@@ -1302,7 +1302,7 @@
           "bin/placeholder/MediSync.Auth.Domain.dll": {}
         }
       },
-      "MediSync.Auth.Infrastrucure/1.0.0": {
+      "MediSync.Auth.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -1313,10 +1313,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.0"
         },
         "compile": {
-          "bin/placeholder/MediSync.Auth.Infrastrucure.dll": {}
+          "bin/placeholder/MediSync.Auth.Infrastructure.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MediSync.Auth.Infrastrucure.dll": {}
+          "bin/placeholder/MediSync.Auth.Infrastructure.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -3706,10 +3706,10 @@
       "path": "../MediSync.Auth.Domain/MediSync.Auth.Domain.csproj",
       "msbuildProject": "../MediSync.Auth.Domain/MediSync.Auth.Domain.csproj"
     },
-    "MediSync.Auth.Infrastrucure/1.0.0": {
+    "MediSync.Auth.Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../MediSync.Auth.Infrastrucure/MediSync.Auth.Infrastrucure.csproj",
-      "msbuildProject": "../MediSync.Auth.Infrastrucure/MediSync.Auth.Infrastrucure.csproj"
+      "path": "../MediSync.Auth.Infrastrucure/MediSync.Auth.Infrastructure.csproj",
+      "msbuildProject": "../MediSync.Auth.Infrastrucure/MediSync.Auth.Infrastructure.csproj"
     },
     "MediSync.BuildingBlocks/1.0.0": {
       "type": "project",
@@ -3720,7 +3720,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "MediSync.Auth.Application >= 1.0.0",
-      "MediSync.Auth.Infrastrucure >= 1.0.0",
+      "MediSync.Auth.Infrastructure >= 1.0.0",
       "MediatR >= 14.1.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.0",
@@ -3764,8 +3764,8 @@
             "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Application\\MediSync.Auth.Application.csproj": {
               "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Application\\MediSync.Auth.Application.csproj"
             },
-            "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastrucure.csproj": {
-              "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastrucure.csproj"
+            "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastructure.csproj": {
+              "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Infrastrucure\\MediSync.Auth.Infrastructure.csproj"
             }
           }
         }

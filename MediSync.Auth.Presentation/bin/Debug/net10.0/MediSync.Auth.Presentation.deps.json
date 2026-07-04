@@ -9,7 +9,7 @@
       "MediSync.Auth.Presentation/1.0.0": {
         "dependencies": {
           "MediSync.Auth.Application": "1.0.0",
-          "MediSync.Auth.Infrastrucure": "1.0.0",
+          "MediSync.Auth.Infrastructure": "1.0.0",
           "MediatR": "14.1.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.0",
@@ -941,7 +941,7 @@
           }
         }
       },
-      "MediSync.Auth.Infrastrucure/1.0.0": {
+      "MediSync.Auth.Infrastructure/1.0.0": {
         "dependencies": {
           "MediSync.Auth.Application": "1.0.0",
           "MediSync.Auth.Domain": "1.0.0",
@@ -950,7 +950,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.0"
         },
         "runtime": {
-          "MediSync.Auth.Infrastrucure.dll": {
+          "MediSync.Auth.Infrastructure.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1381,7 +1381,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MediSync.Auth.Infrastrucure/1.0.0": {
+    "MediSync.Auth.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

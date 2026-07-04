@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediSync.BuildingBlocks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f56dde29687423481d8c6c37bc3e73759db9e57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14f373932696b46d21e42a6ad774d37d2fa400b4")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediSync.BuildingBlocks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediSync.BuildingBlocks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

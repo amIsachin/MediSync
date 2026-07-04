@@ -10,7 +10,7 @@
   <Folder Name="/Services/Auth/src/">
     <Project Path="MediSync.Auth.Application/MediSync.Auth.Application.csproj" Id="d30e2496-a714-4cb9-a74b-af99d151553a" />
     <Project Path="MediSync.Auth.Domain/MediSync.Auth.Domain.csproj" />
-    <Project Path="MediSync.Auth.Infrastrucure/MediSync.Auth.Infrastrucure.csproj" Id="1081e82d-bda6-4e69-af01-ee517a29047c" />
+    <Project Path="MediSync.Auth.Infrastrucure/MediSync.Auth.Infrastructure.csproj" Id="1081e82d-bda6-4e69-af01-ee517a29047c" />
     <Project Path="MediSync.Auth.Presentation/MediSync.Auth.Presentation.csproj" Id="4b2f0255-dd07-4ef9-ba5b-f52b980734e0" />
   </Folder>
   <Folder Name="/Services/Shared/">
