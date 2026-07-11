@@ -1,6 +1,10 @@
 ﻿using MediSync.Web.Services;
 using MediSync.Web.ViewModels;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace MediSync.Web.Controllers
 {
@@ -16,7 +20,12 @@ namespace MediSync.Web.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            return View();
+            if (User.Identity?.IsAuthenticated is true)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(new RegisterViewModel());
         }
 
         [HttpPost]
@@ -31,29 +40,66 @@ namespace MediSync.Web.Controllers
                 TempData["NotificationMessage"] = "Your account has been created. You can now sign in to MediSync.";
                 TempData["NotificationType"] = "Success";
 
-                return View(model);
+                return View(nameof(Login));
             }
 
             TempData["NotificationType"] = "Failure";
             TempData["NotificationMessage"] = response.Error?.Message ?? "Registration failed. Please try again.";
 
-            return View();
+            return View(model);
         }
 
         [HttpGet]
         public async Task<IActionResult> Login()
         {
-            return View();
+            if (User.Identity?.IsAuthenticated is true)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(new LoginViewModel());
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-
             try
             {
                 AuthService authService = new AuthService(_httpClient);
-                var isSuccess = await authService.LoginAsync(model.Email, model.Password);
+                var serviceResponseMessage = await authService.LoginAsync(model.Email, model.Password);
+
+                if (serviceResponseMessage.IsSuccess)
+                {
+                    var claims = new List<Claim>
+                    {
+                        new(ClaimTypes.NameIdentifier, serviceResponseMessage.Value!.UserId.ToString()),
+                        new(ClaimTypes.Email,          serviceResponseMessage.Value.Email),
+                        new(ClaimTypes.GivenName,      serviceResponseMessage.Value.FirstName),
+                        new(ClaimTypes.Surname,        serviceResponseMessage.Value.LastName),
+                        new(ClaimTypes.Role,           serviceResponseMessage.Value.Role),
+                        new("jwt_token",               serviceResponseMessage.Value.Token)
+                    };
+
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    await HttpContext.SignInAsync(
+                        CookieAuthenticationDefaults.AuthenticationScheme,
+                        new ClaimsPrincipal(identity),
+                        new AuthenticationProperties
+                        {
+                            IsPersistent = model.RememberMe,
+                            ExpiresUtc = DateTimeOffset.UtcNow.AddHours(1)
+                        });
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    TempData["NotificationMessage"] = serviceResponseMessage.Error?.Message ?? "Login failed. Please try again.";
+                    TempData["NotificationType"] = "Error";
+                    return View(model);
+                }
 
                 return RedirectToAction("Index", "Home");
             }
@@ -62,6 +108,14 @@ namespace MediSync.Web.Controllers
 
                 throw;
             }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction(nameof(Login));
         }
     }
 }

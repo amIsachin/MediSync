@@ -44,7 +44,7 @@ public class AuthService
         return ServiceResponseMessage<Guid>.Success(resultSuccess!.Value);
     }
 
-    public async Task<LoginResponse> LoginAsync(string email, string password)
+    public async Task<ServiceResponseMessage<LoginResponse>> LoginAsync(string email, string password)
     {
         var payLoad = new
         {
@@ -58,14 +58,12 @@ public class AuthService
 
         if (!response.IsSuccessStatusCode)
         {
-            return new LoginResponse(null!, Guid.Empty, null!, null!, null!, null!);
+            return ServiceResponseMessage<LoginResponse>.Failure(response.StatusCode.ToString(), "Login failed", "Failure");
         }
 
-        var result = await response.Content.ReadAsStringAsync();
+        var result = await response.Content.ReadFromJsonAsync<ServiceResponseMessage<LoginResponse>>(new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-        var deserializeResult = JsonSerializer.Deserialize<LoginResponse>(result);
-
-        return deserializeResult!;
+        return result!;
     }
 }
 

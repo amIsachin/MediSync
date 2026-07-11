@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediSync.Auth.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14f373932696b46d21e42a6ad774d37d2fa400b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7621bc38fc1b40fb259dadd30018a5a27823ef82")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediSync.Auth.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediSync.Auth.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
