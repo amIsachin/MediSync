@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EvhLlx+VFxw=",
+  "dgSpecHash": "+7imtdVf+XM=",
   "success": true,
   "projectFilePath": "S:\\.Net\\Learning\\MediSync\\MediSync.ApiGateway\\MediSync.ApiGateway.csproj",
   "expectedPackageFiles": [
@@ -16,18 +16,5 @@
     "C:\\Users\\amIsa\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\amIsa\\.nuget\\packages\\ocelot\\25.0.0-beta.3\\ocelot.25.0.0-beta.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
-      "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.ApiGateway\\MediSync.ApiGateway.csproj",
-      "warningLevel": 1,
-      "filePath": "S:\\.Net\\Learning\\MediSync\\MediSync.ApiGateway\\MediSync.ApiGateway.csproj",
-      "libraryId": "Microsoft.OpenApi",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  "logs": []
 }

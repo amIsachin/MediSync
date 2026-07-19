@@ -1,0 +1,16 @@
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\bin\Debug\net10.0\MediSync.MedicalRecord.Domain.deps.json
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\bin\Debug\net10.0\MediSync.MedicalRecord.Domain.dll
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\bin\Debug\net10.0\MediSync.MedicalRecord.Domain.pdb
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\MediSync.MedicalRecord.Domain.csproj.AssemblyReference.cache
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\MediSync.MedicalRecord.Domain.GeneratedMSBuildEditorConfig.editorconfig
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\MediSync.MedicalRecord.Domain.AssemblyInfoInputs.cache
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\MediSync.MedicalRecord.Domain.AssemblyInfo.cs
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\MediSync.MedicalRecord.Domain.csproj.CoreCompileInputs.cache
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\MediSync.MedicalRecord.Domain.sourcelink.json
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\MediSync.2A3F64BB.Up2Date
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\MediSync.MedicalRecord.Domain.dll
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\refint\MediSync.MedicalRecord.Domain.dll
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\MediSync.MedicalRecord.Domain.pdb
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Domain\obj\Debug\net10.0\ref\MediSync.MedicalRecord.Domain.dll

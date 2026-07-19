@@ -30,3 +30,5 @@ var applicationUser = new ApplicationUser
             CreatedAt = DateTime.UtcNow,
             DomainUserId = user.Id
         };
+
+Last port used: 7003

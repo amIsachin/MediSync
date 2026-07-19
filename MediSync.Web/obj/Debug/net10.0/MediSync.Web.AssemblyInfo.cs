@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediSync.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7621bc38fc1b40fb259dadd30018a5a27823ef82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66f50c387ee95efa34c8a8f98bc6392c6b2d3f35")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediSync.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediSync.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,6 +13,11 @@ namespace MediSync.Web.Controllers
         {
             try
             {
+                if (User.Identity?.IsAuthenticated is false)
+                {
+                    return RedirectToAction("Login", "Auth");
+                }
+
                 return View();
             }
             catch (Exception ex)

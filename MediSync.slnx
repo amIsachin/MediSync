@@ -13,6 +13,13 @@
     <Project Path="MediSync.Auth.Infrastrucure/MediSync.Auth.Infrastructure.csproj" Id="1081e82d-bda6-4e69-af01-ee517a29047c" />
     <Project Path="MediSync.Auth.Presentation/MediSync.Auth.Presentation.csproj" Id="4b2f0255-dd07-4ef9-ba5b-f52b980734e0" />
   </Folder>
+  <Folder Name="/Services/MedicalRecord/" />
+  <Folder Name="/Services/MedicalRecord/src/">
+    <Project Path="MediSync.MedicalRecord.Application/MediSync.MedicalRecord.Application.csproj" Id="0227d86b-813e-4489-8799-25cfe776d76d" />
+    <Project Path="MediSync.MedicalRecord.Domain/MediSync.MedicalRecord.Domain.csproj" Id="412f5464-f689-4f62-93c5-c16286c344f1" />
+    <Project Path="MediSync.MedicalRecord.Infrastructure/MediSync.MedicalRecord.Infrastructure.csproj" Id="5544a9c9-5553-4c90-a770-bca0f2f72958" />
+    <Project Path="MediSync.MedicalRecord.Presentation/MediSync.MedicalRecord.Presentation.csproj" Id="0f8017c5-815e-40df-b011-60e47fd8f08c" />
+  </Folder>
   <Folder Name="/Services/Shared/">
     <Project Path="MediSync.BuildingBlocks/MediSync.BuildingBlocks.csproj" Id="92a97e35-29fc-4210-a19e-930dc09c4b84" />
   </Folder>

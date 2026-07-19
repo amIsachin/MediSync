@@ -2,7 +2,6 @@
 using MediSync.Web.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -40,7 +39,7 @@ namespace MediSync.Web.Controllers
                 TempData["NotificationMessage"] = "Your account has been created. You can now sign in to MediSync.";
                 TempData["NotificationType"] = "Success";
 
-                return View(nameof(Login));
+                return View(model);
             }
 
             TempData["NotificationType"] = "Failure";
@@ -100,8 +99,6 @@ namespace MediSync.Web.Controllers
                     TempData["NotificationType"] = "Error";
                     return View(model);
                 }
-
-                return RedirectToAction("Index", "Home");
             }
             catch (Exception)
             {
