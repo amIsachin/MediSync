@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "S:\\.Net\\Learning\\MediSync\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\services\\medicalrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\services\\medicalrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\viewmodels\\createpatientprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\viewmodels\\createpatientprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8EF64CB1-F785-4AE3-B081-D7A8F4E66DA2}|MediSync.ApiGateway\\MediSync.ApiGateway.csproj|s:\\.net\\learning\\medisync\\medisync.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{8EF64CB1-F785-4AE3-B081-D7A8F4E66DA2}|MediSync.ApiGateway\\MediSync.ApiGateway.csproj|solutionrelative:medisync.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\iservice\\imedicalrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\iservice\\imedicalrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\PatientController.cs",
+              "RelativeDocumentMoniker": "MediSync.Web\\Controllers\\PatientController.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\PatientController.cs",
+              "RelativeToolTip": "MediSync.Web\\Controllers\\PatientController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwC4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T05:03:02.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreatePatientProfileViewModel.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\ViewModels\\CreatePatientProfileViewModel.cs",
+              "RelativeDocumentMoniker": "MediSync.Web\\ViewModels\\CreatePatientProfileViewModel.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\ViewModels\\CreatePatientProfileViewModel.cs",
+              "RelativeToolTip": "MediSync.Web\\ViewModels\\CreatePatientProfileViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T05:02:15.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "MediSync.Web\\Services\\AuthService.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Services\\AuthService.cs",
+              "RelativeToolTip": "MediSync.Web\\Services\\AuthService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T04:49:54.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MedicalRecordService.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Services\\MedicalRecordService.cs",
+              "RelativeDocumentMoniker": "MediSync.Web\\Services\\MedicalRecordService.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Services\\MedicalRecordService.cs",
+              "RelativeToolTip": "MediSync.Web\\Services\\MedicalRecordService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T04:25:44.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IMedicalRecordService.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\IService\\IMedicalRecordService.cs",
+              "RelativeDocumentMoniker": "MediSync.Web\\IService\\IMedicalRecordService.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\IService\\IMedicalRecordService.cs",
+              "RelativeToolTip": "MediSync.Web\\IService\\IMedicalRecordService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-25T04:19:52.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ocelot.json",
               "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.ApiGateway\\ocelot.json",
               "RelativeDocumentMoniker": "MediSync.ApiGateway\\ocelot.json",
               "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.ApiGateway\\ocelot.json",
               "RelativeToolTip": "MediSync.ApiGateway\\ocelot.json",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAFwAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-18T17:55:51.392Z",
+              "WhenOpened": "2026-07-25T04:19:01.738Z",
               "EditorCaption": ""
             }
           ]

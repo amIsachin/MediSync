@@ -17,7 +17,7 @@ public class AuthService
     {
         var payLoad = new
         {
-            firstName,
+            firstName,  
             lastName,
             email,
             password,
