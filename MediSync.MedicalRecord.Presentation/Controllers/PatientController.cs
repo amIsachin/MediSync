@@ -42,7 +42,9 @@ namespace MediSync.MedicalRecord.Presentation.Controllers
                 return BadRequest(new { result.Error.Code, result.Error.Message });
             }
 
-            return Created($"/api/patients/{result.Value}", new { PatientId = result.Value });
+            //return Created($"/api/patients/{result.Value}", new { PatientId = result.Value });
+
+            return Created($"/api/patients/{result.Value}", result.Value);
         }
 
         [HttpPost("GetById/{id:guid}")]
@@ -59,7 +61,7 @@ namespace MediSync.MedicalRecord.Presentation.Controllers
             return Ok(result.Value);
         }
 
-        [HttpPost("user/{userId:guid}")]
+        [HttpGet("user/{userId:guid}")]
         public async Task<IActionResult> GetByUserId(Guid userId, CancellationToken cancellationToken)
         {
             var query = new GetPatientByUserIdQuery(userId);

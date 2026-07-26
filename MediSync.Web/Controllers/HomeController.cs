@@ -1,22 +1,51 @@
+using MediSync.Web.IService;
 using MediSync.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace MediSync.Web.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
+        private readonly IMedicalRecordService _medicalRecordService;
+
+        public HomeController(IMedicalRecordService medicalRecordService)
+        {
+            _medicalRecordService = medicalRecordService;
+        }
+
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             try
             {
-                if (User.Identity?.IsAuthenticated is false)
+                var role = User.FindFirst(ClaimTypes.Role)?.Value;
+
+                // Only load medical profile for Patient role
+                if (role == "Patient")
                 {
-                    return RedirectToAction("Login", "Auth");
+                    var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
+                    var result = await _medicalRecordService.GetPatientByUserIdAsync(userId);
+
+                    if (result.IsSuccess is true && result.Value is not null)
+                    {
+                        return View(result.Value!);
+                    }
+
+                    // Profile not created yet — redirect to create profile
+                    if (result.IsSuccess is false)
+                    {
+                        return RedirectToAction("Patient", "CreateProfile");
+                    }
                 }
+
+                //if (User.Identity?.IsAuthenticated is false)
+                //{
+                //    return RedirectToAction("Login", "Auth");
+                //}
 
                 return View();
             }

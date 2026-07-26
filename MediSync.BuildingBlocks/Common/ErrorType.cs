@@ -27,11 +27,11 @@ public enum ErrorType
 /// </summary>
 public sealed class Error
 {
-    public string Code { get; set; }
+    public string Code { get; init; }
 
-    public string Message { get; set; }
+    public string Message { get; init; }
 
-    public ErrorType Type { get; set; }
+    public ErrorType Type { get; init; }
 
     private Error(string code, string message, ErrorType type)
     {
@@ -39,7 +39,7 @@ public sealed class Error
         Message = message;
         Type = type;
     }
-    
+
     // Static factory methods — clean API for creating errors
     // Usage: Error.NotFound("User.NotFound", "User was not found")
     public static Error NotFound(string code, string message) => new(code, message, ErrorType.NotFound);

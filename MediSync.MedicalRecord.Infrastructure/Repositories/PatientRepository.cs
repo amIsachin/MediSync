@@ -34,7 +34,7 @@ public class PatientRepository : IPatientRepository
         => await _dbContext.Patients
         .Include("Allergies")
         .Include("Diagnoses")
-        .Include("Encounters").FirstOrDefaultAsync(p => p.Id == userId, cancellationToken);
+        .Include("Encounters").FirstOrDefaultAsync(p => p.UserId == userId, cancellationToken);
 
     public async Task UpdateAsync(Patient patient, CancellationToken cancellationToken = default)
     {

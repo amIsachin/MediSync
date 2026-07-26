@@ -1,19 +1,237 @@
-﻿
+﻿@model MediSync.Web.IService.PatientProfileResponse
+
 @{
     ViewData["Title"] = "Home Page";
     var firstName = User.FindFirst(System.Security.Claims.ClaimTypes.GivenName)?.Value;
     var role = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
     var email = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
+    var hasProfile = Model is not null;
 }
 
-<div class="page-header">
-    <div>
-        <h1>Good morning, @firstName 👋</h1>
-        <p>@role — @email</p>
-    </div>
+@* ── Page Header ── *@
+<div class="page-header mb-4">
+    <h1 style="font-size:20px;font-weight:600;color:#1a202c;">
+        Good morning, @firstName 👋
+    </h1>
+    <p style="font-size:13px;color:#718096;margin-top:3px;">
+        @role — @User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
+    </p>
 </div>
 
-<div class="coming-soon-grid">
+@if (role == "Patient" && hasProfile)
+{
+    @* ── Patient Profile Summary ── *@
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
+            <div class="stat-card">
+                <div class="stat-label">Blood Group</div>
+                <div class="stat-value text-danger">@Model!.BloodGroup</div>
+                <div class="stat-sub">@Model.Age years old</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card">
+                <div class="stat-label">Allergies</div>
+                <div class="stat-value">@Model.Allergies.Count</div>
+                <div class="stat-sub">Recorded</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card">
+                <div class="stat-label">Diagnoses</div>
+                <div class="stat-value">@Model.Diagnoses.Count</div>
+                <div class="stat-sub">@Model.Diagnoses.Count(d => d.IsActive) active</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-card">
+                <div class="stat-label">Encounters</div>
+                <div class="stat-value">@Model.Encounters.Count</div>
+                <div class="stat-sub">Total visits</div>
+            </div>
+        </div>
+    </div>
+
+    @* ── Two Column Layout ── *@
+    <div class="row g-3">
+
+        @* ── Allergies ── *@
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-card-header">
+                    <span class="data-card-title">
+                        <i class="bi bi-exclamation-triangle text-warning"></i>
+                        Allergies
+                    </span>
+                    <span class="badge bg-warning-subtle text-warning fw-semibold">
+                        @Model.Allergies.Count
+                    </span>
+                </div>
+
+                @if (!Model.Allergies.Any())
+                {
+                    <div class="empty-state">
+                        <i class="bi bi-check-circle text-success"></i>
+                        <span>No allergies recorded</span>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var allergy in Model.Allergies)
+                    {
+                        var severityClass = allergy.Severity switch
+                        {
+                            "Severe" => "danger",
+                            "Moderate" => "warning",
+                            _ => "success"
+                        };
+
+                        <div class="list-item">
+                            <div class="list-item-left">
+                                <div class="list-item-title">@allergy.Substance</div>
+                                <div class="list-item-sub">
+                                    @allergy.RecordedAt.ToString("dd MMM yyyy")
+                                </div>
+                            </div>
+                            <span class="badge bg-@(severityClass)-subtle
+                                text-@severityClass fw-semibold">
+                                @allergy.Severity
+                            </span>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        @* ── Diagnoses ── *@
+        <div class="col-md-6">
+            <div class="data-card">
+                <div class="data-card-header">
+                    <span class="data-card-title">
+                        <i class="bi bi-clipboard2-pulse text-primary"></i>
+                        Diagnoses
+                    </span>
+                    <span class="badge bg-primary-subtle text-primary fw-semibold">
+                        @Model.Diagnoses.Count
+                    </span>
+                </div>
+
+                @if (!Model.Diagnoses.Any())
+                {
+                    <div class="empty-state">
+                        <i class="bi bi-check-circle text-success"></i>
+                        <span>No diagnoses recorded</span>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var diagnosis in Model.Diagnoses)
+                    {
+                        <div class="list-item">
+                            <div class="list-item-left">
+                                <div class="list-item-title">@diagnosis.Description</div>
+                                <div class="list-item-sub">
+                                    ICD: @diagnosis.IcdCode •
+                                    @diagnosis.DiagnosedAt.ToString("dd MMM yyyy")
+                                </div>
+                            </div>
+                            <span class="badge @(diagnosis.IsActive
+                                                                                                                                                                                                                                ? "bg-danger-subtle text-danger"
+                                                                                                                                                                                                                                : "bg-secondary-subtle text-secondary") fw-semibold">
+                                @(diagnosis.IsActive ? "Active" : "Resolved")
+                            </span>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        @* ── Recent Encounters ── *@
+        <div class="col-12">
+            <div class="data-card">
+                <div class="data-card-header">
+                    <span class="data-card-title">
+                        <i class="bi bi-calendar-check text-info"></i>
+                        Recent Encounters
+                    </span>
+                    <span class="badge bg-info-subtle text-info fw-semibold">
+                        @Model.Encounters.Count
+                    </span>
+                </div>
+
+                @if (!Model.Encounters.Any())
+                {
+                    <div class="empty-state">
+                        <i class="bi bi-calendar-x text-secondary"></i>
+                        <span>No encounters recorded</span>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var encounter in Model.Encounters
+                        .OrderByDescending(e => e.VisitDate).Take(5))
+                    {
+                        <div class="list-item">
+                            <div class="list-item-left">
+                                <div class="list-item-title">@encounter.ChiefComplaint</div>
+                                <div class="list-item-sub">
+                                    @encounter.EncounterType •
+                                    @encounter.VisitDate.ToString("dd MMM yyyy HH:mm")
+                                    @if (!string.IsNullOrEmpty(encounter.Facility))
+                                    {
+                                        <span> • @encounter.Facility</span>
+                                    }
+                                </div>
+                            </div>
+                            <span class="badge bg-info-subtle text-info fw-semibold">
+                                @encounter.EncounterType
+                            </span>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+    </div>
+}
+else if (role == "Patient" && !hasProfile)
+{
+    @* ── No Profile Yet ── *@
+    <div class="coming-soon-grid">
+        <div class="coming-soon-card">
+            <div class="coming-soon-icon">
+                <i class="bi bi-file-medical"></i>
+            </div>
+            <div class="coming-soon-title">Complete Your Profile</div>
+            <div class="coming-soon-desc">
+                Set up your medical profile to get started
+            </div>
+            <a asp-controller="Patient" asp-action="CreateProfile"
+               class="btn btn-primary btn-sm mt-2">
+                Create Profile
+            </a>
+        </div>
+    </div>
+}
+else
+{
+    @* ── Doctor / LabTech Dashboard ── *@
+    <div class="coming-soon-grid">
+        @if (role == "Doctor")
+        {
+            <partial name="_ComingSoonCard" model="@(("My Patients", "bi-people", "View and manage your patient list"))" />
+            <partial name="_ComingSoonCard" model="@(("Appointments", "bi-calendar-event", "Today's schedule"))" />
+            <partial name="_ComingSoonCard" model="@(("Prescriptions", "bi-capsule", "Review and write prescriptions"))" />
+        }
+        else if (role == "LabTechnician")
+        {
+            <partial name="_ComingSoonCard" model="@(("Test Orders", "bi-clipboard2-pulse", "Pending lab requests"))" />
+            <partial name="_ComingSoonCard" model="@(("Upload Results", "bi-upload", "Submit test results"))" />
+        }
+    </div>
+}
+
+@* <div class="coming-soon-grid">
     @if (role == "Doctor")
     {
         <partial name="_ComingSoonCard" model="@("My Patients", "bi-people", "View and manage your patient list")" />
@@ -31,4 +249,4 @@
         <partial name="_ComingSoonCard" model="@("Test Orders", "bi-clipboard2-pulse", "Pending lab test requests")" />
         <partial name="_ComingSoonCard" model="@("Upload Results", "bi-upload", "Submit completed test results")" />
     }
-</div>
+</div> *@

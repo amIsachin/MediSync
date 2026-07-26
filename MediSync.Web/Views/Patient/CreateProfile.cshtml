@@ -1,0 +1,390 @@
+﻿@model MediSync.Web.ViewModels.CreatePatientProfileViewModel
+
+@{
+    ViewData["Title"] = "Complete Your Medical Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <style>
+        .form-card {
+            background: #fff;
+            border: 0.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 28px;
+            max-width: 680px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1B4F8A;
+            margin-bottom: 16px;
+            margin-top: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+            .section-title:first-of-type {
+                margin-top: 0;
+            }
+
+        .row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .field label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a5568;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .field .form-control {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #2d3748;
+            background: #f7fafc;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+
+            .field .form-control:focus {
+                border-color: #1B4F8A;
+                background: #fff;
+                box-shadow: 0 0 0 3px rgba(27,79,138,0.08);
+            }
+
+        /* Blood Group Cards */
+        .blood-group-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .bg-card {
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 8px;
+            text-align: center;
+            cursor: pointer;
+            background: #f7fafc;
+            transition: all 0.15s;
+        }
+
+            .bg-card:hover {
+                border-color: #1B4F8A;
+                background: #EBF4FF;
+            }
+
+            .bg-card.active {
+                border-color: #1B4F8A;
+                background: #EBF4FF;
+            }
+
+            .bg-card span {
+                font-size: 13px;
+                font-weight: 700;
+                color: #718096;
+            }
+
+            .bg-card.active span {
+                color: #1B4F8A;
+            }
+
+        /* Gender Cards */
+        .gender-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .gender-card {
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 8px;
+            text-align: center;
+            cursor: pointer;
+            background: #f7fafc;
+            transition: all 0.15s;
+        }
+
+            .gender-card:hover {
+                border-color: #1B4F8A;
+                background: #EBF4FF;
+            }
+
+            .gender-card.active {
+                border-color: #1B4F8A;
+                background: #EBF4FF;
+            }
+
+            .gender-card i {
+                font-size: 22px;
+                color: #a0aec0;
+                display: block;
+                margin-bottom: 6px;
+            }
+
+            .gender-card.active i {
+                color: #1B4F8A;
+            }
+
+            .gender-card span {
+                font-size: 11px;
+                color: #718096;
+                font-weight: 500;
+            }
+
+            .gender-card.active span {
+                color: #1B4F8A;
+                font-weight: 600;
+            }
+
+        /* Submit Button */
+        .btn-save {
+            width: 100%;
+            padding: 12px;
+            background: #1B4F8A;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+            transition: background 0.15s;
+        }
+
+            .btn-save:hover {
+                background: #15407a;
+            }
+
+        .required {
+            color: #E53E3E;
+            margin-left: 2px;
+        }
+
+        .validation-error {
+            font-size: 11px;
+            color: #E53E3E;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .page-header {
+            margin-bottom: 20px;
+        }
+
+            .page-header h1 {
+                font-size: 18px;
+                font-weight: 600;
+                color: #1a202c;
+            }
+
+            .page-header p {
+                font-size: 13px;
+                color: #718096;
+                margin-top: 3px;
+            }
+
+        .spinner {
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            display: none;
+        }
+
+        @@keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+}
+
+<div class="page-header">
+    <h1>Complete Your Medical Profile</h1>
+    <p>This information helps doctors provide better care</p>
+</div>
+
+@* Notification *@
+@if (TempData["NotificationMessage"] != null)
+{
+    var isSuccess = TempData["NotificationType"]?.ToString() == "Success";
+    var borderColor = isSuccess ? "border-success" : "border-danger";
+    var iconBg = isSuccess ? "bg-success-subtle" : "bg-danger-subtle";
+    var iconColor = isSuccess ? "text-success" : "text-danger";
+    var icon = isSuccess ? "bi-check-circle-fill" : "bi-x-circle-fill";
+    var title = isSuccess ? "Profile Saved" : "Error";
+    var bgColor = isSuccess ? "bg-success-subtle" : "bg-danger-subtle";
+
+    <div id="notifBox"
+         class="d-flex align-items-start gap-3 p-3 rounded-3 border-start border-4
+        @borderColor @bgColor mb-3 position-relative">
+        <div class="@iconBg @iconColor rounded-2 d-flex align-items-center
+            justify-content-center flex-shrink-0"
+             style="width:38px;height:38px;font-size:18px;">
+            <i class="bi @icon"></i>
+        </div>
+        <div class="flex-grow-1">
+            <div class="fw-bold small @iconColor">@title</div>
+            <div class="text-secondary" style="font-size:12px;margin-top:2px;">
+                @TempData["NotificationMessage"]
+            </div>
+        </div>
+        <i class="bi bi-x-lg flex-shrink-0 @iconColor"
+           style="font-size:14px;cursor:pointer;opacity:0.7;"
+           onclick="document.getElementById('notifBox').remove()"></i>
+    </div>
+}
+
+<div class="form-card">
+    <form asp-action="CreateProfile" method="post" id="profileForm">
+        @Html.AntiForgeryToken()
+
+        @* Hidden fields for selected values *@
+        <input type="hidden" asp-for="BloodGroup" id="selectedBloodGroup" value="APositive" />
+        <input type="hidden" asp-for="Gender" id="selectedGender" value="Male" />
+
+        @* ── Personal Information ── *@
+        <div class="section-title">
+            <i class="bi bi-person"></i> Personal Information
+        </div>
+
+        <div class="row-2">
+            <div class="field">
+                <label>First name <span class="required">*</span></label>
+                <input asp-for="FirstName" class="form-control" placeholder="Sachin" />
+                <span asp-validation-for="FirstName" class="validation-error"></span>
+            </div>
+            <div class="field">
+                <label>Last name <span class="required">*</span></label>
+                <input asp-for="LastName" class="form-control" placeholder="Mehra" />
+                <span asp-validation-for="LastName" class="validation-error"></span>
+            </div>
+        </div>
+
+        <div class="row-2">
+            <div class="field">
+                <label>Date of birth <span class="required">*</span></label>
+                <input asp-for="DateOfBirth" class="form-control" type="date" />
+                <span asp-validation-for="DateOfBirth" class="validation-error"></span>
+            </div>
+            <div class="field">
+                <label>Phone number</label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="+91-9876543210" />
+                <span asp-validation-for="PhoneNumber" class="validation-error"></span>
+            </div>
+        </div>
+
+        @* ── Gender ── *@
+        <div class="section-title">
+            <i class="bi bi-gender-ambiguous"></i> Gender <span class="required">*</span>
+        </div>
+
+        <div class="gender-row">
+            <div class="gender-card active" onclick="selectGender('Male', this)">
+                <i class="bi bi-gender-male"></i>
+                <span>Male</span>
+            </div>
+            <div class="gender-card" onclick="selectGender('Female', this)">
+                <i class="bi bi-gender-female"></i>
+                <span>Female</span>
+            </div>
+            <div class="gender-card" onclick="selectGender('Other', this)">
+                <i class="bi bi-three-dots"></i>
+                <span>Other</span>
+            </div>
+        </div>
+
+        @* ── Blood Group ── *@
+        <div class="section-title">
+            <i class="bi bi-droplet-half"></i> Blood Group <span class="required">*</span>
+        </div>
+
+        <div class="blood-group-grid">
+            <div class="bg-card active" onclick="selectBloodGroup('APositive', this)">
+                <span>A+</span>
+            </div>
+            <div class="bg-card" onclick="selectBloodGroup('ANegative', this)">
+                <span>A−</span>
+            </div>
+            <div class="bg-card" onclick="selectBloodGroup('BPositive', this)">
+                <span>B+</span>
+            </div>
+            <div class="bg-card" onclick="selectBloodGroup('BNegative', this)">
+                <span>B−</span>
+            </div>
+            <div class="bg-card" onclick="selectBloodGroup('ABPositive', this)">
+                <span>AB+</span>
+            </div>
+            <div class="bg-card" onclick="selectBloodGroup('ABNegative', this)">
+                <span>AB−</span>
+            </div>
+            <div class="bg-card" onclick="selectBloodGroup('OPositive', this)">
+                <span>O+</span>
+            </div>
+            <div class="bg-card" onclick="selectBloodGroup('ONegative', this)">
+                <span>O−</span>
+            </div>
+        </div>
+
+        @* ── Submit ── *@
+        <button type="submit" class="btn-save" id="saveBtn">
+            <span class="spinner" id="spinner"></span>
+            <i class="bi bi-check-lg" id="saveIcon"></i>
+            <span id="btnText">Save Medical Profile</span>
+        </button>
+
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        // Blood group selection
+        function selectBloodGroup(value, element) {
+            document.querySelectorAll('.bg-card')
+                .forEach(c => c.classList.remove('active'));
+            element.classList.add('active');
+            document.getElementById('selectedBloodGroup').value = value;
+        }
+
+        // Gender selection
+        function selectGender(value, element) {
+            document.querySelectorAll('.gender-card')
+                .forEach(c => c.classList.remove('active'));
+            element.classList.add('active');
+            document.getElementById('selectedGender').value = value;
+        }
+
+        // Loading state on submit
+        document.getElementById('profileForm').addEventListener('submit', function() {
+            document.getElementById('spinner').style.display = 'inline-block';
+            document.getElementById('saveIcon').style.display = 'none';
+            document.getElementById('btnText').textContent = 'Saving...';
+            document.getElementById('saveBtn').disabled = true;
+        });
+    </script>
+}

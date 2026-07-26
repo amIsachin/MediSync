@@ -13,6 +13,10 @@
       {
         "Path": "MediSync.ApiGateway\\MediSync.ApiGateway.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "MediSync.MedicalRecord.Presentation\\MediSync.MedicalRecord.Presentation.csproj",
+        "Action": "Start"
       }
     ]
   }

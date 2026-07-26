@@ -1,10 +1,15 @@
-﻿<div class="sidebar-section">
+﻿@{
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+}
+
+<div class="sidebar-section">
     <div class="sidebar-label">Main</div>
-    <a asp-controller="Home" asp-action="Index" class="nav-item active">
+    <a asp-controller="Home" asp-action="Index" class="nav-item @(controller == "Home" && action == "Index" ? "active" : "")">
         <i class="bi bi-grid-1x2"></i> Dashboard
     </a>
-    <a href="#" class="nav-item disabled">
-        <i class="bi bi-file-medical"></i> My Records
+    <a asp-controller="Patient" asp-action="CreateProfile" class="nav-item @(controller == "Patient" && action == "CreateProfile" ? "active" : "")">
+        <i class="bi bi-file-medical"></i> My Profile
     </a>
     <a href="#" class="nav-item disabled">
         <i class="bi bi-calendar-event"></i> Appointments

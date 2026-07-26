@@ -1,6 +1,6 @@
 ﻿namespace MediSync.MedicalRecord.Application.DTOs;
 
-public record   PatientProfileDto
+public record PatientProfileDto
     (
         Guid Id,
         Guid UserId,

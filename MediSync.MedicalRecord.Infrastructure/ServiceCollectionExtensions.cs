@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MediSync.MedicalRecord.Infrastructure;
 
-public static class ServiceCollectionExtenstions
+public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddMedicalRecordInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
@@ -19,7 +19,7 @@ public static class ServiceCollectionExtenstions
         });
 
         // Register repositories
-        services.AddScoped<IPatientRepository, PatientRepository>();
+        services.AddScoped<IPatientRepository, PatientRepository>(); 
 
         return services;
     }

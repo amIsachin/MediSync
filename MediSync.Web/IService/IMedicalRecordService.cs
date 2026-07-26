@@ -4,13 +4,13 @@ namespace MediSync.Web.IService;
 
 public interface IMedicalRecordService
 {
-    public Task<ServiceResponseMessage<Guid>> GetPatientByUserIdAsync(Guid userId);
+    public Task<ServiceResponseMessage<PatientProfileResponse>> GetPatientByUserIdAsync(Guid userId);
     public Task<ServiceResponseMessage<Guid>> CreatePatientProfileAsync(CreatePatientProfileRequest request);
 }
 
 public record PatientProfileResponse(
     Guid Id,
-    Guid userId,
+    Guid UserId,
     string FirstName,
     string LastName,
     string FullName,
@@ -21,10 +21,26 @@ public record PatientProfileResponse(
     string Email,
     string? PhoneNumber,
     string Status,
-
     List<AllergyResponse> Allergies,
     List<DiagnosisResponse> Diagnoses,
     List<EncounterResponse> Encounters
+
+//Guid Id,
+//Guid userId,
+//string FirstName,
+//string LastName,
+//string FullName,
+//string DateOfBirth,
+//int Age,
+//string BloodGroup,
+//string Gender,
+//string Email,
+//string? PhoneNumber,
+//string Status,
+
+//List<AllergyResponse> Allergies,
+//List<DiagnosisResponse> Diagnoses,
+//List<EncounterResponse> Encounters
 );
 
 public record AllergyResponse(

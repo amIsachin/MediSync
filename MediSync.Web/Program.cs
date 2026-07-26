@@ -27,6 +27,7 @@ builder.Services.AddHttpClient();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<ITokenProvider, TokenProvider>();
+builder.Services.AddScoped<IMedicalRecordService, MedicalRecordService>();
 
 var app = builder.Build();
 

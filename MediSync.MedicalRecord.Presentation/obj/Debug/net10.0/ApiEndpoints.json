@@ -98,7 +98,7 @@
     "ContainingType": "MediSync.MedicalRecord.Presentation.Controllers.PatientController",
     "Method": "GetByUserId",
     "RelativePath": "api/Patient/user/{userId}",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

@@ -12,6 +12,7 @@ public class MedicalRecordService : IMedicalRecordService
     public MedicalRecordService(HttpClient httpClient, ILogger<MedicalRecordService> logger)
     {
         _httpClient = httpClient;
+        _httpClient.Timeout = TimeSpan.FromMinutes(10);
         _logger = logger;
     }
 
@@ -29,25 +30,25 @@ public class MedicalRecordService : IMedicalRecordService
         var error = await response.Content.ReadAsStringAsync();
         var errorMessage = MedicalRecordService.ExtractMessage(error) ?? "Failed to create patient profile.";
 
-        return ServiceResponseMessage<Guid>.Failure(response.StatusCode.ToString(), "Failed to create patient profile.", "Failed");
-
+        return ServiceResponseMessage<Guid>.Failure(Convert.ToInt32(response.StatusCode).ToString(), errorMessage, "Failed");
     }
 
-    public async Task<ServiceResponseMessage<Guid>> GetPatientByUserIdAsync(Guid userId)
+
+    public async Task<ServiceResponseMessage<PatientProfileResponse>> GetPatientByUserIdAsync(Guid userId)
     {
-        var response = await _httpClient.GetAsync($"https://localhost:7000/api/patients/user/{userId}");
+        var response = await _httpClient.GetAsync($"https://localhost:7000/patients/user/{userId}");
 
         if (response.IsSuccessStatusCode)
         {
-            var data = await response.Content.ReadFromJsonAsync<Guid>(new JsonSerializerOptions { PropertyNameCaseInsensitive = false });
+            var data = await response.Content.ReadFromJsonAsync<PatientProfileResponse>(new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-            return ServiceResponseMessage<Guid>.Success(data);
+            return ServiceResponseMessage<PatientProfileResponse>.Success(data!);
         }
 
         var error = await response.Content.ReadAsStringAsync();
         var errorMessage = MedicalRecordService.ExtractMessage(error) ?? "Failed to load patient profile.";
 
-        return ServiceResponseMessage<Guid>.Failure(response.StatusCode.ToString(), "Failed to load patient profile.", "Failed");
+        return ServiceResponseMessage<PatientProfileResponse>.Failure(response.StatusCode.ToString(), errorMessage, "Failed");
     }
 
     private static string ExtractMessage(string body)
