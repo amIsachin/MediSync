@@ -1,4 +1,6 @@
-﻿namespace MediSync.Web.ViewModels;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MediSync.Web.ViewModels;
 
 public class RegisterViewModel
 {
@@ -8,9 +10,11 @@ public class RegisterViewModel
 
     public string Email { get; set; } = default!;
 
+    [DataType(DataType.Password)]
     public string Password { get; set; } = default!;
 
     public string Role { get; set; } = default!;
 
+    [DataType(DataType.Password)]
     public string ConfirmPassword { get; set; } = default!;
 }
