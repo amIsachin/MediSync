@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediSync.MedicalRecord.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9639875fd1cc86879029cb85d98b0681d5f7c83")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa696f42844ed59280069868632a6163a35efaed")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediSync.MedicalRecord.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediSync.MedicalRecord.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

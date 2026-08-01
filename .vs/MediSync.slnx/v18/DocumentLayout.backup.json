@@ -3,56 +3,56 @@
   "WorkspaceRootPath": "S:\\.Net\\Learning\\MediSync\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\valueobjects\\dosageinstruction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\valueobjects\\dosageinstruction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\events\\prescriptioncancelledevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\events\\prescriptioncancelledevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\errors\\prescriptionerrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\errors\\prescriptionerrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\aggregates\\prescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\aggregates\\prescription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\services\\medicalrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\services\\medicalrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\interfaces\\iprescriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\interfaces\\iprescriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0227D86B-813E-4489-8799-25CFE776D76D}|MediSync.MedicalRecord.Application\\MediSync.MedicalRecord.Application.csproj|s:\\.net\\learning\\medisync\\medisync.medicalrecord.application\\queries\\getpatientbyuserid\\getpatientbyuseridhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0227D86B-813E-4489-8799-25CFE776D76D}|MediSync.MedicalRecord.Application\\MediSync.MedicalRecord.Application.csproj|solutionrelative:medisync.medicalrecord.application\\queries\\getpatientbyuserid\\getpatientbyuseridhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\enums\\prescriptionstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\enums\\prescriptionstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F8017C5-815E-40DF-B011-60E47FD8F08C}|MediSync.MedicalRecord.Presentation\\MediSync.MedicalRecord.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.medicalrecord.presentation\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F8017C5-815E-40DF-B011-60E47FD8F08C}|MediSync.MedicalRecord.Presentation\\MediSync.MedicalRecord.Presentation.csproj|solutionrelative:medisync.medicalrecord.presentation\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\events\\prescriptioncreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\events\\prescriptioncreatedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8EF64CB1-F785-4AE3-B081-D7A8F4E66DA2}|MediSync.ApiGateway\\MediSync.ApiGateway.csproj|s:\\.net\\learning\\medisync\\medisync.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8EF64CB1-F785-4AE3-B081-D7A8F4E66DA2}|MediSync.ApiGateway\\MediSync.ApiGateway.csproj|solutionrelative:medisync.apigateway\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\events\\prescriptionsupersededevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\events\\prescriptionsupersededevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\iservice\\imedicalrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\iservice\\imedicalrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\valueobjects\\druginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\valueobjects\\druginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0227D86B-813E-4489-8799-25CFE776D76D}|MediSync.MedicalRecord.Application\\MediSync.MedicalRecord.Application.csproj|s:\\.net\\learning\\medisync\\medisync.medicalrecord.application\\dtos\\patientprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0227D86B-813E-4489-8799-25CFE776D76D}|MediSync.MedicalRecord.Application\\MediSync.MedicalRecord.Application.csproj|solutionrelative:medisync.medicalrecord.application\\dtos\\patientprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\valueobjects\\prescriptionid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\valueobjects\\prescriptionid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7DEF4B1B-7D07-B7B9-3272-2D73CD0DE616}|MediSync.Auth.Domain\\MediSync.Auth.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.auth.domain\\aggregates\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DEF4B1B-7D07-B7B9-3272-2D73CD0DE616}|MediSync.Auth.Domain\\MediSync.Auth.Domain.csproj|solutionrelative:medisync.auth.domain\\aggregates\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B2F0255-DD07-4EF9-BA5B-F52B980734E0}|MediSync.Auth.Presentation\\MediSync.Auth.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.auth.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4B2F0255-DD07-4EF9-BA5B-F52B980734E0}|MediSync.Auth.Presentation\\MediSync.Auth.Presentation.csproj|solutionrelative:medisync.auth.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\enums\\routeofadministration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\enums\\routeofadministration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5544A9C9-5553-4C90-A770-BCA0F2F72958}|MediSync.MedicalRecord.Infrastructure\\MediSync.MedicalRecord.Infrastructure.csproj|s:\\.net\\learning\\medisync\\medisync.medicalrecord.infrastructure\\repositories\\patientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5544A9C9-5553-4C90-A770-BCA0F2F72958}|MediSync.MedicalRecord.Infrastructure\\MediSync.MedicalRecord.Infrastructure.csproj|solutionrelative:medisync.medicalrecord.infrastructure\\repositories\\patientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|s:\\.net\\learning\\medisync\\medisync.prescription.domain\\enums\\frequencytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C370CFE6-E028-4227-BC82-352A846A2985}|MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj|solutionrelative:medisync.prescription.domain\\enums\\frequencytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,176 +62,168 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "MediSync.Web\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "MediSync.Web\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAFEAAABsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-26T10:04:10.779Z",
+              "DocumentIndex": 4,
+              "Title": "IPrescriptionRepository.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Interfaces\\IPrescriptionRepository.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\Interfaces\\IPrescriptionRepository.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Interfaces\\IPrescriptionRepository.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\Interfaces\\IPrescriptionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T06:54:04.579Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "site.css",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "MediSync.Web\\wwwroot\\css\\site.css",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "MediSync.Web\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAJgBAAAAAAAAAAAYwMkCAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-07-26T09:58:35.432Z",
+              "Title": "Prescription.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Aggregates\\Prescription.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\Aggregates\\Prescription.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Aggregates\\Prescription.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\Aggregates\\Prescription.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T06:35:11.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "MediSync.Web\\Views\\Home\\Index.cshtml",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "MediSync.Web\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAACQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-26T09:47:35.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PatientProfileDto.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Application\\DTOs\\PatientProfileDto.cs",
-              "RelativeDocumentMoniker": "MediSync.MedicalRecord.Application\\DTOs\\PatientProfileDto.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Application\\DTOs\\PatientProfileDto.cs",
-              "RelativeToolTip": "MediSync.MedicalRecord.Application\\DTOs\\PatientProfileDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
+              "Title": "PrescriptionErrors.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Errors\\PrescriptionErrors.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\Errors\\PrescriptionErrors.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Errors\\PrescriptionErrors.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\Errors\\PrescriptionErrors.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T09:04:08.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GetPatientByUserIdHandler.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Application\\Queries\\GetPatientByUserId\\GetPatientByUserIdHandler.cs",
-              "RelativeDocumentMoniker": "MediSync.MedicalRecord.Application\\Queries\\GetPatientByUserId\\GetPatientByUserIdHandler.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Application\\Queries\\GetPatientByUserId\\GetPatientByUserIdHandler.cs",
-              "RelativeToolTip": "MediSync.MedicalRecord.Application\\Queries\\GetPatientByUserId\\GetPatientByUserIdHandler.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAYwBIAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T09:01:14.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Presentation\\Program.cs",
-              "RelativeDocumentMoniker": "MediSync.Auth.Presentation\\Program.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Presentation\\Program.cs",
-              "RelativeToolTip": "MediSync.Auth.Presentation\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T09:02:16.133Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IMedicalRecordService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\IService\\IMedicalRecordService.cs",
-              "RelativeDocumentMoniker": "MediSync.Web\\IService\\IMedicalRecordService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\IService\\IMedicalRecordService.cs",
-              "RelativeToolTip": "MediSync.Web\\IService\\IMedicalRecordService.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEEAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T08:57:35.592Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PatientRepository.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Infrastructure\\Repositories\\PatientRepository.cs",
-              "RelativeDocumentMoniker": "MediSync.MedicalRecord.Infrastructure\\Repositories\\PatientRepository.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Infrastructure\\Repositories\\PatientRepository.cs",
-              "RelativeToolTip": "MediSync.MedicalRecord.Infrastructure\\Repositories\\PatientRepository.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwCEAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T08:50:07.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PatientController.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\PatientController.cs",
-              "RelativeDocumentMoniker": "MediSync.Web\\Controllers\\PatientController.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\PatientController.cs",
-              "RelativeToolTip": "MediSync.Web\\Controllers\\PatientController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T08:50:07.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PatientController.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Presentation\\Controllers\\PatientController.cs",
-              "RelativeDocumentMoniker": "MediSync.MedicalRecord.Presentation\\Controllers\\PatientController.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Presentation\\Controllers\\PatientController.cs",
-              "RelativeToolTip": "MediSync.MedicalRecord.Presentation\\Controllers\\PatientController.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAlwEEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T08:43:17.586Z",
+              "WhenOpened": "2026-08-01T06:30:46.391Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "ocelot.json",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.ApiGateway\\ocelot.json",
-              "RelativeDocumentMoniker": "MediSync.ApiGateway\\ocelot.json",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.ApiGateway\\ocelot.json",
-              "RelativeToolTip": "MediSync.ApiGateway\\ocelot.json",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-26T08:43:02.143Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MedicalRecordService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Services\\MedicalRecordService.cs",
-              "RelativeDocumentMoniker": "MediSync.Web\\Services\\MedicalRecordService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Services\\MedicalRecordService.cs",
-              "RelativeToolTip": "MediSync.Web\\Services\\MedicalRecordService.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAlwDMAAAAEAAAAAAAAAA==",
+              "Title": "PrescriptionSupersededEvent.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Events\\PrescriptionSupersededEvent.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\Events\\PrescriptionSupersededEvent.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Events\\PrescriptionSupersededEvent.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\Events\\PrescriptionSupersededEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T08:42:46.604Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-01T06:28:12.544Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MediSync.Web\\Controllers\\HomeController.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MediSync.Web\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "Title": "PrescriptionCancelledEvent.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Events\\PrescriptionCancelledEvent.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\Events\\PrescriptionCancelledEvent.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Events\\PrescriptionCancelledEvent.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\Events\\PrescriptionCancelledEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T08:42:36.617Z",
+              "WhenOpened": "2026-08-01T06:25:43.817Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PrescriptionCreatedEvent.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Events\\PrescriptionCreatedEvent.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\Events\\PrescriptionCreatedEvent.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Events\\PrescriptionCreatedEvent.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\Events\\PrescriptionCreatedEvent.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAYwBYAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T06:19:35.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DosageInstruction.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\ValueObjects\\DosageInstruction.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\ValueObjects\\DosageInstruction.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\ValueObjects\\DosageInstruction.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\ValueObjects\\DosageInstruction.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowBkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T06:13:45.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DrugInfo.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\ValueObjects\\DrugInfo.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\ValueObjects\\DrugInfo.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\ValueObjects\\DrugInfo.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\ValueObjects\\DrugInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAACGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T06:08:33.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Domain\\Aggregates\\User.cs",
+              "RelativeDocumentMoniker": "MediSync.Auth.Domain\\Aggregates\\User.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Auth.Domain\\Aggregates\\User.cs",
+              "RelativeToolTip": "MediSync.Auth.Domain\\Aggregates\\User.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAAwH4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T06:01:04.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PrescriptionId.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\ValueObjects\\PrescriptionId.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\ValueObjects\\PrescriptionId.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\ValueObjects\\PrescriptionId.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\ValueObjects\\PrescriptionId.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T05:53:28.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RouteOfAdministration.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Enums\\RouteOfAdministration.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\Enums\\RouteOfAdministration.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Enums\\RouteOfAdministration.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\Enums\\RouteOfAdministration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T05:51:59.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FrequencyType.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Enums\\FrequencyType.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\Enums\\FrequencyType.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Enums\\FrequencyType.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\Enums\\FrequencyType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T05:50:41.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PrescriptionStatus.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Enums\\PrescriptionStatus.cs",
+              "RelativeDocumentMoniker": "MediSync.Prescription.Domain\\Enums\\PrescriptionStatus.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\Enums\\PrescriptionStatus.cs",
+              "RelativeToolTip": "MediSync.Prescription.Domain\\Enums\\PrescriptionStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-01T05:49:15.046Z"
             }
           ]
         }

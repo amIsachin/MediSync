@@ -1,0 +1,6 @@
+S:\.Net\Learning\MediSync\MediSync.Prescription.Domain\obj\Debug\net10.0\MediSync.Prescription.Domain.csproj.AssemblyReference.cache
+S:\.Net\Learning\MediSync\MediSync.Prescription.Domain\obj\Debug\net10.0\MediSync.Prescription.Domain.GeneratedMSBuildEditorConfig.editorconfig
+S:\.Net\Learning\MediSync\MediSync.Prescription.Domain\obj\Debug\net10.0\MediSync.Prescription.Domain.AssemblyInfoInputs.cache
+S:\.Net\Learning\MediSync\MediSync.Prescription.Domain\obj\Debug\net10.0\MediSync.Prescription.Domain.AssemblyInfo.cs
+S:\.Net\Learning\MediSync\MediSync.Prescription.Domain\obj\Debug\net10.0\MediSync.Prescription.Domain.csproj.CoreCompileInputs.cache
+S:\.Net\Learning\MediSync\MediSync.Prescription.Domain\obj\Debug\net10.0\MediSync.Prescription.Domain.sourcelink.json

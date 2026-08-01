@@ -14,7 +14,6 @@ namespace MediSync.MedicalRecord.Domain.Aggregates;
 /// </summary>
 public sealed class Patient : AggregateRoot
 {
-
     // Properties
     // Represents the patient's profile information, current status,
     // and audit timestamps.
