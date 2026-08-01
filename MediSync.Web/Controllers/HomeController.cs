@@ -23,6 +23,7 @@ namespace MediSync.Web.Controllers
             try
             {
                 var role = User.FindFirst(ClaimTypes.Role)?.Value;
+                var token = User.FindFirst("jwt_token")?.Value;
 
                 // Only load medical profile for Patient role
                 if (role == "Patient")

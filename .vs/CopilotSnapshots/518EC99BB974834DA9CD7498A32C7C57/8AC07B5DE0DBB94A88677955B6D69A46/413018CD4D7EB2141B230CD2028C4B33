@@ -1,0 +1,39 @@
+﻿using MediatR;
+using MediSync.BuildingBlocks.Common;
+using MediSync.Prescription.Domain.Errors;
+using MediSync.Prescription.Domain.Interfaces;
+
+namespace MediSync.Prescription.Application.Commands.CancelPrescription;
+
+public class CancelPrescriptionHandler : IRequestHandler<CancelPrescriptionCommand, Result<bool>>
+{
+    private readonly IPrescriptionRepository _prescriptionRepository;
+
+    public CancelPrescriptionHandler(IPrescriptionRepository prescriptionRepository)
+    {
+        _prescriptionRepository = prescriptionRepository;
+    }
+
+    public async Task<Result<bool>> Handle(CancelPrescriptionCommand request, CancellationToken cancellationToken)
+    {
+        var prescription = await _prescriptionRepository.GetByIdAsync(request.PrescriptionId, cancellationToken);
+
+        if (prescription is null)
+        {
+            return Result<bool>.Failure(PrescriptionErrors.NotFound(request.PrescriptionId));
+        }
+
+        try
+        {
+            prescription.Cancel(request.Reason);
+        }
+        catch (Exception ex)
+        {
+            return Result<bool>.Failure(Error.Failure("Prescription.InvalidOperation", ex.Message));
+        }
+
+        await _prescriptionRepository.UpdateAsync(prescription, cancellationToken);
+
+        return Result<bool>.Success(true);
+    }
+}

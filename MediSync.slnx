@@ -22,6 +22,7 @@
   </Folder>
   <Folder Name="/Services/Prescription/" />
   <Folder Name="/Services/Prescription/src/">
+    <Project Path="MediSync.Prescription.Application/MediSync.Prescription.Application.csproj" Id="063b4e78-eaa2-4dcb-849d-7f70f0f420cf" />
     <Project Path="MediSync.Prescription.Domain/MediSync.Prescription.Domain.csproj" Id="c370cfe6-e028-4227-bc82-352a846a2985" />
   </Folder>
   <Folder Name="/Services/Shared/">

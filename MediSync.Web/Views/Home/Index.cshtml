@@ -8,6 +8,44 @@
     var hasProfile = Model is not null;
 }
 
+<style>
+    /* Cards */
+    .stat-card,
+    .data-card,
+    .coming-soon-card {
+        transition: box-shadow .22s ease, transform .22s ease, border-color .22s ease;
+    }
+
+        .stat-card:hover,
+        .data-card:hover,
+        .coming-soon-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(15,23,42,.08);
+            border-color: #d0d7de;
+        }
+
+    /* List */
+    .list-item {
+        transition: background-color .18s ease, padding-left .18s ease;
+    }
+
+        .list-item:hover {
+            background: #f6f8fa;
+            padding-left: 12px;
+            border-radius: 8px;
+        }
+
+    /* Buttons */
+    .btn {
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,.08);
+        }
+</style>
+
 @* ── Page Header ── *@
 <div class="page-header mb-4">
     <h1 style="font-size:20px;font-weight:600;color:#1a202c;">

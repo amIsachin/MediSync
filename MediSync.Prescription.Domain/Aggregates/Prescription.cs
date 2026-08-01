@@ -26,6 +26,21 @@ public sealed class Prescription : AggregateRoot
 
     private Prescription() { }
 
+    /// <summary>
+    /// Creates a new prescription in the <see cref="PrescriptionStatus.Pending"/> state.
+    /// </summary>
+    /// <param name="patientId">The identifier of the patient receiving the prescription.</param>
+    /// <param name="doctorId">The identifier of the prescribing doctor.</param>
+    /// <param name="drug">The prescribed medication.</param>
+    /// <param name="dosage">The dosage instructions for the medication.</param>
+    /// <param name="notes">Optional clinical notes associated with the prescription.</param>
+    /// <returns>A newly created <see cref="Prescription"/> instance.</returns>
+    /// <exception cref="ArgumentException">
+    /// Thrown when <paramref name="patientId"/> or <paramref name="doctorId"/> is empty.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown when <paramref name="drug"/> or <paramref name="dosage"/> is <see langword="null"/>.
+    /// </exception>
     public static Prescription Create(Guid patientId, Guid doctorId, DrugInfo drug, DosageInstruction dosage, string? notes = null)
     {
         if (patientId == Guid.Empty)
@@ -56,6 +71,16 @@ public sealed class Prescription : AggregateRoot
         return prescription;
     }
 
+    /// <summary>
+    /// Activates the prescription.
+    /// </summary>
+    /// <remarks>
+    /// A prescription can only be activated while it is in the
+    /// <see cref="PrescriptionStatus.Pending"/> state.
+    /// </remarks>
+    /// <exception cref="InvalidOperationException">
+    /// Thrown when the prescription is not pending.
+    /// </exception>
     public void Activate()
     {
         if (Status != PrescriptionStatus.Pending)
@@ -66,6 +91,19 @@ public sealed class Prescription : AggregateRoot
         Status = PrescriptionStatus.Active; // Assuming activation means setting to Pending
     }
 
+    /// <summary>
+    /// Cancels the prescription.
+    /// </summary>
+    /// <param name="reason">The reason for cancellation.</param>
+    /// <remarks>
+    /// A cancelled or superseded prescription cannot be cancelled again.
+    /// </remarks>
+    /// <exception cref="ArgumentException">
+    /// Thrown when <paramref name="reason"/> is null, empty, or whitespace.
+    /// </exception>
+    /// <exception cref="InvalidOperationException">
+    /// Thrown when the prescription has already been cancelled or superseded.
+    /// </exception>
     public void Cancel(string reason)
     {
         if (Status == PrescriptionStatus.Cancelled)
@@ -88,6 +126,19 @@ public sealed class Prescription : AggregateRoot
         RaiseDomainEvent(new PrescriptionCancelledEvent(Id, PatientId, reason));
     }
 
+    /// <summary>
+    /// Marks the prescription as superseded by another prescription.
+    /// </summary>
+    /// <param name="newPrescriptionId">
+    /// The identifier of the replacement prescription.
+    /// </param>
+    /// <remarks>
+    /// Superseding preserves the audit history while indicating that a newer
+    /// prescription replaces the current one.
+    /// </remarks>
+    /// <exception cref="InvalidOperationException">
+    /// Thrown when the prescription has been cancelled or has already been superseded.
+    /// </exception>
     public void Supersede(Guid newPrescriptionId)
     {
         if (Status == PrescriptionStatus.Cancelled)
@@ -106,6 +157,13 @@ public sealed class Prescription : AggregateRoot
         RaiseDomainEvent(new PrescriptionSupersededEvent(Id, newPrescriptionId, PatientId, DoctorId));
     }
 
+    /// <summary>
+    /// Expires the prescription.
+    /// </summary>
+    /// <remarks>
+    /// Only active prescriptions can be expired. Calling this method for a
+    /// non-active prescription has no effect.
+    /// </remarks>
     public void Expire()
     {
         if (Status != PrescriptionStatus.Active)
