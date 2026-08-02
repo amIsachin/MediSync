@@ -62,7 +62,6 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-S:\.Net\Learning\MediSync\MediSync.Web\wwwroot\lib\jquery\LICENSE.txt
 S:\.Net\Learning\MediSync\MediSync.Web\wwwroot\css\site.css
 S:\.Net\Learning\MediSync\MediSync.Web\wwwroot\favicon.ico
 S:\.Net\Learning\MediSync\MediSync.Web\wwwroot\js\site.js
@@ -124,3 +123,4 @@ S:\.Net\Learning\MediSync\MediSync.Web\wwwroot\lib\jquery\dist\jquery.min.map
 S:\.Net\Learning\MediSync\MediSync.Web\wwwroot\lib\jquery\dist\jquery.slim.js
 S:\.Net\Learning\MediSync\MediSync.Web\wwwroot\lib\jquery\dist\jquery.slim.min.js
 S:\.Net\Learning\MediSync\MediSync.Web\wwwroot\lib\jquery\dist\jquery.slim.min.map
+S:\.Net\Learning\MediSync\MediSync.Web\wwwroot\lib\jquery\LICENSE.txt

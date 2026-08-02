@@ -6,6 +6,8 @@
     var role = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
     var email = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
     var hasProfile = Model is not null;
+
+    var prescriptions = ViewBag.Prescriptions as List<MediSync.Web.IService.PrescriptionResponse> ?? new List<MediSync.Web.IService.PrescriptionResponse>();
 }
 
 <style>
@@ -65,6 +67,61 @@
                 <div class="stat-label">Encounters</div>
                 <div class="stat-value">@Model.Encounters.Count</div>
                 <div class="stat-sub">Total visits</div>
+            </div>
+        </div>
+
+        @* Active Prescriptions *@
+        <div class="col-12 mt-3">
+            <div class="data-card">
+                <div class="data-card-header">
+                    <span class="data-card-title">
+                        <i class="bi bi-capsule text-success"></i>
+                        Active Prescriptions
+                    </span>
+                    <span class="badge bg-success-subtle text-success fw-semibold">
+                        @prescriptions.Count
+                    </span>
+                </div>
+
+                @if (!prescriptions.Any())
+                {
+                    <div class="empty-state">
+                        <i class="bi bi-capsule text-secondary"></i>
+                        <span>No active prescriptions</span>
+                    </div>
+                }
+                else
+                {
+                    @foreach (var prescription in prescriptions)
+                    {
+                        <div class="list-item">
+                            <div class="list-item-left">
+                                <div class="list-item-title">
+                                    @prescription.DrugName @prescription.Dosage
+                                    @if (!string.IsNullOrEmpty(prescription.GenericName))
+                                    {
+                                        <span class="text-secondary fw-normal">
+                                            (@prescription.GenericName)
+                                        </span>
+                                    }
+                                </div>
+                                <div class="list-item-sub">
+                                    @prescription.Frequency •
+                                    @prescription.Route •
+                                    @prescription.DurationDays days •
+                                    Expires @prescription.ExpiresAt.ToString("dd MMM yyyy")
+                                    @if (!string.IsNullOrEmpty(prescription.SpecialInstructions))
+                                    {
+                                        <span> • @prescription.SpecialInstructions</span>
+                                    }
+                                </div>
+                            </div>
+                            <span class="badge bg-success-subtle text-success fw-semibold">
+                                Active
+                            </span>
+                        </div>
+                    }
+                }
             </div>
         </div>
     </div>
@@ -153,8 +210,8 @@
                                 </div>
                             </div>
                             <span class="badge @(diagnosis.IsActive
-                                                                                                                                                                                                                                                                ? "bg-danger-subtle text-danger"
-                                                                                                                                                                                                                                                                : "bg-secondary-subtle text-secondary") fw-semibold">
+                                                                                                                                                                                                                                                                                                                                                                ? "bg-danger-subtle text-danger"
+                                                                                                                                                                                                                                                                                                                                                                : "bg-secondary-subtle text-secondary") fw-semibold">
                                 @(diagnosis.IsActive ? "Active" : "Resolved")
                             </span>
                         </div>

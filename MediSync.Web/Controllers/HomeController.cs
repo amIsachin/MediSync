@@ -11,10 +11,12 @@ namespace MediSync.Web.Controllers
     public class HomeController : Controller
     {
         private readonly IMedicalRecordService _medicalRecordService;
+        private readonly IPrescriptionService _prescriptionService;
 
-        public HomeController(IMedicalRecordService medicalRecordService)
+        public HomeController(IMedicalRecordService medicalRecordService, IPrescriptionService prescriptionService)
         {
             _medicalRecordService = medicalRecordService;
+            _prescriptionService = prescriptionService;
         }
 
         [HttpGet]
@@ -23,36 +25,32 @@ namespace MediSync.Web.Controllers
             try
             {
                 var role = User.FindFirst(ClaimTypes.Role)?.Value;
+                var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
                 var token = User.FindFirst("jwt_token")?.Value;
 
                 // Only load medical profile for Patient role
                 if (role == "Patient")
                 {
-                    var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
-                    var result = await _medicalRecordService.GetPatientByUserIdAsync(userId);
-
-                    if (result.IsSuccess is true && result.Value is not null)
-                    {
-                        return View(result.Value!);
-                    }
+                    var profileResult = await _medicalRecordService.GetPatientByUserIdAsync(userId);
 
                     // Profile not created yet — redirect to create profile
-                    if (result.IsSuccess is false)
+                    if (profileResult.IsSuccess is false || profileResult.Value is null)
                     {
                         return RedirectToAction("CreateProfile", "Patient");
-                    }
-                }
+                    }               
 
-                //if (User.Identity?.IsAuthenticated is false)
-                //{
-                //    return RedirectToAction("Login", "Auth");
-                //}
+                    // Load active prescriptions
+                    var prescriptionResult = await _prescriptionService.GetPatientPrescriptionsAsync(userId, isActiveOnly: true);
+
+                    ViewBag.Prescriptions = prescriptionResult.IsSuccess ? prescriptionResult.Value : new List<PrescriptionResponse>();
+
+                    return View(profileResult.Value);
+                }
 
                 return View();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 throw;
             }
         }
