@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "S:\\.Net\\Learning\\MediSync\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|solutionrelative:medisync.web\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2ED4669E-173A-4B45-AA4F-18E5B4F5103C}|MediSync.Web\\MediSync.Web.csproj|s:\\.net\\learning\\medisync\\medisync.web\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,32 +22,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\ViewModels\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "MediSync.Web\\ViewModels\\RegisterViewModel.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\ViewModels\\RegisterViewModel.cs",
-              "RelativeToolTip": "MediSync.Web\\ViewModels\\RegisterViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\PatientController.cs",
+              "RelativeDocumentMoniker": "MediSync.Web\\Controllers\\PatientController.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\PatientController.cs",
+              "RelativeToolTip": "MediSync.Web\\Controllers\\PatientController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwBsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-01T19:19:40.421Z",
+              "WhenOpened": "2026-08-02T05:34:18.95Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Views\\Auth\\Register.cshtml",
-              "RelativeDocumentMoniker": "MediSync.Web\\Views\\Auth\\Register.cshtml",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Views\\Auth\\Register.cshtml",
-              "RelativeToolTip": "MediSync.Web\\Views\\Auth\\Register.cshtml",
-              "ViewState": "AgIAAN4BAAAAAAAAAAAAAOoBAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-08-01T19:19:02.157Z",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MediSync.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MediSync.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAEwBUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-02T05:34:19.066Z",
               "EditorCaption": ""
             },
             {
@@ -58,9 +58,9 @@
               "RelativeDocumentMoniker": "MediSync.Web\\Controllers\\AuthController.cs",
               "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Web\\Controllers\\AuthController.cs",
               "RelativeToolTip": "MediSync.Web\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-01T19:15:20.417Z",
+              "WhenOpened": "2026-08-02T05:34:19.078Z",
               "EditorCaption": ""
             }
           ]

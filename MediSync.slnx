@@ -25,6 +25,7 @@
     <Project Path="MediSync.Prescription.Application/MediSync.Prescription.Application.csproj" Id="063b4e78-eaa2-4dcb-849d-7f70f0f420cf" />
     <Project Path="MediSync.Prescription.Domain/MediSync.Prescription.Domain.csproj" Id="c370cfe6-e028-4227-bc82-352a846a2985" />
     <Project Path="MediSync.Prescription.Infrastructure/MediSync.Prescription.Infrastructure.csproj" Id="635ada79-94ba-4c8f-9db4-629dc08e075d" />
+    <Project Path="MediSync.Prescription.Presentation/MediSync.Prescription.Presentation.csproj" Id="c249aae6-407c-4850-9162-62362c33eea9" />
   </Folder>
   <Folder Name="/Services/Shared/">
     <Project Path="MediSync.BuildingBlocks/MediSync.BuildingBlocks.csproj" Id="92a97e35-29fc-4210-a19e-930dc09c4b84" />

@@ -39,7 +39,7 @@ namespace MediSync.Web.Controllers
                     // Profile not created yet — redirect to create profile
                     if (result.IsSuccess is false)
                     {
-                        return RedirectToAction("Patient", "CreateProfile");
+                        return RedirectToAction("CreateProfile", "Patient");
                     }
                 }
 

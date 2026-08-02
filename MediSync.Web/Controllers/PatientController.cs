@@ -16,13 +16,13 @@ namespace MediSync.Web.Controllers
             _medicalRecordService = medicalRecordService;
         }
 
-        [HttpGet]
+        [HttpGet("CreateProfile")]
         public IActionResult CreateProfile()
         {
             return View(new CreatePatientProfileViewModel());
         }
 
-        [HttpPost]
+        [HttpPost("CreateProfile")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateProfile(CreatePatientProfileViewModel model)
         {
