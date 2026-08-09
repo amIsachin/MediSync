@@ -18,4 +18,6 @@ public interface IPatientRepository
 
     // Save changes to existing patient
     Task UpdateAsync(Patient patient, CancellationToken cancellationToken = default);
+
+    Task<Patient?> GetPatientByEmailAsync(string email, CancellationToken cancellationToken = default);
 }

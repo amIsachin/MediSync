@@ -80,9 +80,25 @@
   },
   {
     "ContainingType": "MediSync.MedicalRecord.Presentation.Controllers.PatientController",
+    "Method": "GetByEmail",
+    "RelativePath": "api/Patient/email/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediSync.MedicalRecord.Presentation.Controllers.PatientController",
     "Method": "GetById",
     "RelativePath": "api/Patient/GetById/{id}",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

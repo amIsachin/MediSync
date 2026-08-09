@@ -43,7 +43,7 @@
       }
     },
     "/api/Patient/GetById/{id}": {
-      "post": {
+      "get": {
         "tags": [
           "Patient"
         ],
@@ -78,6 +78,28 @@
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Patient/email/{email}": {
+      "get": {
+        "tags": [
+          "Patient"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],

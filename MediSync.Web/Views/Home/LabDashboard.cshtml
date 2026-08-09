@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Lab Dashboard";
+    var firstName = User.FindFirst(System.Security.Claims.ClaimTypes.GivenName)?.Value;
+    var email = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
+}
+
+<div class="page-header mb-4">
+    <h1 style="font-size:20px;font-weight:600;color:#1a202c;">
+        Good morning, @firstName 👋
+    </h1>
+    <p style="font-size:13px;color:#718096;margin-top:3px;">
+        Lab Technician — @email
+    </p>
+</div>
+
+<div class="coming-soon-grid">
+    <div class="coming-soon-card">
+        <div class="coming-soon-icon">
+            <i class="bi bi-clipboard2-pulse"></i>
+        </div>
+        <div class="coming-soon-title">Test Orders</div>
+        <div class="coming-soon-desc">Pending lab test requests</div>
+        <div class="coming-soon-badge">Coming soon</div>
+    </div>
+    <div class="coming-soon-card">
+        <div class="coming-soon-icon">
+            <i class="bi bi-upload"></i>
+        </div>
+        <div class="coming-soon-title">Upload Results</div>
+        <div class="coming-soon-desc">Submit completed test results</div>
+        <div class="coming-soon-badge">Coming soon</div>
+    </div>
+</div>

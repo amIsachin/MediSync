@@ -3,6 +3,7 @@ using MediSync.MedicalRecord.Application.Commands.AddAllergy;
 using MediSync.MedicalRecord.Application.Commands.AddDiagnosis;
 using MediSync.MedicalRecord.Application.Commands.CreatePatientProfile;
 using MediSync.MedicalRecord.Application.Commands.RecordEncounter;
+using MediSync.MedicalRecord.Application.Queries.GetPatientByEmail;
 using MediSync.MedicalRecord.Application.Queries.GetPatientByUserId;
 using MediSync.MedicalRecord.Application.Queries.GetPatientProfile;
 using MediSync.MedicalRecord.Domain.Enums;
@@ -47,7 +48,7 @@ namespace MediSync.MedicalRecord.Presentation.Controllers
             return Created($"/api/patients/{result.Value}", result.Value);
         }
 
-        [HttpPost("GetById/{id:guid}")]
+        [HttpGet("GetById/{id:guid}")]
         public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken)
         {
             var query = new GetPatientProfileQuery(id);
@@ -65,6 +66,20 @@ namespace MediSync.MedicalRecord.Presentation.Controllers
         public async Task<IActionResult> GetByUserId(Guid userId, CancellationToken cancellationToken)
         {
             var query = new GetPatientByUserIdQuery(userId);
+            var result = await _mediator.Send(query, cancellationToken);
+
+            if (result.IsFailure)
+            {
+                return NotFound(new { result.Error.Code, result.Error.Message });
+            }
+
+            return Ok(result.Value);
+        }
+
+        [HttpGet("email/{email}")]
+        public async Task<IActionResult> GetByEmail(string email, CancellationToken cancellationToken)
+        {
+            var query = new GetPatientByEmailQuery(email);
             var result = await _mediator.Send(query, cancellationToken);
 
             if (result.IsFailure)

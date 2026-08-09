@@ -1,5 +1,6 @@
 using MediSync.Web.IService;
 using MediSync.Web.Models;
+using MediSync.Web.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -26,6 +27,9 @@ namespace MediSync.Web.Controllers
             {
                 var role = User.FindFirst(ClaimTypes.Role)?.Value;
                 var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
+                var firstName = User.FindFirst(ClaimTypes.GivenName)?.Value;
+                var lastName = User.FindFirst(ClaimTypes.Surname)?.Value;
+                var email = User.FindFirst(ClaimTypes.Email)?.Value;
                 var token = User.FindFirst("jwt_token")?.Value;
 
                 // Only load medical profile for Patient role
@@ -37,7 +41,7 @@ namespace MediSync.Web.Controllers
                     if (profileResult.IsSuccess is false || profileResult.Value is null)
                     {
                         return RedirectToAction("CreateProfile", "Patient");
-                    }               
+                    }
 
                     // Load active prescriptions
                     var prescriptionResult = await _prescriptionService.GetPatientPrescriptionsAsync(userId, isActiveOnly: true);
@@ -47,7 +51,18 @@ namespace MediSync.Web.Controllers
                     return View(profileResult.Value);
                 }
 
-                return View();
+                if (role == "Doctor")
+                {
+                    var model = new DoctorDashboardViewModel
+                    {
+                        DoctorName = $"{firstName} {lastName}",
+                        Email = email!
+                    };
+
+                    return View("DoctorDashboard", model);
+                }
+
+                return View("LabDashboard");
             }
             catch (Exception)
             {

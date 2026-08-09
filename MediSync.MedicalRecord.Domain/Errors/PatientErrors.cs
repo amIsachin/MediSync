@@ -7,6 +7,9 @@ public static class PatientErrors
     public static Error NotFound(Guid id)
         => Error.NotFound("Patient.NotFound", $"Patient with id '{id}' was not found.");
 
+    public static Error NotFound(string email)
+        => Error.NotFound("Patient.NotFound", $"Patient with email '{email}' was not found.");
+
     public static Error AlreadyExists(Guid userId)
         => Error.Conflict("Patient.AlreadyExists", $"Patient with user id '{userId}' already exists.");
 

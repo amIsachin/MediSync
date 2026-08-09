@@ -1,0 +1,71 @@
+﻿@model MediSync.Web.ViewModels.DoctorDashboardViewModel
+
+@{
+    ViewData["Title"] = "Doctor Dashboard";
+}
+
+<style>
+    .stat-card,
+    .data-card,
+    .coming-soon-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: box-shadow .3s ease;
+    }
+
+        .stat-card:hover,
+        .data-card:hover,
+        .coming-soon-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+</style>
+
+<div class="page-header mb-4">
+    <h1 style="font-size:20px;font-weight:600;color:#1a202c;">
+        Good morning, @Model.DoctorName 👋
+    </h1>
+    <p style="font-size:13px;color:#718096;margin-top:3px;">
+        Doctor — @Model.Email
+    </p>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-label">Write Prescription</div>
+            <div class="stat-value text-primary">
+                <i class="bi bi-capsule" style="font-size:28px;"></i>
+            </div>
+            <div class="stat-sub mt-2">
+                <a asp-controller="Doctor" asp-action="WritePrescription"
+                   class="btn btn-primary btn-sm">
+                    <i class="bi bi-plus-lg"></i> New Prescription
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-label">Find Patient</div>
+            <div class="stat-value text-success">
+                <i class="bi bi-search-heart" style="font-size:28px;"></i>
+            </div>
+            <div class="stat-sub mt-2">
+                <a asp-controller="Doctor" asp-action="FindPatient"
+                   class="btn btn-success btn-sm">
+                    <i class="bi bi-search"></i> Search Patient
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-label">More Features</div>
+            <div class="stat-value text-secondary">
+                <i class="bi bi-clock-history" style="font-size:28px;"></i>
+            </div>
+            <div class="stat-sub">Coming soon</div>
+        </div>
+    </div>
+</div>

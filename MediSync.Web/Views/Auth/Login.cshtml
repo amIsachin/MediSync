@@ -1,5 +1,4 @@
-﻿@* MediSync.Web/Views/Account/Login.cshtml *@
-@model MediSync.Web.ViewModels.LoginViewModel
+﻿@model MediSync.Web.ViewModels.LoginViewModel
 
 @{
     ViewData["Title"] = "Sign In";
@@ -519,6 +518,13 @@
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 
     <script>
+
+            $(document).ready(function() {
+                var userAgent = navigator.userAgent;
+
+                console.log(userAgent)
+
+            });
             function togglePasswordVisibility() {
                 const input = document.getElementById('passwordInput');
                 const icon = document.getElementById('togglePassword');
@@ -549,7 +555,7 @@
                 spinner.style.display = 'inline-block';
                 icon.style.display = 'none';
                 text.textContent = 'Signing in...';
-             });
+            });
     </script>
 </body>
 </html>

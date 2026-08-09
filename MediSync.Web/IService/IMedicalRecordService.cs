@@ -6,6 +6,8 @@ public interface IMedicalRecordService
 {
     public Task<ServiceResponseMessage<PatientProfileResponse>> GetPatientByUserIdAsync(Guid userId);
     public Task<ServiceResponseMessage<Guid>> CreatePatientProfileAsync(CreatePatientProfileRequest request);
+    public Task<ServiceResponseMessage<PatientProfileResponse>> GetPatientByEmailAsync(string email);
+    public Task<ServiceResponseMessage<PatientProfileResponse>> GetPatientByIdAsync(Guid id);
 }
 
 public record PatientProfileResponse(

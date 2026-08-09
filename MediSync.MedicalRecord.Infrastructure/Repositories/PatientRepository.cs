@@ -36,6 +36,13 @@ public class PatientRepository : IPatientRepository
         .Include("Diagnoses")
         .Include("Encounters").FirstOrDefaultAsync(p => p.UserId == userId, cancellationToken);
 
+    public async Task<Patient?> GetPatientByEmailAsync(string email, CancellationToken cancellationToken = default) 
+        => await _dbContext.Patients
+        .Include("Allergies")
+        .Include("Diagnoses")
+        .Include("Encounters").FirstOrDefaultAsync(p => p.Email == email, cancellationToken);
+
+
     public async Task UpdateAsync(Patient patient, CancellationToken cancellationToken = default)
     {
         foreach (var entry in _dbContext.ChangeTracker.Entries())

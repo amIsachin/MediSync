@@ -1,0 +1,264 @@
+﻿@model MediSync.Web.ViewModels.PatientDetailViewModel
+
+@{
+    ViewData["Title"] = "Patient Detail";
+    var profile = Model.Profile;
+}
+
+@section Styles {
+    <style>
+        .patient-header {
+            background: #fff;
+            border: 0.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .patient-avatar {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            background: #1B4F8A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .patient-name {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1a202c;
+        }
+
+        .patient-meta {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 3px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .patient-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .blood-badge {
+            background: #FEE2E2;
+            color: #DC2626;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: auto;
+        }
+
+        .btn-write {
+            background: #1B4F8A;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.15s;
+        }
+
+        .btn-write:hover { background: #15407a; color: #fff; }
+    </style>
+}
+
+<div class="page-header mb-3 d-flex justify-content-between align-items-center">
+    <div>
+        <h1 style="font-size:20px;font-weight:600;color:#1a202c;">Patient Detail</h1>
+        <p style="font-size:13px;color:#718096;margin-top:3px;">
+            Full medical profile and prescription history
+        </p>
+    </div>
+    <a asp-controller="Doctor" asp-action="FindPatient"
+       class="btn btn-outline-secondary btn-sm">
+        <i class="bi bi-arrow-left"></i> Back to Search
+    </a>
+</div>
+
+@* Patient Header Card *@
+<div class="patient-header">
+    <div class="patient-avatar">
+        @profile.FirstName[0]@profile.LastName[0]
+    </div>
+    <div class="flex-grow-1">
+        <div class="patient-name">@profile.FullName</div>
+        <div class="patient-meta">
+            <span><i class="bi bi-calendar3"></i> @profile.Age years old</span>
+            <span><i class="bi bi-gender-ambiguous"></i> @profile.Gender</span>
+            <span><i class="bi bi-envelope"></i> @profile.Email</span>
+            @if (!string.IsNullOrEmpty(profile.PhoneNumber))
+            {
+                <span><i class="bi bi-phone"></i> @profile.PhoneNumber</span>
+            }
+        </div>
+    </div>
+    <div class="blood-badge">@profile.BloodGroup</div>
+    <a asp-controller="Doctor" asp-action="WritePrescription"
+       asp-route-patientId="@profile.Id"
+       asp-route-patientName="@profile.FullName"
+       class="btn-write ms-3">
+        <i class="bi bi-capsule"></i> Write Prescription
+    </a>
+</div>
+
+<div class="row g-3">
+
+    @* Allergies *@
+    <div class="col-md-6">
+        <div class="data-card">
+            <div class="data-card-header">
+                <span class="data-card-title">
+                    <i class="bi bi-exclamation-triangle text-warning"></i>
+                    Allergies
+                </span>
+                <span class="badge bg-warning-subtle text-warning fw-semibold">
+                    @profile.Allergies.Count
+                </span>
+            </div>
+            @if (!profile.Allergies.Any())
+            {
+                <div class="empty-state">
+                    <i class="bi bi-check-circle text-success"></i>
+                    <span>No allergies recorded</span>
+                </div>
+            }
+            else
+            {
+                @foreach (var allergy in profile.Allergies)
+                {
+                    var sc = allergy.Severity switch
+                    {
+                        "Severe" => "danger",
+                        "Moderate" => "warning",
+                        _ => "success"
+                    };
+                    <div class="list-item">
+                        <div class="list-item-left">
+                            <div class="list-item-title">@allergy.Substance</div>
+                            <div class="list-item-sub">
+                                @allergy.RecordedAt.ToString("dd MMM yyyy")
+                            </div>
+                        </div>
+                        <span class="badge bg-@(sc)-subtle text-@sc fw-semibold">
+                            @allergy.Severity
+                        </span>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    @* Active Diagnoses *@
+    <div class="col-md-6">
+        <div class="data-card">
+            <div class="data-card-header">
+                <span class="data-card-title">
+                    <i class="bi bi-clipboard2-pulse text-primary"></i>
+                    Active Diagnoses
+                </span>
+                <span class="badge bg-primary-subtle text-primary fw-semibold">
+                    @profile.Diagnoses.Count(d => d.IsActive)
+                </span>
+            </div>
+            @if (!profile.Diagnoses.Any(d => d.IsActive))
+            {
+                <div class="empty-state">
+                    <i class="bi bi-check-circle text-success"></i>
+                    <span>No active diagnoses</span>
+                </div>
+            }
+            else
+            {
+                @foreach (var diagnosis in profile.Diagnoses.Where(d => d.IsActive))
+                {
+                    <div class="list-item">
+                        <div class="list-item-left">
+                            <div class="list-item-title">@diagnosis.Description</div>
+                            <div class="list-item-sub">
+                                ICD: @diagnosis.IcdCode •
+                                @diagnosis.DiagnosedAt.ToString("dd MMM yyyy")
+                            </div>
+                        </div>
+                        <span class="badge bg-danger-subtle text-danger fw-semibold">
+                            Active
+                        </span>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    @* Prescriptions *@
+    <div class="col-12">
+        <div class="data-card">
+            <div class="data-card-header">
+                <span class="data-card-title">
+                    <i class="bi bi-capsule text-success"></i>
+                    Prescriptions
+                </span>
+                <span class="badge bg-success-subtle text-success fw-semibold">
+                    @Model.Prescriptions.Count
+                </span>
+            </div>
+            @if (!Model.Prescriptions.Any())
+            {
+                <div class="empty-state">
+                    <i class="bi bi-capsule text-secondary"></i>
+                    <span>No prescriptions written yet</span>
+                </div>
+            }
+            else
+            {
+                @foreach (var prescription in Model.Prescriptions
+                    .OrderByDescending(p => p.PrescribedAt))
+                {
+                    var statusClass = prescription.Status switch
+                    {
+                        "Active" => "success",
+                        "Cancelled" => "danger",
+                        "Superseded" => "warning",
+                        "Expired" => "secondary",
+                        _ => "info"
+                    };
+                    <div class="list-item">
+                        <div class="list-item-left">
+                            <div class="list-item-title">
+                                @prescription.DrugName @prescription.Dosage
+                            </div>
+                            <div class="list-item-sub">
+                                @prescription.Frequency •
+                                @prescription.Route •
+                                @prescription.DurationDays days •
+                                @prescription.PrescribedAt.ToString("dd MMM yyyy")
+                            </div>
+                        </div>
+                        <span class="badge bg-@(statusClass)-subtle
+                            text-@statusClass fw-semibold">
+                            @prescription.Status
+                        </span>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+</div>

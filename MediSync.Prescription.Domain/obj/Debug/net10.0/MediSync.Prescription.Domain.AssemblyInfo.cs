@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediSync.Prescription.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+96a6493be2db26ec39d3c2c06881081abb371157")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2984471cd54bd0ac2c31b5aa3ef22f65c597d56f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediSync.Prescription.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediSync.Prescription.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

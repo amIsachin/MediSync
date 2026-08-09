@@ -51,6 +51,40 @@ public class MedicalRecordService : IMedicalRecordService
         return ServiceResponseMessage<PatientProfileResponse>.Failure(response.StatusCode.ToString(), errorMessage, "Failed");
     }
 
+    public async Task<ServiceResponseMessage<PatientProfileResponse>> GetPatientByEmailAsync(string email)
+    {
+        var response = await _httpClient.GetAsync($"https://localhost:7000/medical/Patient/email/{email}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var data = await response.Content.ReadFromJsonAsync<PatientProfileResponse>(new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            return ServiceResponseMessage<PatientProfileResponse>.Success(data!);
+        }
+
+        var error = await response.Content.ReadAsStringAsync();
+        var errorMessage = MedicalRecordService.ExtractMessage(error) ?? "Failed to load patient profile.";
+
+        return ServiceResponseMessage<PatientProfileResponse>.Failure(response.StatusCode.ToString(), errorMessage, "Failed");
+    }
+
+    public async Task<ServiceResponseMessage<PatientProfileResponse>> GetPatientByIdAsync(Guid id)
+    {
+        var response = await _httpClient.GetAsync($"https://localhost:7000/medical/patient/GetById/{id}");
+
+        if (response.IsSuccessStatusCode)
+        {
+            var data = await response.Content.ReadFromJsonAsync<PatientProfileResponse>(new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            return ServiceResponseMessage<PatientProfileResponse>.Success(data!);
+        }
+
+        var error = await response.Content.ReadAsStringAsync();
+        var errorMessage = MedicalRecordService.ExtractMessage(error) ?? "Failed to load patient profile.";
+
+        return ServiceResponseMessage<PatientProfileResponse>.Failure(response.StatusCode.ToString(), errorMessage, "Failed");
+    }
+
     private static string ExtractMessage(string body)
     {
         try
