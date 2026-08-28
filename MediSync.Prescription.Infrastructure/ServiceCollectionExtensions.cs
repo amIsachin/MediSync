@@ -1,4 +1,5 @@
-﻿using MediSync.Prescription.Domain.Interfaces;
+﻿using MediSync.BuildingBlocks.Domain;
+using MediSync.Prescription.Domain.Interfaces;
 using MediSync.Prescription.Infrastructure.Persistence;
 using MediSync.Prescription.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,14 @@ public static class ServiceCollectionExtensions
 
         // Register repositories
         services.AddScoped<IPrescriptionRepository, PrescriptionRepository>();
+
+        services.AddHttpClient("NotificationApi", client =>
+        {
+            client.BaseAddress = new Uri(configuration["NotificationApi:BaseUrl"]! ?? "https://localhost:7005");
+        });
+
+        services.AddScoped<INotificationPublisher, NotificationPublisher>();
+
         return services;
     }
 }

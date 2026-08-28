@@ -44,7 +44,7 @@ namespace MediSync.Web.Controllers
                     }
 
                     // Load active prescriptions
-                    var prescriptionResult = await _prescriptionService.GetPatientPrescriptionsAsync(userId, isActiveOnly: true);
+                    var prescriptionResult = await _prescriptionService.GetPatientPrescriptionsAsync(profileResult.Value.Id, isActiveOnly: true);
 
                     ViewBag.Prescriptions = prescriptionResult.IsSuccess ? prescriptionResult.Value : new List<PrescriptionResponse>();
 

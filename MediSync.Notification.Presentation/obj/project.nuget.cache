@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "a5kBskI9xz4=",
+  "success": true,
+  "projectFilePath": "S:\\.Net\\Learning\\MediSync\\MediSync.Notification.Presentation\\MediSync.Notification.Presentation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amIsa\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
+    "C:\\Users\\amIsa\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -20,6 +20,10 @@
     <Project Path="MediSync.MedicalRecord.Infrastructure/MediSync.MedicalRecord.Infrastructure.csproj" Id="5544a9c9-5553-4c90-a770-bca0f2f72958" />
     <Project Path="MediSync.MedicalRecord.Presentation/MediSync.MedicalRecord.Presentation.csproj" Id="0f8017c5-815e-40df-b011-60e47fd8f08c" />
   </Folder>
+  <Folder Name="/Services/Notification/" />
+  <Folder Name="/Services/Notification/src/">
+    <Project Path="MediSync.Notification.Presentation/MediSync.Notification.Presentation.csproj" Id="11cfd6c4-caa4-4638-8adf-9d0a7d3a6731" />
+  </Folder>
   <Folder Name="/Services/Prescription/" />
   <Folder Name="/Services/Prescription/src/">
     <Project Path="MediSync.Prescription.Application/MediSync.Prescription.Application.csproj" Id="063b4e78-eaa2-4dcb-849d-7f70f0f420cf" />

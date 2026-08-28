@@ -3,9 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MediSync.Prescription.Infrastructure.Persistence;
 
-public class PrescriptionDbContext(DbContextOptions<PrescriptionDbContext> options) : DbContext(options)
+public class PrescriptionDbContext(DbContextOptions<PrescriptionDbContext> options, INotificationPublisher notificationPublisher) : DbContext(options)
 {
     public DbSet<MediSync.Prescription.Domain.Aggregates.Prescription> Prescriptions => Set<MediSync.Prescription.Domain.Aggregates.Prescription>();
+
+    private readonly INotificationPublisher _notificationPublisher = notificationPublisher;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -24,7 +26,8 @@ public class PrescriptionDbContext(DbContextOptions<PrescriptionDbContext> optio
             {
                 foreach (var domainEvent in aggregate.DomainEvents)
                 {
-                    Console.WriteLine($"Domain Event: {domainEvent.GetType().Name}");
+                    // Publish via INotificationPublisher
+                    await _notificationPublisher.PublishAsync(domainEvent, cancellationToken);
                 }
 
                 aggregate.ClearDomainEvents();

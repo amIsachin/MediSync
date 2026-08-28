@@ -1,0 +1,71 @@
+[
+  {
+    "ContainingType": "MediSync.Notification.Presentation.Controllers.NotificationController",
+    "Method": "DiagnosisAdded",
+    "RelativePath": "api/Notification/diagnosis-added",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MediSync.Notification.Presentation.Models.DiagnosisAddedNotification",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediSync.Notification.Presentation.Controllers.NotificationController",
+    "Method": "PrescriptionCreated",
+    "RelativePath": "api/Notification/prescription-created",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MediSync.Notification.Presentation.Models.PrescriptionCreatedNotification",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediSync.Notification.Presentation.Controllers.NotificationController",
+    "Method": "ProfileCreated",
+    "RelativePath": "api/Notification/profile-created",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MediSync.Notification.Presentation.Models.PatientProfileCreatedNotification",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediSync.Notification.Presentation.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MediSync.Notification.Presentation.WeatherForecast, MediSync.Notification.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]

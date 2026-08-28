@@ -32,9 +32,9 @@ public class PrescriptionService : IPrescriptionService
 
         if (response.IsSuccessStatusCode)
         {
-            var data = await response.Content.ReadAsStringAsync();
+            var data = await response.Content.ReadFromJsonAsync<Guid>();
 
-            return ServiceResponseMessage<Guid>.Success(Guid.Parse(data));
+            return ServiceResponseMessage<Guid>.Success(data);
         }
 
         var errorMessage = await response.Content.ReadAsStringAsync();

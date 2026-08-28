@@ -1,0 +1,6 @@
+@MediSync.Notification.Presentation_HostAddress = http://localhost:5107
+
+GET {{MediSync.Notification.Presentation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

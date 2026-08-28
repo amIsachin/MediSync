@@ -21,6 +21,10 @@
       {
         "Path": "MediSync.Prescription.Presentation\\MediSync.Prescription.Presentation.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "MediSync.Notification.Presentation\\MediSync.Notification.Presentation.csproj",
+        "Action": "Start"
       }
     ]
   }
