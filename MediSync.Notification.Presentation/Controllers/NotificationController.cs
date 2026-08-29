@@ -33,7 +33,7 @@ namespace MediSync.Notification.Presentation.Controllers
                 return Ok(new { Message = "Patient not found — notification skipped" });
             }
 
-            var email = new EmailMessage(patient.Value.Email, patient.Value.FullName, "New Prescription — MediSync", NotificationController.BuildPrescriptionEmail(request));
+            var email = new EmailMessage(patient.Value.Email, patient.Value.FullName, "New Prescription — MediSync", BuildPrescriptionEmail(request));
 
             await _emailService.SendAsync(email, cancellationToken);
 

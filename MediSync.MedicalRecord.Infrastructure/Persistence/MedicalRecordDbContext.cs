@@ -4,9 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MediSync.MedicalRecord.Infrastructure.Persistence;
 
-public class MedicalRecordDbContext(DbContextOptions<MedicalRecordDbContext> options) : DbContext(options)
+public class MedicalRecordDbContext(DbContextOptions<MedicalRecordDbContext> options, INotificationPublisher notificationPublisher) : DbContext(options)
 {
     public DbSet<Patient> Patients => Set<Patient>();
+
+    private readonly INotificationPublisher _notificationPublisher = notificationPublisher;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -32,9 +34,8 @@ public class MedicalRecordDbContext(DbContextOptions<MedicalRecordDbContext> opt
             {
                 foreach (var domainEvent in aggregate.DomainEvents)
                 {
-                    // TODO: _eventBus.PublishAsync(domainEvent)
-                    // For now — log to console so you can see events firing
-                    Console.WriteLine($"Domain Event: {domainEvent.GetType().Name}");
+                    // Publish via INotificationPublisher
+                    await _notificationPublisher.PublishAsync(domainEvent, cancellationToken);
                 }
 
                 aggregate.ClearDomainEvents();

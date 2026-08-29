@@ -10,3 +10,4 @@ S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\MediSync.Bui
 S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\refint\MediSync.BuildingBlocks.dll
 S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\MediSync.BuildingBlocks.pdb
 S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\ref\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.BuildingBlocks\obj\Debug\net10.0\MediSync.022E6085.Up2Date

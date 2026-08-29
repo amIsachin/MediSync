@@ -43,8 +43,7 @@ public class NotificationPublisher : INotificationPublisher
         catch (Exception ex)
         {
             // Never let notification failure break the main flow
-            _logger.LogError(ex, "Failed to publish notification for {EventType}",
-                domainEvent.GetType().Name);
+            _logger.LogError(ex, "Failed to publish notification for {EventType}", domainEvent.GetType().Name);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MediSync.MedicalRecord.Domain.Interfaces;
+﻿using MediSync.BuildingBlocks.Domain;
+using MediSync.MedicalRecord.Domain.Interfaces;
 using MediSync.MedicalRecord.Infrastructure.Persistence;
 using MediSync.MedicalRecord.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,14 @@ public static class ServiceCollectionExtensions
         });
 
         // Register repositories
-        services.AddScoped<IPatientRepository, PatientRepository>(); 
+        services.AddScoped<IPatientRepository, PatientRepository>();
+
+        services.AddHttpClient("NotificationApi", client =>
+        {
+            client.BaseAddress = new Uri(configuration["NotificationApi:BaseUrl"]! ?? "https://localhost:7005");
+        });
+
+        services.AddScoped<INotificationPublisher, NotificationPublisher>();
 
         return services;
     }
