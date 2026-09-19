@@ -87,8 +87,7 @@
               "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2026-09-12T06:45:50.862Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -100,8 +99,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Controllers\\ChatController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwB4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T09:27:47.772Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-19T09:27:47.772Z"
             },
             {
               "$type": "Document",
@@ -113,8 +111,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Services\\ChatService.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAAtwFgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T07:01:18.726Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-19T07:01:18.726Z"
             },
             {
               "$type": "Document",
@@ -126,8 +123,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Services\\IChatService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T07:00:28.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-19T07:00:28.776Z"
             },
             {
               "$type": "Document",
@@ -139,8 +135,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Models\\ChatRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T06:57:40.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-19T06:57:40.61Z"
             },
             {
               "$type": "Document",
@@ -152,8 +147,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Controllers\\IndexController.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAxwBUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T08:29:28.882Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-13T08:29:28.882Z"
             },
             {
               "$type": "Document",
@@ -165,8 +159,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Services\\IndexService.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAABgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T07:48:31.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-13T07:48:31.621Z"
             },
             {
               "$type": "Document",
@@ -190,8 +183,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Models\\IndexPatientRequest.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAABUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T07:45:57.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-13T07:45:57.9Z"
             },
             {
               "$type": "Document",
@@ -203,8 +195,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Controllers\\DrugInteractionController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T06:15:49.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-13T06:15:49.704Z"
             },
             {
               "$type": "Document",
@@ -216,8 +207,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Program.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAawC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-12T09:35:13.039Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-12T09:35:13.039Z"
             },
             {
               "$type": "Document",
@@ -229,8 +219,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Services\\VectorStoreService.cs",
               "ViewState": "AgIAAIkAAAAAAAAAAAAawJoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-12T08:54:19.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-12T08:54:19.162Z"
             },
             {
               "$type": "Document",
@@ -254,8 +243,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\Services\\EmbeddingService.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAswDEAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-12T08:33:15.117Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-12T08:33:15.117Z"
             },
             {
               "$type": "Document",
@@ -277,7 +265,7 @@
               "RelativeDocumentMoniker": "MediSync.AI.Presentation\\appsettings.json",
               "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\appsettings.json",
               "RelativeToolTip": "MediSync.AI.Presentation\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-09-12T08:15:47.213Z",
               "EditorCaption": ""
