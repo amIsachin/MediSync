@@ -949,6 +949,7 @@
       "MediSync.Prescription.Infrastructure/1.0.0": {
         "dependencies": {
           "MediSync.BuildingBlocks": "1.0.0",
+          "MediSync.Prescription.Application": "1.0.0",
           "MediSync.Prescription.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "10.0.0"
         },

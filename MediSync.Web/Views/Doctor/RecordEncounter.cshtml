@@ -1,0 +1,198 @@
+﻿@model MediSync.Web.ViewModels.RecordEncounterViewModel
+
+@{
+    ViewData["Title"] = "Record Encounter";
+}
+
+@section Styles {
+    <style>
+        .form-card {
+            background: #fff;
+            border: 0.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 28px;
+            max-width: 520px;
+        }
+
+        .field label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a5568;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .field .form-control, .field .form-select {
+            padding: 9px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #2d3748;
+            background: #f7fafc;
+            width: 100%;
+            outline: none;
+        }
+
+            .field .form-control:focus, .field .form-select:focus {
+                border-color: #27AE60;
+                background: #fff;
+            }
+
+        .validation-error {
+            font-size: 11px;
+            color: #E53E3E;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .encounter-type-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .type-card {
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 8px;
+            text-align: center;
+            cursor: pointer;
+            background: #f7fafc;
+        }
+
+            .type-card.active {
+                border-color: #27AE60;
+                background: #E8F8EF;
+            }
+
+            .type-card i {
+                font-size: 20px;
+                color: #a0aec0;
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .type-card.active i {
+                color: #27AE60;
+            }
+
+            .type-card span {
+                font-size: 11px;
+                color: #718096;
+                font-weight: 500;
+            }
+
+            .type-card.active span {
+                color: #27AE60;
+                font-weight: 600;
+            }
+
+        .btn-save {
+            width: 100%;
+            padding: 11px;
+            background: #27AE60;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .required {
+            color: #E53E3E;
+            margin-left: 2px;
+        }
+    </style>
+}
+
+<div class="page-header mb-4 d-flex justify-content-between align-items-center">
+    <div>
+        <h1 style="font-size:20px;font-weight:600;color:#1a202c;">Record Encounter</h1>
+        <p style="font-size:13px;color:#718096;margin-top:3px;">
+            Recording visit for <strong>@Model.PatientName</strong>
+        </p>
+    </div>
+    <a asp-controller="Doctor" asp-action="PatientDetail"
+       asp-route-patientId="@Model.PatientId"
+       class="btn btn-outline-secondary btn-sm">
+        <i class="bi bi-arrow-left"></i> Back
+    </a>
+</div>
+
+<div class="form-card">
+    <form asp-action="RecordEncounter" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="PatientId" />
+        <input type="hidden" asp-for="PatientName" />
+        <input type="hidden" asp-for="EncounterType"
+               id="selectedEncounterType" value="InPerson" />
+
+        <div class="mb-3">
+            <label style="font-size:11px;font-weight:600;color:#4a5568;text-transform:uppercase;letter-spacing:0.03em;display:block;margin-bottom:8px;">
+                Encounter Type <span class="required">*</span>
+            </label>
+            <div class="encounter-type-grid">
+                <div class="type-card active" onclick="selectType('InPerson', this)">
+                    <i class="bi bi-hospital"></i>
+                    <span>In Person</span>
+                </div>
+                <div class="type-card" onclick="selectType('Telemedicine', this)">
+                    <i class="bi bi-camera-video"></i>
+                    <span>Telemedicine</span>
+                </div>
+                <div class="type-card" onclick="selectType('Emergency', this)">
+                    <i class="bi bi-heart-pulse"></i>
+                    <span>Emergency</span>
+                </div>
+                <div class="type-card" onclick="selectType('FollowUp', this)">
+                    <i class="bi bi-arrow-repeat"></i>
+                    <span>Follow Up</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="field mb-3">
+            <label>Chief Complaint <span class="required">*</span></label>
+            <input asp-for="ChiefComplaint" class="form-control"
+                   placeholder="Why did the patient visit?" autofocus />
+            <span asp-validation-for="ChiefComplaint" class="validation-error"></span>
+        </div>
+
+        <div class="field mb-3">
+            <label>Facility</label>
+            <input asp-for="Facility" class="form-control"
+                   placeholder="Hospital or clinic name (optional)" />
+        </div>
+
+        <div class="field mb-3">
+            <label>Notes</label>
+            <textarea asp-for="Notes" class="form-control" rows="4"
+                      placeholder="Doctor's notes from this visit (optional)"></textarea>
+        </div>
+
+        <button type="submit" class="btn-save">
+            <i class="bi bi-calendar-check"></i> Record Encounter
+        </button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        function selectType(value, element) {
+            document.querySelectorAll('.type-card').forEach(c => {
+                c.classList.remove('active');
+            });
+            element.classList.add('active');
+            document.getElementById('selectedEncounterType').value = value;
+        }
+    </script>
+}

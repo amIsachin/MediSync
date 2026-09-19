@@ -153,8 +153,6 @@ namespace MediSync.MedicalRecord.Presentation.Controllers
 
             return Ok(new { Message = "Encounter recorded successfully" });
         }
-
-
     }
 }
 

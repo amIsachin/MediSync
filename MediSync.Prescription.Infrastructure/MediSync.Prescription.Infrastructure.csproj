@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MediSync.BuildingBlocks\MediSync.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\MediSync.Prescription.Application\MediSync.Prescription.Application.csproj" />
     <ProjectReference Include="..\MediSync.Prescription.Domain\MediSync.Prescription.Domain.csproj" />
   </ItemGroup>
 

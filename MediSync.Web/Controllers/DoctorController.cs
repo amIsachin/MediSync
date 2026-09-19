@@ -113,5 +113,126 @@ namespace MediSync.Web.Controllers
             TempData["NotificationType"] = "Success";
             return RedirectToAction("PatientDetail", new { patientId = model.PatientId });
         }
+
+        [HttpGet]
+        public async Task<IActionResult> AddAllergy(Guid patientId, string patientName)
+        {
+            return View(new AddAllergyViewModel
+            {
+                PatientId = patientId,
+                PatientName = patientName
+            });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddAllergy(AddAllergyViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var doctorId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value!);
+
+            var result = await _medicalRecordService.AddAllergyAsync(model.PatientId, new AddAllergyRequest
+                 (
+                     model.Substance,
+                     model.Severity,
+                     doctorId,
+                     model.Notes
+                 ));
+
+            if (!result.IsSuccess)
+            {
+                TempData["NotificationMessage"] = result.Error.Message;
+                TempData["NotificationType"] = "Error";
+                return View(model);
+            }
+
+            TempData["NotificationMessage"] = "Allergy recorded successfully.";
+            TempData["NotificationType"] = "Success";
+            return RedirectToAction("PatientDetail", new { patientId = model.PatientId });
+        }
+
+        [HttpGet]
+        public IActionResult AddDiagnosis(Guid patientId, string patientName)
+        {
+            return View(new AddDiagnosisViewModel
+            {
+                PatientId = patientId,
+                PatientName = patientName
+            });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddDiagnosis(AddDiagnosisViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var doctorId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            var result = await _medicalRecordService.AddDiagnosisAsync(model.PatientId, new AddDiagnosisRequest
+                (
+                    doctorId,
+                    model.IcdCode,
+                    model.Description
+                ));
+
+            if (!result.IsSuccess)
+            {
+                TempData["NotificationMessage"] = result.Error.Message;
+                TempData["NotificationType"] = "Error";
+                return View(model);
+            }
+
+            TempData["NotificationMessage"] = "Diagnosis recorded successfully.";
+            TempData["NotificationType"] = "Success";
+            return RedirectToAction("PatientDetail", new { patientId = model.PatientId });
+        }
+        [HttpGet]
+        public IActionResult RecordEncounter(Guid patientId, string patientName)
+        {
+            return View(new RecordEncounterViewModel
+            {
+                PatientId = patientId,
+                PatientName = patientName
+            });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RecordEncounter(RecordEncounterViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var doctorId = Guid.Parse(
+                User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
+
+            var result = await _medicalRecordService.RecordEncounterAsync(
+                model.PatientId,
+                new RecordEncounterRequest(
+                    doctorId,
+                    model.EncounterType,
+                    model.ChiefComplaint,
+                    model.Notes,
+                    model.Facility));
+
+            if (!result.IsSuccess)
+            {
+                TempData["NotificationMessage"] = result.Error.Message;
+                TempData["NotificationType"] = "Error";
+                return View(model);
+            }
+
+            TempData["NotificationMessage"] = "Encounter recorded successfully.";
+            TempData["NotificationType"] = "Success";
+            return RedirectToAction("PatientDetail", new { patientId = model.PatientId });
+        }
     }
 }

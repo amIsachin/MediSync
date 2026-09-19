@@ -31,12 +31,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[S:/.Net/Learning/MediSync/MediSync.Web/Views/Doctor/AddAllergy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEFkZEFsbGVyZ3kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/.Net/Learning/MediSync/MediSync.Web/Views/Doctor/AddDiagnosis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEFkZERpYWdub3Npcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [S:/.Net/Learning/MediSync/MediSync.Web/Views/Doctor/FindPatient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEZpbmRQYXRpZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [S:/.Net/Learning/MediSync/MediSync.Web/Views/Doctor/PatientDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXFBhdGllbnREZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[S:/.Net/Learning/MediSync/MediSync.Web/Views/Doctor/RecordEncounter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXFJlY29yZEVuY291bnRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [S:/.Net/Learning/MediSync/MediSync.Web/Views/Doctor/WritePrescription.cshtml]

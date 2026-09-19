@@ -3,8 +3,10 @@ S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\bin\Debug\net10.0
 S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\bin\Debug\net10.0\MediSync.Prescription.Infrastructure.dll
 S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\bin\Debug\net10.0\MediSync.Prescription.Infrastructure.pdb
 S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\bin\Debug\net10.0\MediSync.Prescription.Application.dll
 S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\bin\Debug\net10.0\MediSync.Prescription.Domain.dll
 S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
+S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\bin\Debug\net10.0\MediSync.Prescription.Application.pdb
 S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\bin\Debug\net10.0\MediSync.Prescription.Domain.pdb
 S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\obj\Debug\net10.0\MediSync.Prescription.Infrastructure.csproj.AssemblyReference.cache
 S:\.Net\Learning\MediSync\MediSync.Prescription.Infrastructure\obj\Debug\net10.0\MediSync.Prescription.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig

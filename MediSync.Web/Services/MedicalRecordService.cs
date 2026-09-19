@@ -85,6 +85,51 @@ public class MedicalRecordService : IMedicalRecordService
         return ServiceResponseMessage<PatientProfileResponse>.Failure(response.StatusCode.ToString(), errorMessage, "Failed");
     }
 
+    public async Task<ServiceResponseMessage<bool>> AddAllergyAsync(Guid patientId, AddAllergyRequest request)
+    {
+        var response = await _httpClient.PostAsJsonAsync($"https://localhost:7000/medical/patient/{patientId}/allergy", request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            return ServiceResponseMessage<bool>.Success(true);
+        }
+
+        var error = await response.Content.ReadAsStringAsync();
+        var errorMessage = MedicalRecordService.ExtractMessage(error) ?? "Failed to add allergy.";
+
+        return ServiceResponseMessage<bool>.Failure(response.StatusCode.ToString(), errorMessage, "Failed");
+    }
+
+    public async Task<ServiceResponseMessage<bool>> AddDiagnosisAsync(Guid patientId, AddDiagnosisRequest request)
+    {
+        var response = await _httpClient.PostAsJsonAsync($"https://localhost:7000/medical/patient/{patientId}/diagnoses", request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            return ServiceResponseMessage<bool>.Success(true);
+        }
+
+        var error = await response.Content.ReadAsStringAsync();
+        var errorMessage = MedicalRecordService.ExtractMessage(error) ?? "Failed to add allergy.";
+
+        return ServiceResponseMessage<bool>.Failure(response.StatusCode.ToString(), errorMessage, "Failed");
+    }
+
+    public async Task<ServiceResponseMessage<bool>> RecordEncounterAsync(Guid patientId, RecordEncounterRequest request)
+    {
+        var response = await _httpClient.PostAsJsonAsync($"https://localhost:7000/medical/patient/{patientId}/encounters", request);
+
+        if (response.IsSuccessStatusCode)
+        {
+            return ServiceResponseMessage<bool>.Success(true);
+        }
+
+        var error = await response.Content.ReadAsStringAsync();
+        var errorMessage = MedicalRecordService.ExtractMessage(error) ?? "Failed to add allergy.";
+
+        return ServiceResponseMessage<bool>.Failure(response.StatusCode.ToString(), errorMessage, "Failed");
+    }
+
     private static string ExtractMessage(string body)
     {
         try

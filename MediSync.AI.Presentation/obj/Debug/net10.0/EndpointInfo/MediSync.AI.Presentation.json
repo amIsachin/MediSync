@@ -1,0 +1,477 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "MediSync.AI.Presentation | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:7006"
+    }
+  ],
+  "paths": {
+    "/api/ai/chat": {
+      "post": {
+        "tags": [
+          "Chat"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ai/drug-interaction": {
+      "post": {
+        "tags": [
+          "DrugInteraction"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugInteractionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugInteractionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DrugInteractionRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ai/index": {
+      "post": {
+        "tags": [
+          "Index"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IndexPatientRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IndexPatientRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/IndexPatientRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActiveMedication": {
+        "required": [
+          "drugName",
+          "dosage",
+          "frequency"
+        ],
+        "type": "object",
+        "properties": {
+          "drugName": {
+            "type": "string"
+          },
+          "dosage": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          }
+        }
+      },
+      "AllergyRecord": {
+        "required": [
+          "substance",
+          "severity",
+          "notes",
+          "recordedAt"
+        ],
+        "type": "object",
+        "properties": {
+          "substance": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "notes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "recordedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ChatRequest": {
+        "required": [
+          "patientId",
+          "message",
+          "patientName"
+        ],
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "message": {
+            "type": "string"
+          },
+          "patientName": {
+            "type": "string"
+          }
+        }
+      },
+      "DiagnosisRecord": {
+        "required": [
+          "icdCode",
+          "description",
+          "doctorId",
+          "diagnosedAt",
+          "isActive"
+        ],
+        "type": "object",
+        "properties": {
+          "icdCode": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "doctorId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "diagnosedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        }
+      },
+      "DrugInteractionRequest": {
+        "required": [
+          "patientId",
+          "newDrugName",
+          "newDosage",
+          "frequency",
+          "route",
+          "activeMedications",
+          "allergies"
+        ],
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "newDrugName": {
+            "type": "string"
+          },
+          "newDosage": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "route": {
+            "type": "string"
+          },
+          "activeMedications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActiveMedication"
+            }
+          },
+          "allergies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PatientAllergy"
+            }
+          }
+        }
+      },
+      "EncounterRecord": {
+        "required": [
+          "doctorId",
+          "visitDate",
+          "encounterType",
+          "chiefComplaint",
+          "notes",
+          "facility"
+        ],
+        "type": "object",
+        "properties": {
+          "doctorId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "visitDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "encounterType": {
+            "type": "string"
+          },
+          "chiefComplaint": {
+            "type": "string"
+          },
+          "notes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "facility": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "IndexPatientRequest": {
+        "required": [
+          "patientId",
+          "allergies",
+          "diagnoses",
+          "encounters",
+          "prescriptions"
+        ],
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "allergies": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AllergyRecord"
+            }
+          },
+          "diagnoses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiagnosisRecord"
+            }
+          },
+          "encounters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EncounterRecord"
+            }
+          },
+          "prescriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PrescriptionRecord"
+            }
+          }
+        }
+      },
+      "PatientAllergy": {
+        "required": [
+          "substance",
+          "severity"
+        ],
+        "type": "object",
+        "properties": {
+          "substance": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          }
+        }
+      },
+      "PrescriptionRecord": {
+        "required": [
+          "drugName",
+          "dosage",
+          "frequency",
+          "route",
+          "durationDays",
+          "status",
+          "expiresAt",
+          "notes"
+        ],
+        "type": "object",
+        "properties": {
+          "drugName": {
+            "type": "string"
+          },
+          "dosage": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "route": {
+            "type": "string"
+          },
+          "durationDays": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "status": {
+            "type": "string"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "notes": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "temperatureF": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "summary": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Chat"
+    },
+    {
+      "name": "DrugInteraction"
+    },
+    {
+      "name": "Index"
+    },
+    {
+      "name": "WeatherForecast"
+    }
+  ]
+}

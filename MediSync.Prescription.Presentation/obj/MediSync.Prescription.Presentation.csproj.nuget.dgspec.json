@@ -1084,6 +1084,9 @@
               "S:\\.Net\\Learning\\MediSync\\MediSync.BuildingBlocks\\MediSync.BuildingBlocks.csproj": {
                 "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.BuildingBlocks\\MediSync.BuildingBlocks.csproj"
               },
+              "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Application\\MediSync.Prescription.Application.csproj": {
+                "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Application\\MediSync.Prescription.Application.csproj"
+              },
               "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj": {
                 "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Domain\\MediSync.Prescription.Domain.csproj"
               }

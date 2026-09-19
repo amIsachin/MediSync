@@ -8,7 +8,31 @@ public interface IMedicalRecordService
     public Task<ServiceResponseMessage<Guid>> CreatePatientProfileAsync(CreatePatientProfileRequest request);
     public Task<ServiceResponseMessage<PatientProfileResponse>> GetPatientByEmailAsync(string email);
     public Task<ServiceResponseMessage<PatientProfileResponse>> GetPatientByIdAsync(Guid id);
+    public Task<ServiceResponseMessage<bool>> AddAllergyAsync(Guid patientId, AddAllergyRequest request);
+    public Task<ServiceResponseMessage<bool>> AddDiagnosisAsync(Guid patientId, AddDiagnosisRequest request);
+    public Task<ServiceResponseMessage<bool>> RecordEncounterAsync(Guid patientId, RecordEncounterRequest request);
 }
+
+public record AddAllergyRequest(
+    string Substance,
+    string Severity,
+    Guid DoctorId,
+    string? Notes
+);
+
+public record AddDiagnosisRequest(
+    Guid DoctorId,
+    string IcdCode,
+    string Description
+);
+
+public record RecordEncounterRequest(
+    Guid DoctorId,
+    string EncounterType,
+    string ChiefComplaint,
+    string? Notes,
+    string? Facility
+);
 
 public record PatientProfileResponse(
     Guid Id,
@@ -26,23 +50,6 @@ public record PatientProfileResponse(
     List<AllergyResponse> Allergies,
     List<DiagnosisResponse> Diagnoses,
     List<EncounterResponse> Encounters
-
-//Guid Id,
-//Guid userId,
-//string FirstName,
-//string LastName,
-//string FullName,
-//string DateOfBirth,
-//int Age,
-//string BloodGroup,
-//string Gender,
-//string Email,
-//string? PhoneNumber,
-//string Status,
-
-//List<AllergyResponse> Allergies,
-//List<DiagnosisResponse> Diagnoses,
-//List<EncounterResponse> Encounters
 );
 
 public record AllergyResponse(

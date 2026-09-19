@@ -1,0 +1,205 @@
+﻿@model MediSync.Web.ViewModels.AddAllergyViewModel
+
+@{
+    ViewData["Title"] = "Add Allergy";
+}
+
+@section Styles {
+    <style>
+        .form-card {
+            background: #fff;
+            border: 0.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 28px;
+            max-width: 520px;
+        }
+
+        .form-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+
+        .form-sub {
+            font-size: 13px;
+            color: #718096;
+            margin-bottom: 24px;
+        }
+
+        .field label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a5568;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .field .form-control, .field .form-select {
+            padding: 9px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #2d3748;
+            background: #f7fafc;
+            width: 100%;
+            outline: none;
+        }
+
+            .field .form-control:focus, .field .form-select:focus {
+                border-color: #1B4F8A;
+                background: #fff;
+            }
+
+        .validation-error {
+            font-size: 11px;
+            color: #E53E3E;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .severity-row {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .severity-card {
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 8px;
+            text-align: center;
+            cursor: pointer;
+            background: #f7fafc;
+        }
+
+            .severity-card.active.mild {
+                border-color: #27AE60;
+                background: #E8F8EF;
+            }
+
+            .severity-card.active.moderate {
+                border-color: #F39C12;
+                background: #FEF3E2;
+            }
+
+            .severity-card.active.severe {
+                border-color: #E74C3C;
+                background: #FDEAEA;
+            }
+
+            .severity-card span {
+                font-size: 12px;
+                font-weight: 600;
+                color: #718096;
+            }
+
+            .severity-card.active.mild span {
+                color: #27AE60;
+            }
+
+            .severity-card.active.moderate span {
+                color: #F39C12;
+            }
+
+            .severity-card.active.severe span {
+                color: #E74C3C;
+            }
+
+        .btn-save {
+            width: 100%;
+            padding: 11px;
+            background: #F39C12;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .required {
+            color: #E53E3E;
+            margin-left: 2px;
+        }
+    </style>
+}
+
+<div class="page-header mb-4 d-flex justify-content-between align-items-center">
+    <div>
+        <h1 style="font-size:20px;font-weight:600;color:#1a202c;">Add Allergy</h1>
+        <p style="font-size:13px;color:#718096;margin-top:3px;">
+            Recording allergy for <strong>@Model.PatientName</strong>
+        </p>
+    </div>
+    <a asp-controller="Doctor" asp-action="PatientDetail"
+       asp-route-patientId="@Model.PatientId"
+       class="btn btn-outline-secondary btn-sm">
+        <i class="bi bi-arrow-left"></i> Back
+    </a>
+</div>
+
+<div class="form-card">
+    <form asp-action="AddAllergy" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="PatientId" />
+        <input type="hidden" asp-for="PatientName" />
+        <input type="hidden" asp-for="Severity" id="selectedSeverity" value="Mild" />
+
+        <div class="field mb-3">
+            <label>Substance <span class="required">*</span></label>
+            <input asp-for="Substance" class="form-control"
+                   placeholder="e.g. Penicillin, Peanuts" autofocus />
+            <span asp-validation-for="Substance" class="validation-error"></span>
+        </div>
+
+        <div class="mb-3">
+            <label style="font-size:11px;font-weight:600;color:#4a5568;text-transform:uppercase;letter-spacing:0.03em;display:block;margin-bottom:8px;">
+                Severity <span class="required">*</span>
+            </label>
+            <div class="severity-row">
+                <div class="severity-card mild active" onclick="selectSeverity('Mild', this)">
+                    <i class="bi bi-thermometer-low" style="font-size:18px;color:#27AE60;display:block;margin-bottom:4px;"></i>
+                    <span>Mild</span>
+                </div>
+                <div class="severity-card moderate" onclick="selectSeverity('Moderate', this)">
+                    <i class="bi bi-thermometer-half" style="font-size:18px;color:#F39C12;display:block;margin-bottom:4px;"></i>
+                    <span>Moderate</span>
+                </div>
+                <div class="severity-card severe" onclick="selectSeverity('Severe', this)">
+                    <i class="bi bi-thermometer-high" style="font-size:18px;color:#E74C3C;display:block;margin-bottom:4px;"></i>
+                    <span>Severe</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="field mb-3">
+            <label>Notes</label>
+            <textarea asp-for="Notes" class="form-control" rows="3" placeholder="Any additional notes (optional)"></textarea>
+        </div>
+
+        <button type="submit" class="btn-save">
+            <i class="bi bi-exclamation-triangle"></i> Record Allergy
+        </button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        function selectSeverity(value, element) {
+            document.querySelectorAll('.severity-card').forEach(c => {
+                c.classList.remove('active');
+            });
+            element.classList.add('active');
+            document.getElementById('selectedSeverity').value = value;
+        }
+    </script>
+}

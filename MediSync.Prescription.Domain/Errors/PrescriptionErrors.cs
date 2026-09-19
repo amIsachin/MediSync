@@ -18,4 +18,8 @@ public sealed class PrescriptionErrors
 
     public static readonly Error CannotModifyActive =
         Error.Failure("Prescription.CannotModify", "An active prescription cannot be modified — create a new one");
+
+    public static Error DrugInteraction(IEnumerable<string> interactions, string recommendation) =>
+        Error.Conflict("Prescription.DrugInteraction", $"Prescription blocked — {string.Join(", ", interactions)}. {recommendation}");
+
 }
