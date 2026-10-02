@@ -62,7 +62,7 @@ public class IndexService : IIndexService
 
         var chunk = new PatientRecordChunk(
             PatientId: patientId,
-            RecordType: "Allergy",
+            RecordType: "allergy",
             Content: content,
             Metadata: new Dictionary<string, string>
             {
@@ -84,7 +84,7 @@ public class IndexService : IIndexService
 
         var chunk = new PatientRecordChunk(
             PatientId: patientId,
-            RecordType: "Diagnosis",
+            RecordType: "diagnosis",
             Content: content,
             Metadata: new Dictionary<string, string>
             {

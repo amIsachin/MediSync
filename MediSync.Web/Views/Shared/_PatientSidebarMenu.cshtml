@@ -27,4 +27,8 @@
     <a href="#" class="nav-item disabled">
         <i class="bi bi-shield-check"></i> Consent Grants
     </a>
+    <a asp-controller="Chat" asp-action="Index"
+       class="nav-item @(controller == "Chat" ? "active" : "")">
+        <i class="bi bi-chat-heart"></i> Health Chat
+    </a>
 </div>

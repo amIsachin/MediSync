@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using MediSync.BuildingBlocks.Common;
+using MediSync.MedicalRecord.Application.Abstraction;
 using MediSync.MedicalRecord.Domain.Errors;
 using MediSync.MedicalRecord.Domain.Interfaces;
 
@@ -8,10 +9,12 @@ namespace MediSync.MedicalRecord.Application.Commands.AddAllergy;
 public class AddAllergyHandler : IRequestHandler<AddAllergyCommand, Result<Guid>>
 {
     private readonly IPatientRepository _patientRepository;
+    private readonly IAIIndexService _aiIndexService;
 
-    public AddAllergyHandler(IPatientRepository patientRepository)
+    public AddAllergyHandler(IPatientRepository patientRepository, IAIIndexService aiIndexService)
     {
         _patientRepository = patientRepository;
+        _aiIndexService = aiIndexService;
     }
 
     public async Task<Result<Guid>> Handle(AddAllergyCommand request, CancellationToken cancellationToken)
@@ -35,6 +38,8 @@ public class AddAllergyHandler : IRequestHandler<AddAllergyCommand, Result<Guid>
 
         // Step 3 — Save changes
         await _patientRepository.UpdateAsync(patient, cancellationToken);
+
+        _ = Task.Run(() => _aiIndexService           .IndexPatientAsync(patient.Id, CancellationToken.None));
 
         return Result<Guid>.Success(patient.Id);
     }

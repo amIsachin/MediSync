@@ -2,7 +2,9 @@ S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\bin\Debug\net10.
 S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\bin\Debug\net10.0\MediSync.MedicalRecord.Infrastructure.dll
 S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\bin\Debug\net10.0\MediSync.MedicalRecord.Infrastructure.pdb
 S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\bin\Debug\net10.0\MediSync.MedicalRecord.Application.dll
 S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\bin\Debug\net10.0\MediSync.MedicalRecord.Domain.dll
+S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\bin\Debug\net10.0\MediSync.MedicalRecord.Application.pdb
 S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\bin\Debug\net10.0\MediSync.MedicalRecord.Domain.pdb
 S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
 S:\.Net\Learning\MediSync\MediSync.MedicalRecord.Infrastructure\obj\Debug\net10.0\MediSync.MedicalRecord.Infrastructure.csproj.AssemblyReference.cache

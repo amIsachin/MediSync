@@ -12,6 +12,8 @@ public interface IVectorStoreService
     Task DeletePatientRecordsAsync(Guid patientId, CancellationToken cancellationToken = default);
 
     Task EnsureCollectionExistsAsync(CancellationToken cancellationToken = default);
+
+    Task<List<PatientRecordChunk>> GetAllPatientRecordsAsync(Guid patientId, CancellationToken cancellationToken = default);
 }
 
 public record PatientRecordChunk(

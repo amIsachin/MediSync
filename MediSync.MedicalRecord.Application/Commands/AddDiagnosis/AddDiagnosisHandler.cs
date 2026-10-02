@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using MediSync.BuildingBlocks.Common;
+using MediSync.MedicalRecord.Application.Abstraction;
 using MediSync.MedicalRecord.Domain.Errors;
 using MediSync.MedicalRecord.Domain.Interfaces;
 using MediSync.MedicalRecord.Domain.ValueObjects;
@@ -9,10 +10,12 @@ namespace MediSync.MedicalRecord.Application.Commands.AddDiagnosis;
 public class AddDiagnosisHandler : IRequestHandler<AddDiagnosisCommand, Result<Guid>>
 {
     private readonly IPatientRepository _patientRepository;
+    private readonly IAIIndexService _aiIndexService;
 
-    public AddDiagnosisHandler(IPatientRepository patientRepository)
+    public AddDiagnosisHandler(IPatientRepository patientRepository, IAIIndexService aiIndexService)
     {
         _patientRepository = patientRepository;
+        _aiIndexService = aiIndexService;
     }
 
     public async Task<Result<Guid>> Handle(AddDiagnosisCommand request, CancellationToken cancellationToken)
@@ -40,6 +43,8 @@ public class AddDiagnosisHandler : IRequestHandler<AddDiagnosisCommand, Result<G
 
         // Step 4 — Save changes
         await _patientRepository.UpdateAsync(patient, cancellationToken);
+
+        _ = Task.Run(() => _aiIndexService.IndexPatientAsync(patient.Id, CancellationToken.None));
 
         return Result<Guid>.Success(patient.Id);
     }

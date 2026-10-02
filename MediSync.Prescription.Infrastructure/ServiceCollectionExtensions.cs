@@ -41,10 +41,17 @@ public static class ServiceCollectionExtensions
             client.Timeout = TimeSpan.FromMinutes(10);
         });
 
+        services.AddHttpClient("AIApi", client =>
+        {
+            client.BaseAddress = new Uri(configuration["AIApi:BaseUrl"] ?? "https://localhost:7006");
+            client.Timeout = TimeSpan.FromSeconds(30);
+        });
+
         services.AddScoped<INotificationPublisher, NotificationPublisher>();
         services.AddScoped<IAIService, AIService>();
         services.AddScoped<IAIInteractionChecker, AIInteractionChecker>();
         services.AddScoped<IPatientDataService, PatientDataService>();
+        services.AddScoped<IAIPrescriptionIndexService, AIPrescriptionIndexService>();
 
         return services;
     }

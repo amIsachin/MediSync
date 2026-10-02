@@ -49,6 +49,8 @@ builder.Services.AddScoped<IDrugInteractionService, DrugInteractionService>();
 builder.Services.AddScoped<IVectorStoreService, VectorStoreService>();
 builder.Services.AddScoped<IIndexService, IndexService>();
 builder.Services.AddScoped<IChatService, ChatService>();
+builder.Services.AddScoped<ISummaryService, SummaryService>();
+builder.Services.AddScoped<IPrescriptionInfoService, PrescriptionInfoService>();
 
 var app = builder.Build();
 
@@ -73,10 +75,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-//async Task EnsureQdrantCollectionExistsAsync(IServiceProvider serviceProvider)
-//{
-//    using var scope = serviceProvider.CreateScope();
-//    var vectorStoreService = scope.ServiceProvider.GetRequiredService<IVectorStoreService>();
-//    await vectorStoreService.EnsureCollectionExistsAsync();
-//}

@@ -48,6 +48,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MediSync.AI.Presentation.Controllers.PrescriptionInfoController",
+    "Method": "GetPrescriptionInfo",
+    "RelativePath": "api/ai/prescription-info",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MediSync.AI.Presentation.Models.PrescriptionInfoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediSync.AI.Presentation.Controllers.SummaryController",
+    "Method": "GetSummary",
+    "RelativePath": "api/ai/summary/{patientId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "patientId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "patientName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MediSync.AI.Presentation.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

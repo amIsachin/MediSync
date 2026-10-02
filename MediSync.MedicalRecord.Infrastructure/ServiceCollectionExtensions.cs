@@ -1,7 +1,9 @@
 ﻿using MediSync.BuildingBlocks.Domain;
+using MediSync.MedicalRecord.Application.Abstraction;
 using MediSync.MedicalRecord.Domain.Interfaces;
 using MediSync.MedicalRecord.Infrastructure.Persistence;
 using MediSync.MedicalRecord.Infrastructure.Repositories;
+using MediSync.MedicalRecord.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,7 +29,14 @@ public static class ServiceCollectionExtensions
             client.BaseAddress = new Uri(configuration["NotificationApi:BaseUrl"]! ?? "https://localhost:7005");
         });
 
+        services.AddHttpClient("AIApi", client =>
+        {
+            client.BaseAddress = new Uri(configuration["AIApi:BaseUrl"] ?? "https://localhost:7006");
+            client.Timeout = TimeSpan.FromSeconds(30);
+        });
+
         services.AddScoped<INotificationPublisher, NotificationPublisher>();
+        services.AddScoped<IAIIndexService, AIIndexService>();
 
         return services;
     }

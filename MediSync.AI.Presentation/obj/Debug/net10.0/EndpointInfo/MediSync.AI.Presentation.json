@@ -106,6 +106,68 @@
         }
       }
     },
+    "/api/ai/prescription-info": {
+      "post": {
+        "tags": [
+          "PrescriptionInfo"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrescriptionInfoRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrescriptionInfoRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrescriptionInfoRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/ai/summary/{patientId}": {
+      "get": {
+        "tags": [
+          "Summary"
+        ],
+        "parameters": [
+          {
+            "name": "patientId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "patientName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -379,6 +441,28 @@
           }
         }
       },
+      "PrescriptionInfoRequest": {
+        "required": [
+          "drugName",
+          "dosage",
+          "patientQuestion"
+        ],
+        "type": "object",
+        "properties": {
+          "drugName": {
+            "type": "string"
+          },
+          "dosage": {
+            "type": "string"
+          },
+          "patientQuestion": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
       "PrescriptionRecord": {
         "required": [
           "drugName",
@@ -469,6 +553,12 @@
     },
     {
       "name": "Index"
+    },
+    {
+      "name": "PrescriptionInfo"
+    },
+    {
+      "name": "Summary"
     },
     {
       "name": "WeatherForecast"

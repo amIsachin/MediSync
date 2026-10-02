@@ -11,11 +11,13 @@ public sealed class CreatePrescriptionHandler : IRequestHandler<CreatePrescripti
 {
     private readonly IPrescriptionRepository _prescriptionRepository;
     private readonly IAIInteractionChecker _aiInteractionChecker;
+    private readonly IAIPrescriptionIndexService _aiPrescriptionIndexService;
 
-    public CreatePrescriptionHandler(IPrescriptionRepository prescriptionRepository, IAIInteractionChecker aiInteractionChecker)
+    public CreatePrescriptionHandler(IPrescriptionRepository prescriptionRepository, IAIInteractionChecker aiInteractionChecker, IAIPrescriptionIndexService aiPrescriptionIndexService)
     {
         _prescriptionRepository = prescriptionRepository;
         _aiInteractionChecker = aiInteractionChecker;
+        _aiPrescriptionIndexService = aiPrescriptionIndexService;
     }
 
     public async Task<Result<Guid>> Handle(CreatePrescriptionCommand request, CancellationToken cancellationToken)
@@ -38,6 +40,8 @@ public sealed class CreatePrescriptionHandler : IRequestHandler<CreatePrescripti
         prescription.Activate();
 
         await _prescriptionRepository.AddAsync(prescription);
+
+        _ = Task.Run(() => _aiPrescriptionIndexService.IndexPrescriptionsAsync(request.PatientId, CancellationToken.None));
 
         return Result<Guid>.Success(prescription.Id);
     }

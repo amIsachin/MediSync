@@ -29,6 +29,12 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<ITokenProvider, TokenProvider>();
 builder.Services.AddScoped<IMedicalRecordService, MedicalRecordService>();
 builder.Services.AddScoped<IPrescriptionService, PrescriptionService>();
+builder.Services.AddScoped<IAIChatService, AIChatService>();
+
+builder.Services.AddHttpClient("Gateway", client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["Gateway:BaseUrl"]! ?? "https://localhost:7005");
+});
 
 var app = builder.Build();
 

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MediSync.MedicalRecord.Application\MediSync.MedicalRecord.Application.csproj" />
     <ProjectReference Include="..\MediSync.MedicalRecord.Domain\MediSync.MedicalRecord.Domain.csproj" />
   </ItemGroup>
 

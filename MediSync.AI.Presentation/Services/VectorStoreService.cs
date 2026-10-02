@@ -101,6 +101,54 @@ public class VectorStoreService : IVectorStoreService
         }
     }
 
+    public async Task<List<PatientRecordChunk>> GetAllPatientRecordsAsync(Guid patientId, CancellationToken cancellationToken = default)
+    {
+        if (!await _qdrantClient.CollectionExistsAsync(CollectionName, cancellationToken))
+        {
+            return new List<PatientRecordChunk>();
+        }
+
+        var filter = new Filter
+        {
+            Must =
+            {
+                new Condition
+                {
+                    Field = new FieldCondition
+                    {
+                        Key = "patient_id",
+                        Match = new Match
+                        {
+                            Keyword = patientId.ToString()
+                        }
+                    }
+                }
+            }
+        };
+
+        // Scroll through ALL records — not just top 5
+        var results = await _qdrantClient.ScrollAsync(
+            CollectionName,
+            filter: filter,
+            limit: 100,   // max 100 chunks per patient
+            payloadSelector: new WithPayloadSelector { Enable = true },
+            vectorsSelector: new WithVectorsSelector { Enable = false }, // no need for vectors here
+            cancellationToken: cancellationToken);
+
+        return results.Result.Select(r => new PatientRecordChunk(
+             PatientId: Guid.Parse(r.Payload["patient_id"].StringValue),
+             RecordType: r.Payload["record_type"].StringValue,
+             Content: r.Payload["content"].StringValue,
+             Metadata: r.Payload
+                 .Where(p => p.Key != "patient_id" &&
+                             p.Key != "record_type" &&
+                             p.Key != "content")
+                 .ToDictionary(
+                     p => p.Key,
+                     p => p.Value.StringValue)
+        )).ToList();
+    }
+
     public async Task<List<PatientRecordChunk>> SearchAsync(float[] queryVector, Guid patientId, int topK = 5, CancellationToken cancellationToken = default)
     {
         try

@@ -3,68 +3,12 @@
   "WorkspaceRootPath": "S:\\.Net\\Learning\\MediSync\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{11CFD6C4-CAA4-4638-8ADF-9D0A7D3A6731}|MediSync.Notification.Presentation\\MediSync.Notification.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.notification.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{11CFD6C4-CAA4-4638-8ADF-9D0A7D3A6731}|MediSync.Notification.Presentation\\MediSync.Notification.Presentation.csproj|solutionrelative:medisync.notification.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|S:\\.Net\\Learning\\MediSync\\Dependency.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:Dependency.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\services\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\services\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\services\\vectorstoreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\services\\vectorstoreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\services\\indexservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\services\\indexservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\controllers\\indexcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\controllers\\indexcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\models\\chatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\models\\chatrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\services\\embeddingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\services\\embeddingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\services\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\services\\ichatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\controllers\\druginteractioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\controllers\\druginteractioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\models\\indexpatientrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\models\\indexpatientrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\services\\ivectorstoreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\services\\ivectorstoreservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\services\\iindexservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\services\\iindexservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.ai.presentation\\services\\iembeddingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FFD37A6-79DF-4E77-A770-09641B126587}|MediSync.AI.Presentation\\MediSync.AI.Presentation.csproj|solutionrelative:medisync.ai.presentation\\services\\iembeddingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,200 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Dependency.txt",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\Dependency.txt",
-              "RelativeDocumentMoniker": "Dependency.txt",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\Dependency.txt",
-              "RelativeToolTip": "Dependency.txt",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-09-12T06:45:50.862Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ChatController.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Controllers\\ChatController.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Controllers\\ChatController.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Controllers\\ChatController.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Controllers\\ChatController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB4AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T09:27:47.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChatService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\ChatService.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Services\\ChatService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\ChatService.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Services\\ChatService.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAtwFgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T07:01:18.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IChatService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IChatService.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Services\\IChatService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IChatService.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Services\\IChatService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T07:00:28.776Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ChatRequest.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Models\\ChatRequest.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Models\\ChatRequest.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Models\\ChatRequest.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Models\\ChatRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-19T06:57:40.61Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IndexController.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Controllers\\IndexController.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Controllers\\IndexController.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Controllers\\IndexController.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Controllers\\IndexController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBUAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T08:29:28.882Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IndexService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IndexService.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Services\\IndexService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IndexService.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Services\\IndexService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAABgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T07:48:31.621Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IIndexService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IIndexService.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Services\\IIndexService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IIndexService.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Services\\IIndexService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T07:47:32.998Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IndexPatientRequest.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Models\\IndexPatientRequest.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Models\\IndexPatientRequest.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Models\\IndexPatientRequest.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Models\\IndexPatientRequest.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAABUAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T07:45:57.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DrugInteractionController.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Controllers\\DrugInteractionController.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Controllers\\DrugInteractionController.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Controllers\\DrugInteractionController.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Controllers\\DrugInteractionController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-13T06:15:49.704Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Program.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Program.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Program.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Program.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAawC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-12T09:35:13.039Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "VectorStoreService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\VectorStoreService.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Services\\VectorStoreService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\VectorStoreService.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Services\\VectorStoreService.cs",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAawJoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-12T08:54:19.162Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IVectorStoreService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IVectorStoreService.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Services\\IVectorStoreService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IVectorStoreService.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Services\\IVectorStoreService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-12T08:50:58.073Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EmbeddingService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\EmbeddingService.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Services\\EmbeddingService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\EmbeddingService.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Services\\EmbeddingService.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAswDEAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-12T08:33:15.117Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IEmbeddingService.cs",
-              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IEmbeddingService.cs",
-              "RelativeDocumentMoniker": "MediSync.AI.Presentation\\Services\\IEmbeddingService.cs",
-              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\Services\\IEmbeddingService.cs",
-              "RelativeToolTip": "MediSync.AI.Presentation\\Services\\IEmbeddingService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-12T08:25:52.002Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Notification.Presentation\\appsettings.json",
+              "RelativeDocumentMoniker": "MediSync.Notification.Presentation\\appsettings.json",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.Notification.Presentation\\appsettings.json",
+              "RelativeToolTip": "MediSync.Notification.Presentation\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-02T05:30:56.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\appsettings.json",
               "RelativeDocumentMoniker": "MediSync.AI.Presentation\\appsettings.json",
               "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\appsettings.json",
               "RelativeToolTip": "MediSync.AI.Presentation\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-12T08:15:47.213Z",
+              "WhenOpened": "2026-10-02T05:30:02.721Z",
               "EditorCaption": ""
             }
           ]

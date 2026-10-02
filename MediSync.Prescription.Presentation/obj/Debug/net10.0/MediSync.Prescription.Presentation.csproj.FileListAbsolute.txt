@@ -146,6 +146,7 @@ S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\r
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\runtimes\win\lib\net9.0\System.Windows.Extensions.dll
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\MediSync.BuildingBlocks.dll
+S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\MediSync.MedicalRecord.Domain.dll
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\MediSync.Prescription.Application.dll
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\MediSync.Prescription.Domain.dll
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\MediSync.Prescription.Infrastructure.dll
@@ -153,6 +154,7 @@ S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\M
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\MediSync.Prescription.Domain.pdb
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\MediSync.Prescription.Infrastructure.pdb
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\MediSync.BuildingBlocks.pdb
+S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\bin\Debug\net10.0\MediSync.MedicalRecord.Domain.pdb
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\obj\Debug\net10.0\MediSync.Prescription.Presentation.csproj.AssemblyReference.cache
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\obj\Debug\net10.0\rpswa.dswa.cache.json
 S:\.Net\Learning\MediSync\MediSync.Prescription.Presentation\obj\Debug\net10.0\MediSync.Prescription.Presentation.GeneratedMSBuildEditorConfig.editorconfig

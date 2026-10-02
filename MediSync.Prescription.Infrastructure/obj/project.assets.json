@@ -1245,6 +1245,19 @@
           "bin/placeholder/MediSync.BuildingBlocks.dll": {}
         }
       },
+      "MediSync.MedicalRecord.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "MediSync.BuildingBlocks": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MediSync.MedicalRecord.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MediSync.MedicalRecord.Domain.dll": {}
+        }
+      },
       "MediSync.Prescription.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -3606,6 +3619,11 @@
       "path": "../MediSync.BuildingBlocks/MediSync.BuildingBlocks.csproj",
       "msbuildProject": "../MediSync.BuildingBlocks/MediSync.BuildingBlocks.csproj"
     },
+    "MediSync.MedicalRecord.Domain/1.0.0": {
+      "type": "project",
+      "path": "../MediSync.MedicalRecord.Domain/MediSync.MedicalRecord.Domain.csproj",
+      "msbuildProject": "../MediSync.MedicalRecord.Domain/MediSync.MedicalRecord.Domain.csproj"
+    },
     "MediSync.Prescription.Application/1.0.0": {
       "type": "project",
       "path": "../MediSync.Prescription.Application/MediSync.Prescription.Application.csproj",
@@ -3620,6 +3638,7 @@
   "projectFileDependencyGroups": {
     "net10.0": [
       "MediSync.BuildingBlocks >= 1.0.0",
+      "MediSync.MedicalRecord.Domain >= 1.0.0",
       "MediSync.Prescription.Application >= 1.0.0",
       "MediSync.Prescription.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.0",
@@ -3662,6 +3681,9 @@
           "projectReferences": {
             "S:\\.Net\\Learning\\MediSync\\MediSync.BuildingBlocks\\MediSync.BuildingBlocks.csproj": {
               "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.BuildingBlocks\\MediSync.BuildingBlocks.csproj"
+            },
+            "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Domain\\MediSync.MedicalRecord.Domain.csproj": {
+              "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Domain\\MediSync.MedicalRecord.Domain.csproj"
             },
             "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Application\\MediSync.Prescription.Application.csproj": {
               "projectPath": "S:\\.Net\\Learning\\MediSync\\MediSync.Prescription.Application\\MediSync.Prescription.Application.csproj"
@@ -3719,7 +3741,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
