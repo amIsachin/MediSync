@@ -18,7 +18,7 @@ namespace MediSync.MedicalRecord.Presentation.Controllers
         private readonly IMediator _mediator;
 
         public PatientController(IMediator mediator)
-        {
+        { 
             _mediator = mediator;
         }
 

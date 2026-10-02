@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "S:\\.Net\\Learning\\MediSync\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0F8017C5-815E-40DF-B011-60E47FD8F08C}|MediSync.MedicalRecord.Presentation\\MediSync.MedicalRecord.Presentation.csproj|s:\\.net\\learning\\medisync\\medisync.medicalrecord.presentation\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F8017C5-815E-40DF-B011-60E47FD8F08C}|MediSync.MedicalRecord.Presentation\\MediSync.MedicalRecord.Presentation.csproj|solutionrelative:medisync.medicalrecord.presentation\\controllers\\patientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|S:\\.Net\\Learning\\MediSync\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PatientController.cs",
+              "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Presentation\\Controllers\\PatientController.cs",
+              "RelativeDocumentMoniker": "MediSync.MedicalRecord.Presentation\\Controllers\\PatientController.cs",
+              "ToolTip": "S:\\.Net\\Learning\\MediSync\\MediSync.MedicalRecord.Presentation\\Controllers\\PatientController.cs",
+              "RelativeToolTip": "MediSync.MedicalRecord.Presentation\\Controllers\\PatientController.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAUwA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T05:58:12.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "README.md",
               "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Notification.Presentation\\Program.cs",
               "RelativeDocumentMoniker": "MediSync.Notification.Presentation\\Program.cs",
@@ -51,12 +68,11 @@
               "RelativeToolTip": "MediSync.Notification.Presentation\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-02T05:44:02.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-02T05:44:02.186Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.Notification.Presentation\\appsettings.json",
               "RelativeDocumentMoniker": "MediSync.Notification.Presentation\\appsettings.json",
@@ -64,12 +80,11 @@
               "RelativeToolTip": "MediSync.Notification.Presentation\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-02T05:30:56.332Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-02T05:30:56.332Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "S:\\.Net\\Learning\\MediSync\\MediSync.AI.Presentation\\appsettings.json",
               "RelativeDocumentMoniker": "MediSync.AI.Presentation\\appsettings.json",
@@ -77,8 +92,7 @@
               "RelativeToolTip": "MediSync.AI.Presentation\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-02T05:30:02.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-02T05:30:02.721Z"
             }
           ]
         }
