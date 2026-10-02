@@ -18,7 +18,7 @@ builder.Services.AddHttpClient("MedicalRecordApi", client =>
     client.Timeout = TimeSpan.FromSeconds(10);
 });
 
-var app = builder.Build();
+var app = builder.Build(); 
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

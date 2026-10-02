@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MediSync.Notification.Presentation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31015d870594a5ba759900ff7448853949876e93")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49fbf6ec3b0fbdba20ffed40269da0dc934ba7db")]
 [assembly: System.Reflection.AssemblyProductAttribute("MediSync.Notification.Presentation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MediSync.Notification.Presentation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

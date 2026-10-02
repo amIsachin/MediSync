@@ -39,5 +39,6 @@
   </Folder>
   <Folder Name="/Solution Items/">
     <File Path="Dependency.txt" />
+    <File Path="README.md" />
   </Folder>
 </Solution>
